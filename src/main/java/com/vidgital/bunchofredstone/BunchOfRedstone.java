@@ -1,7 +1,9 @@
 package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.level.block.Blocks;
+import com.vidgital.bunchofredstone.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,7 +15,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -33,7 +34,7 @@ public class BunchOfRedstone
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-
+        ModItems.Register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -50,7 +51,13 @@ public class BunchOfRedstone
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
+        {
+            event.accept(ModItems.WRENCH);
+            event.accept(ModItems.EXPOSED_WRENCH);
+            event.accept(ModItems.WEATHERED_WRENCH);
+            event.accept(ModItems.OXIDIZED_WRENCH);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
