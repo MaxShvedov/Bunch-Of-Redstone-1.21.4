@@ -26,12 +26,12 @@ public class ModBlocks
     //Temp block
     public static final RegistryObject<Block> COBBLED_DEEPSLATE_TILES = RegisterBlock("cobbled_deepslate_tiles",
             () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobbled_deepslate_tiles")))
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES)));
+                    .strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES)));
 
     //Temp block
     public static final RegistryObject<Block> SMOOTH_CALCITE = RegisterBlock("smooth_calcite",
             () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
-                    .strength(2f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
+                    .strength(0.75f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
 
 
     //Helping method, returns block registration object
