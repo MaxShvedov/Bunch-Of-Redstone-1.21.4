@@ -2,6 +2,7 @@ package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
 import com.vidgital.bunchofredstone.block.ModBlocks;
+import com.vidgital.bunchofredstone.item.ModCreativeModeTabs;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -27,6 +28,7 @@ public class BunchOfRedstone
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    //Creates an object of BunchOfRedstone class
     public BunchOfRedstone(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -34,6 +36,9 @@ public class BunchOfRedstone
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        //Register mod creative mode tabs
+        ModCreativeModeTabs.Register(modEventBus);
 
         // Register mod items and blocks
         ModItems.Register(modEventBus);
