@@ -1,6 +1,7 @@
 package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
+import com.vidgital.bunchofredstone.block.ModBlocks;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -34,8 +35,9 @@ public class BunchOfRedstone
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        // Register mod items and blocks
         ModItems.Register(modEventBus);
-
+        ModBlocks.Register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -48,7 +50,7 @@ public class BunchOfRedstone
 
     }
 
-    // Add the example block item to the building blocks tab
+    // Add items and block items to the creative menu tabs
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
@@ -57,6 +59,12 @@ public class BunchOfRedstone
             event.accept(ModItems.EXPOSED_WRENCH);
             event.accept(ModItems.WEATHERED_WRENCH);
             event.accept(ModItems.OXIDIZED_WRENCH);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        {
+            event.accept(ModBlocks.COBBLED_DEEPSLATE_TILES);
+            event.accept(ModBlocks.SMOOTH_CALCITE);
         }
     }
 

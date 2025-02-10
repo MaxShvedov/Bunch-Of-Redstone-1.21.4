@@ -2,5 +2,8 @@
   "item.bunchofredstone.wrench": "Wrench",
   "item.bunchofredstone.exposed_wrench": "Exposed Wrench",
   "item.bunchofredstone.weathered_wrench": "Weathered Wrench",
-  "item.bunchofredstone.oxidized_wrench": "Oxidized Wrench"
+  "item.bunchofredstone.oxidized_wrench": "Oxidized Wrench",
+  "item.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles",
+
+  "block.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles"
 }

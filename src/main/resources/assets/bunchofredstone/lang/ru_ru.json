@@ -1,6 +1,9 @@
 {
-  "item.bunchofredstone.wrench": "Гаечный Ключ",
-  "item.bunchofredstone.exposed_wrench": "Потемневший Гаечный Ключ",
-  "item.bunchofredstone.weathered_wrench": "Состаренный Гаечный Ключ",
-  "item.bunchofredstone.oxidized_wrench": "Окисленный Гаечный Ключ"
+  "item.bunchofredstone.wrench": "Гаечный ключ",
+  "item.bunchofredstone.exposed_wrench": "Потемневший гаечный ключ",
+  "item.bunchofredstone.weathered_wrench": "Состаренный гаечный ключ",
+  "item.bunchofredstone.oxidized_wrench": "Окисленный гаечный ключ",
+  "item.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого сланца",
+
+  "block.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого сланца"
 }
