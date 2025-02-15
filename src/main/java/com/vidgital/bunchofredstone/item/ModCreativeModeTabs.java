@@ -22,6 +22,7 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.EXPOSED_WRENCH.get());
                         output.accept(ModItems.WEATHERED_WRENCH.get());
                         output.accept(ModItems.OXIDIZED_WRENCH.get());
+                        output.accept(ModItems.MAGIC_WRENCH.get());
                     }).build());
 
 

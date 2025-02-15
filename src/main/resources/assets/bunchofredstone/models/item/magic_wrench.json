@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures":
+  {
+    "layer0": "bunchofredstone:item/special_wrench_placeholder"
+  }
+}

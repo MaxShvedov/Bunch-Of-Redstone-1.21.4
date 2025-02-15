@@ -26,7 +26,7 @@ public class BunchOfRedstone
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "bunchofredstone";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    private static final Logger _LOGGER = LogUtils.getLogger();
 
     //Creates an object of BunchOfRedstone class
     public BunchOfRedstone(FMLJavaModLoadingContext context)

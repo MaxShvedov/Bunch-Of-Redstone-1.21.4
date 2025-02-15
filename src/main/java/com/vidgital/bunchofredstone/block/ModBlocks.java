@@ -2,7 +2,6 @@ package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.item.ModItems;
-import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
