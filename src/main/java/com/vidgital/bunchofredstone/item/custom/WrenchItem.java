@@ -1,5 +1,6 @@
 package com.vidgital.bunchofredstone.item.custom;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -14,16 +15,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Property;
 
+import javax.annotation.concurrent.Immutable;
+import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class WrenchItem extends Item
 {
@@ -32,6 +35,14 @@ public class WrenchItem extends Item
                     Direction.Axis.X, Direction.Axis.Y,
                     Direction.Axis.Y, Direction.Axis.Z,
                     Direction.Axis.Z, Direction.Axis.X
+            );
+
+    private static final Map<Direction, Direction> _FACING_FOUR_MAP =
+            Map.of(
+                    Direction.NORTH, Direction.EAST,
+                    Direction.EAST, Direction.SOUTH,
+                    Direction.SOUTH, Direction.WEST,
+                    Direction.WEST, Direction.NORTH
             );
 
 
@@ -60,7 +71,7 @@ public class WrenchItem extends Item
         {
             BlockPos blockPos = pContext.getClickedPos();
             Block selectedBlock = level.getBlockState(blockPos).getBlock();
-            if(!this.HandleInteraction(selectedBlock, level.getBlockState(blockPos), level, blockPos, true, pContext.getItemInHand()))
+            if(!this.HandleInteraction(player, selectedBlock, level.getBlockState(blockPos), level, blockPos, true, pContext.getItemInHand()))
             {
                 return InteractionResult.FAIL;
             }
@@ -72,15 +83,34 @@ public class WrenchItem extends Item
         return InteractionResult.SUCCESS;
     }
 
-    private boolean HandleInteraction(Block pSelectedBlock, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean pShouldRotate, ItemStack pWrenchStack )
+    private boolean HandleInteraction(Player pPlayer, Block pSelectedBlock, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean pShouldRotate, ItemStack pWrenchStack )
     {
-
-        if(pSelectedBlock instanceof RotatedPillarBlock)
+        StateDefinition<Block, BlockState> stateDefinition = pSelectedBlock.getStateDefinition();
+        Collection<Property<?>> collection = stateDefinition.getProperties();
+        if(collection.contains(BlockStateProperties.AXIS))
         {
-            pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, _AXIS_MAP.get(pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
+            if(pPlayer.isCrouching())
+                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, getKeyByValue(_AXIS_MAP, pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
+            else
+                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, _AXIS_MAP.get(pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
             return true;
         }
+
         return false;
+    }
+
+    private static <T, E> T getKeyByValue(Map<T, E> map, E value)
+    {
+        T pKey = null;
+        for (Map.Entry<T, E> entry : map.entrySet())
+        {
+            if (Objects.equals(value, entry.getValue()))
+            {
+                pKey = entry.getKey();
+                break;
+            }
+        }
+        return pKey;
     }
 
     //Creates an object of WrenchItem class.
