@@ -1,11 +1,7 @@
 package com.vidgital.bunchofredstone.item.custom;
 
-import com.google.common.collect.ImmutableList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -21,12 +17,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Property;
 
-import javax.annotation.concurrent.Immutable;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 public class WrenchItem extends Item
 {
@@ -37,7 +31,17 @@ public class WrenchItem extends Item
                     Direction.Axis.Z, Direction.Axis.X
             );
 
-    private static final Map<Direction, Direction> _FACING_FOUR_MAP =
+    private static final Map<Direction, Direction> _FACING_6_MAP =
+            Map.of(
+                    Direction.NORTH, Direction.EAST,
+                    Direction.EAST, Direction.SOUTH,
+                    Direction.SOUTH, Direction.WEST,
+                    Direction.WEST, Direction.UP,
+                    Direction.UP, Direction.DOWN,
+                    Direction.DOWN, Direction.NORTH
+            );
+
+    private static final Map<Direction, Direction> _FACING_4_MAP =
             Map.of(
                     Direction.NORTH, Direction.EAST,
                     Direction.EAST, Direction.SOUTH,
@@ -45,33 +49,29 @@ public class WrenchItem extends Item
                     Direction.WEST, Direction.NORTH
             );
 
-
-//    @Override
-//    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context)
-//    {
-//        Level level = context.getLevel();
-//        BlockPos blockPos = context.getClickedPos();
-//        BlockState blockState = level.getBlockState(blockPos);
-//        Block targetBlock = blockState.getBlock();
-//        if(!level.isClientSide && _AXIS_LIST.contains(targetBlock))
-//        {
-//            blockState.rotate(level, blockPos, Rotation.CLOCKWISE_90);
-//            level.playSound(null,context.getClickedPos(), SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS);
-//        }
-//        return InteractionResult.SUCCESS;
-//    }
+    private static final List<Block> _IGNORE_BLOCKS =
+            List.of();
 
     @Override
-    public InteractionResult useOn(UseOnContext pContext)
+    public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
+        if(!pLevel.isClientSide())
+        {
+            if(this.HandleInteraction(pPlayer, pState, pLevel, pPos, false, null))
+                pLevel.playSound(null, pPos ,SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS);
+        }
+        return false;
+    }
+
+    @Override
+    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext pContext)
     {
         Player player = pContext.getPlayer();
         Level level = pContext.getLevel();
-
+        Direction.Axis axis = pContext.getClickedFace().getAxis();
         if(!level.isClientSide())
         {
             BlockPos blockPos = pContext.getClickedPos();
-            Block selectedBlock = level.getBlockState(blockPos).getBlock();
-            if(!this.HandleInteraction(player, selectedBlock, level.getBlockState(blockPos), level, blockPos, true, pContext.getItemInHand()))
+            if(!this.HandleInteraction(player, level.getBlockState(blockPos), level, blockPos, true, axis))
             {
                 return InteractionResult.FAIL;
             }
@@ -83,22 +83,87 @@ public class WrenchItem extends Item
         return InteractionResult.SUCCESS;
     }
 
-    private boolean HandleInteraction(Player pPlayer, Block pSelectedBlock, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean pShouldRotate, ItemStack pWrenchStack )
+    private boolean HandleInteraction(Player pPlayer, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean rightMouseClicked, Direction.Axis pAxis )
     {
-        StateDefinition<Block, BlockState> stateDefinition = pSelectedBlock.getStateDefinition();
+
+
+        StateDefinition<Block, BlockState> stateDefinition = pStateClicked.getBlock().getStateDefinition();
         Collection<Property<?>> collection = stateDefinition.getProperties();
+
+
         if(collection.contains(BlockStateProperties.AXIS))
         {
-            if(pPlayer.isCrouching())
-                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, getKeyByValue(_AXIS_MAP, pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
-            else
-                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, _AXIS_MAP.get(pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
+            if(rightMouseClicked)
+            {
+                if (pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, getKeyByValue(_AXIS_MAP, pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, _AXIS_MAP.get(pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
+            }
             return true;
         }
+        if(collection.contains(BlockStateProperties.FACING))
+        {
+            if(rightMouseClicked)
+            {
+                if (pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, pStateClicked.getValue(BlockStateProperties.FACING).getCounterClockWise(pAxis)), 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, pStateClicked.getValue(BlockStateProperties.FACING).getClockWise(pAxis)), 11);
+            }
+            else
+            {
+                if (pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, getKeyByValue(_FACING_6_MAP, pStateClicked.getValue(BlockStateProperties.FACING))), 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, _FACING_6_MAP.get(pStateClicked.getValue(BlockStateProperties.FACING))), 11);
+            }
+            return true;
+        }
+        if(collection.contains(BlockStateProperties.HORIZONTAL_FACING))
+        {
+            if(rightMouseClicked)
+            {
+                if (pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING).getCounterClockWise(Direction.Axis.Y)), 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING).getClockWise(Direction.Axis.Y)), 11);
+            }
+            else
+            {
+                if (pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, getKeyByValue(_FACING_4_MAP, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING))), 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, _FACING_4_MAP.get(pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING))), 11);
+            }
+            return true;
+        }
+        if(collection.contains(BlockStateProperties.ROTATION_16))
+        {
+            if(rightMouseClicked)
+            {
+                if(pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
+                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 < 0 ? 16 + pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4) , 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 4) % 16), 11);
+            }
+            else
+            {
+                if(pPlayer.isCrouching())
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
+                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1 < 0 ? 15 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1) , 11);
+                else
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 1) % 16), 11);
+            }
+            return true;
+        }
+
 
         return false;
     }
 
+    //Returns key from key-value pair from map.
     private static <T, E> T getKeyByValue(Map<T, E> map, E value)
     {
         T pKey = null;
@@ -111,6 +176,11 @@ public class WrenchItem extends Item
             }
         }
         return pKey;
+    }
+
+    private static void messageProperties(Player pPlayer, Collection<?> propertiesCollection)
+    {
+
     }
 
     //Creates an object of WrenchItem class.
