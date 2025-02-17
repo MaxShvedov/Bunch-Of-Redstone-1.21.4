@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.SlabType;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import java.util.Collection;
 import java.util.List;
@@ -99,10 +100,13 @@ public class WrenchItem extends Item
         return InteractionResult.SUCCESS;
     }
 
+    @Override
+    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, Player player) {
+        return super.onBlockStartBreak(itemstack, pos, player);
+    }
+
     private boolean HandleInteraction(Player pPlayer, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean rightMouseClicked, Direction.Axis pAxis )
     {
-
-
         StateDefinition<Block, BlockState> stateDefinition = pStateClicked.getBlock().getStateDefinition();
         Collection<Property<?>> collection = stateDefinition.getProperties();
 
@@ -182,6 +186,20 @@ public class WrenchItem extends Item
         return false;
     }
 
+    //Заготовка под метод. Вызывается при нажатии ПКМ по блоку с ключом в руках.
+    private boolean InteractionRightClick()
+    {
+        return false;
+    }
+
+    //Заготовка под метод. Вызывается при нажатии ЛКМ по блоку с ключом в руках.
+    private boolean InteractionLeftClick()
+    {
+        return false;
+    }
+
+
+
     //Returns key from key-value pair from map.
     private static <T, E> T getKeyByValue(Map<T, E> map, E value)
     {
@@ -197,10 +215,31 @@ public class WrenchItem extends Item
         return pKey;
     }
 
-    private static void messageProperties(Player pPlayer, Collection<?> propertiesCollection)
-    {
 
-    }
+
+    //Заготовки под будущие методы. Не забудь убрать static при необходимости.
+    private static void RotateAxis(){}
+    private static void RotateHorizontalFacing(){}
+    private static void RotateTrapdoor(){}
+    private static void ChangeDoorHinge(){}
+    private static void RotateFacing(){}
+    private static void RotateAngular(){}
+    private static void RotateSlab(){}
+    private static void RotateStairs(){}
+    private static void ChangeStairsShape(){}
+    private static void RotateRails(){}
+    private static void ChangeRailsType(){}
+    private static void RotateHopper(){}
+    private static void RotateCrafter(){}
+    private static void RotateMushroom(){}
+    private static void AddFenceSide(){}
+    private static void AddWallSite(){}
+    private static void RotateFence(){}
+    private static void RotateWallPlants(){}
+    private static void ConnectMinecarts(){}
+    private static void DisconnectMinecarts(){}
+    private static void ArmorStandInteraction(){}
+
 
     //Creates an object of WrenchItem class.
     public WrenchItem(Properties pProperties)
