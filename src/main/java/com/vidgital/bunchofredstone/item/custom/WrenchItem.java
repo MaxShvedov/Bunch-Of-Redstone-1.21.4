@@ -15,7 +15,9 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.SlabType;
 
 import java.util.Collection;
 import java.util.List;
@@ -24,6 +26,7 @@ import java.util.Objects;
 
 public class WrenchItem extends Item
 {
+
     private static final Map<Direction.Axis, Direction.Axis> _AXIS_MAP =
             Map.of(
                     Direction.Axis.X, Direction.Axis.Y,
@@ -49,6 +52,18 @@ public class WrenchItem extends Item
                     Direction.WEST, Direction.NORTH
             );
 
+    private static final Map<SlabType, SlabType> _SLAB_MAP =
+            Map.of(
+                    SlabType.BOTTOM, SlabType.TOP,
+                    SlabType.TOP, SlabType.BOTTOM
+            );
+
+    private static final Map<Half, Half> _HALF_MAP  =
+    Map.of(
+            Half.BOTTOM, Half.TOP,
+            Half.TOP, Half.BOTTOM
+        );
+
     private static final List<Block> _IGNORE_BLOCKS =
             List.of();
 
@@ -56,6 +71,7 @@ public class WrenchItem extends Item
     public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
         if(!pLevel.isClientSide())
         {
+
             if(this.HandleInteraction(pPlayer, pState, pLevel, pPos, false, null))
                 pLevel.playSound(null, pPos ,SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS);
         }
@@ -129,13 +145,6 @@ public class WrenchItem extends Item
                 else
                     pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING).getClockWise(Direction.Axis.Y)), 11);
             }
-            else
-            {
-                if (pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, getKeyByValue(_FACING_4_MAP, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING))), 11);
-                else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, _FACING_4_MAP.get(pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING))), 11);
-            }
             return true;
         }
         if(collection.contains(BlockStateProperties.ROTATION_16))
@@ -144,21 +153,31 @@ public class WrenchItem extends Item
             {
                 if(pPlayer.isCrouching())
                     pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
-                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 < 0 ? 16 + pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4) , 11);
+                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1 < 0 ? 15 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1) , 11);
                 else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 4) % 16), 11);
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 1) % 16), 11);
             }
             else
             {
                 if(pPlayer.isCrouching())
                     pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
-                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1 < 0 ? 15 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1) , 11);
+                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 < 0 ? 16 + pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4) , 11);
                 else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 1) % 16), 11);
+                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 4) % 16), 11);
             }
             return true;
         }
-
+        if(collection.contains(BlockStateProperties.SLAB_TYPE))
+        {
+            if(rightMouseClicked)
+                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.SLAB_TYPE, _SLAB_MAP.get(pStateClicked.getValue(BlockStateProperties.SLAB_TYPE))), 11);
+            return true;
+        }
+        if(collection.contains(BlockStateProperties.HALF))
+        {
+            if(!rightMouseClicked)
+                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HALF, _HALF_MAP.get(pStateClicked.getValue(BlockStateProperties.HALF))), 11);
+        }
 
         return false;
     }
