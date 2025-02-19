@@ -2,6 +2,7 @@ package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
 import com.vidgital.bunchofredstone.block.ModBlocks;
+import com.vidgital.bunchofredstone.event.WrenchEvents;
 import com.vidgital.bunchofredstone.item.ModCreativeModeTabs;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,6 +36,7 @@ public class BunchOfRedstone
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
+
         MinecraftForge.EVENT_BUS.register(this);
 
         //Register mod creative mode tabs

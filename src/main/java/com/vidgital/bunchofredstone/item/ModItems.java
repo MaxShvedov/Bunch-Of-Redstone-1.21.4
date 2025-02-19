@@ -2,12 +2,12 @@ package com.vidgital.bunchofredstone.item;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.item.custom.MagicWrenchItem;
+import com.vidgital.bunchofredstone.item.custom.NewWrenchItem;
 import com.vidgital.bunchofredstone.item.custom.WrenchItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,11 +19,11 @@ public class ModItems
             DeferredRegister.create(ForgeRegistries.ITEMS, BunchOfRedstone.MOD_ID);
 
     public static final RegistryObject<Item> WRENCH = ITEMS.register(
-            "wrench", () -> new WrenchItem(new Item.Properties().useItemDescriptionPrefix().stacksTo(1).
+            "wrench", () -> new NewWrenchItem(new Item.Properties().useItemDescriptionPrefix().stacksTo(1).
                     setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "wrench")))));
 
     public static final RegistryObject<Item> EXPOSED_WRENCH = ITEMS.register(
-            "exposed_wrench", () -> new Item(new Item.Properties().useItemDescriptionPrefix().stacksTo(1).
+            "exposed_wrench", () -> new WrenchItem(new Item.Properties().useItemDescriptionPrefix().stacksTo(1).
                     setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "exposed_wrench")))));
 
     public static final RegistryObject<Item> WEATHERED_WRENCH = ITEMS.register(

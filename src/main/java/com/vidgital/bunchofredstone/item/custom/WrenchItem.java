@@ -221,12 +221,13 @@ public class WrenchItem extends Item
     //Заготовки под будущие методы. Не забудь убрать static при необходимости.
     private static void RotateAxis(){}
     private static void RotateHorizontalFacing(){}
+    private static void RotateStairs(){}
+    private static void RotateGrinder(){}
     private static void RotateTrapdoor(){}
     private static void ChangeDoorHinge(){}
     private static void RotateFacing(){}
     private static void RotateAngular(){}
     private static void RotateSlab(){}
-    private static void RotateStairs(){}
     private static void ChangeStairsShape(){}
     private static void RotateRails(){}
     private static void ChangeRailsType(){}
