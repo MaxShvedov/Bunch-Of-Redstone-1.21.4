@@ -38,23 +38,20 @@ public class WrenchEvents
     {
         Player player = event.getEntity();
         ItemStack mainHandItem = player.getMainHandItem();
-        if(player != null && mainHandItem.getItem() instanceof NewWrenchItem)
+        if(event.getAction() == PlayerInteractEvent.LeftClickBlock.Action.START)
         {
-            event.setCanceled(true);
-        }
-        if(mainHandItem.getItem() instanceof NewWrenchItem && player instanceof ServerPlayer serverPlayer)
-        {
-
-            LevelAccessor level = event.getLevel();
-            BlockPos pos = event.getPos();
-            BlockState blockState = level.getBlockState(pos);
-            Direction face = event.getFace();
-
-            if(InteractLeftClick(player, blockState, level, pos, face, player.isCrouching()))
+            if (mainHandItem.getItem() instanceof NewWrenchItem && player instanceof ServerPlayer serverPlayer)
             {
 
-            }
+                LevelAccessor level = event.getLevel();
+                BlockPos pos = event.getPos();
+                BlockState blockState = level.getBlockState(pos);
+                Direction face = event.getFace();
 
+                if (InteractLeftClick(player, blockState, level, pos, face, player.isCrouching())) {
+
+                }
+            }
         }
     }
 
@@ -131,21 +128,6 @@ public class WrenchEvents
     private static boolean RotateAngular(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction.Axis interactedAxis)
     {
         return false;
-    }
-
-
-
-    private static Direction.Axis calculateAxis(Direction.Axis hitAxis, Direction.Axis stateAxis)
-    {
-        if(hitAxis.isHorizontal() && stateAxis.isHorizontal() && hitAxis != stateAxis)
-            return stateAxis;
-        if(stateAxis.isVertical() && hitAxis != Direction.Axis.Z)
-            return Direction.Axis.X;
-        if (stateAxis.isVertical() && hitAxis == Direction.Axis.Z)
-            return Direction.Axis.Z;
-
-        return
-                Direction.Axis.Y;
     }
 
 }

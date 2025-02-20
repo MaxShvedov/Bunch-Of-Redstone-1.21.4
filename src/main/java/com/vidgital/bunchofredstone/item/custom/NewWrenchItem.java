@@ -28,8 +28,9 @@ public class NewWrenchItem extends Item
     @Override
     public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer)
     {
-        return false;
+        return !pPlayer.isCreative();
     }
+
 
     //Method to interact with blocks without opening BlockEntities GUI, changing redstone blocks settings, etc.
     @Override
