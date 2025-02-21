@@ -98,6 +98,9 @@ public class WrenchEvents
         if(stateProperties.contains(BlockStateProperties.SLAB_TYPE))
             return RotateSlab(pState, pLevel, pPos);
 
+        if(stateProperties.contains(BlockStateProperties.FACING_HOPPER))
+            return ChangeHopperOutput(pState, pLevel, pPos, pFace, isPlayerCrouching);
+
 
         return false;
     }
@@ -225,6 +228,21 @@ public class WrenchEvents
         else
             return false;
 
+        return true;
+    }
+
+    private static boolean ChangeHopperOutput(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
+    {
+        Direction stateFace = pState.getValue(BlockStateProperties.FACING_HOPPER);
+
+        if(isPlayerCrouching)
+        {
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, stateFace == pFace.getOpposite() ? Direction.DOWN : pFace), 11 );
+        }
+        else
+        {
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, stateFace == pFace ? Direction.DOWN : pFace.getOpposite()), 11 );
+        }
         return true;
     }
 
