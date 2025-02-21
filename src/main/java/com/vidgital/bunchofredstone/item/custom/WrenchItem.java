@@ -1,29 +1,20 @@
 package com.vidgital.bunchofredstone.item.custom;
 
-import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GrindstoneBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.Half;
-import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraft.world.level.block.state.properties.SlabType;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraft.world.level.block.state.properties.*;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,176 +23,228 @@ import java.util.Objects;
 
 public class WrenchItem extends Item
 {
-
-    private static final Map<Direction.Axis, Direction.Axis> _AXIS_MAP =
+    private static final Map<List<?>, List<?>> _STAIRS_ROTATION_MAP =
             Map.of(
-                    Direction.Axis.X, Direction.Axis.Y,
-                    Direction.Axis.Y, Direction.Axis.Z,
-                    Direction.Axis.Z, Direction.Axis.X
+                    List.of(Direction.SOUTH, Half.BOTTOM), List.of(Direction.NORTH, Half.BOTTOM),
+                    List.of(Direction.NORTH, Half.BOTTOM), List.of(Direction.NORTH, Half.TOP),
+                    List.of(Direction.NORTH, Half.TOP),  List.of(Direction.SOUTH, Half.TOP),
+                    List.of(Direction.SOUTH, Half.TOP), List.of(Direction.SOUTH, Half.BOTTOM),
+
+                    List.of(Direction.EAST, Half.BOTTOM), List.of(Direction.WEST, Half.BOTTOM),
+                    List.of(Direction.WEST, Half.BOTTOM), List.of(Direction.WEST, Half.TOP),
+                    List.of(Direction.WEST, Half.TOP),  List.of(Direction.EAST, Half.TOP),
+                    List.of(Direction.EAST, Half.TOP), List.of(Direction.EAST, Half.BOTTOM)
             );
 
-    private static final Map<Direction, Direction> _FACING_6_MAP =
+    private static final Map<StairsShape, StairsShape> _STAIRS_SHAPE_MAP =
             Map.of(
-                    Direction.NORTH, Direction.EAST,
-                    Direction.EAST, Direction.SOUTH,
-                    Direction.SOUTH, Direction.WEST,
-                    Direction.WEST, Direction.UP,
-                    Direction.UP, Direction.DOWN,
-                    Direction.DOWN, Direction.NORTH
+                    StairsShape.INNER_LEFT, StairsShape.OUTER_LEFT,
+                    StairsShape.OUTER_LEFT, StairsShape.STRAIGHT,
+                    StairsShape.STRAIGHT, StairsShape.OUTER_RIGHT,
+                    StairsShape.OUTER_RIGHT, StairsShape.INNER_RIGHT,
+                    StairsShape.INNER_RIGHT, StairsShape.INNER_LEFT
             );
 
-    private static final Map<Direction, Direction> _FACING_4_MAP =
-            Map.of(
-                    Direction.NORTH, Direction.EAST,
-                    Direction.EAST, Direction.SOUTH,
-                    Direction.SOUTH, Direction.WEST,
-                    Direction.WEST, Direction.NORTH
-            );
 
-    private static final Map<SlabType, SlabType> _SLAB_MAP =
-            Map.of(
-                    SlabType.BOTTOM, SlabType.TOP,
-                    SlabType.TOP, SlabType.BOTTOM
-            );
-
-    private static final Map<Half, Half> _HALF_MAP  =
-    Map.of(
-            Half.BOTTOM, Half.TOP,
-            Half.TOP, Half.BOTTOM
-        );
-
-    private static final List<Block> _IGNORE_BLOCKS =
-            List.of();
-
+    //Method to prevent block destruction in Creative Mode.
     @Override
-    public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
-
-        if(!pLevel.isClientSide())
-        {
-
-            if(this.HandleInteraction(pPlayer, pState, pLevel, pPos, false, null))
-                pLevel.playSound(null, pPos ,SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS);
-        }
-        return false;
+    public boolean canAttackBlock(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer)
+    {
+        return !pPlayer.isCreative();
     }
 
+
+    //Method to interact with blocks without opening BlockEntities GUI, changing redstone blocks settings, etc.
     @Override
-    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext pContext)
+    public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context)
     {
-        Player player = pContext.getPlayer();
-        Level level = pContext.getLevel();
-        Direction.Axis axis = pContext.getClickedFace().getAxis();
+        Player player = context.getPlayer();
+        Level level = context.getLevel();
         if(!level.isClientSide())
         {
-            BlockPos blockPos = pContext.getClickedPos();
-            if(!this.HandleInteraction(player, level.getBlockState(blockPos), level, blockPos, true, axis))
+            BlockPos blockPos = context.getClickedPos();
+            Direction face = context.getClickedFace();
+            assert player != null;
+            if(!this.InteractionRightClick(player, level.getBlockState(blockPos), level, blockPos, face, player.isCrouching()))
             {
                 return InteractionResult.FAIL;
             }
-            level.playSound(null, pContext.getClickedPos(),SoundEvents.SPYGLASS_USE, SoundSource.BLOCKS);
             return InteractionResult.SUCCESS;
         }
-
-
         return InteractionResult.SUCCESS;
     }
 
-    private boolean HandleInteraction(Player pPlayer, BlockState pStateClicked, LevelAccessor pAccessor, BlockPos pPos, boolean rightMouseClicked, Direction.Axis pAxis )
+
+    //Right click interaction handling method. Calls the proper method for different block properties.
+    private boolean InteractionRightClick(Player pPlayer, BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
     {
-        StateDefinition<Block, BlockState> stateDefinition = pStateClicked.getBlock().getStateDefinition();
-        Collection<Property<?>> collection = stateDefinition.getProperties();
+        StateDefinition<Block, BlockState> stateDefinition = pState.getBlock().getStateDefinition();
+        Collection<Property<?>> stateProperties = stateDefinition.getProperties();
 
+        if(pState.getBlock() instanceof StairBlock stairBlock)
+            return StairsInteraction(pPlayer, pState, pLevel, pPos, pFace.getAxis(), isPlayerCrouching);
 
-        if(collection.contains(BlockStateProperties.AXIS))
+        if(pState.getBlock() instanceof GrindstoneBlock grindstoneBlock)
+            return RotateHorizontalFacing(pState, pLevel, pPos, isPlayerCrouching);
+
+        if(stateProperties.contains(BlockStateProperties.HORIZONTAL_FACING))
+            return RotateHorizontalFacing(pState, pLevel, pPos, isPlayerCrouching);
+
+        if(stateProperties.contains(BlockStateProperties.FACING))
+            return RotateFacing(pState, pLevel, pPos, pFace.getAxis() , isPlayerCrouching);
+
+        if(stateProperties.contains(BlockStateProperties.AXIS))
+            return  RotateAxis(pState, pLevel, pPos, pFace.getAxis());
+
+        if(stateProperties.contains(BlockStateProperties.ROTATION_16))
+            return RotateAngular(pState, pLevel, pPos, isPlayerCrouching);
+
+        if(stateProperties.contains(BlockStateProperties.SLAB_TYPE))
+            return RotateSlab(pState, pLevel, pPos);
+
+        if(stateProperties.contains(BlockStateProperties.FACING_HOPPER))
+            return RotateHopperOutput(pState, pLevel, pPos, isPlayerCrouching);
+
+        return false;
+    }
+
+    private boolean StairsInteraction(Player player, BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction.Axis interactedAxis, boolean isPlayerCrouching)
+    {
+        Direction.Axis stateAxis = pState.getValue(BlockStateProperties.HORIZONTAL_FACING).getAxis();
+        List<?> stairsState = List.of(pState.getValue(BlockStateProperties.HORIZONTAL_FACING), pState.getValue(BlockStateProperties.HALF));
+
+        if (isPlayerCrouching)
         {
-            if(rightMouseClicked)
+            if (interactedAxis == stateAxis)
             {
-                if (pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, getKeyByValue(_AXIS_MAP, pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
-                else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.AXIS, _AXIS_MAP.get(pStateClicked.getValue(BlockStateProperties.AXIS))), 11);
-            }
-            return true;
-        }
-        if(collection.contains(BlockStateProperties.FACING))
-        {
-            if(rightMouseClicked)
-            {
-                if (pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, pStateClicked.getValue(BlockStateProperties.FACING).getCounterClockWise(pAxis)), 11);
-                else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, pStateClicked.getValue(BlockStateProperties.FACING).getClockWise(pAxis)), 11);
+                pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.STAIRS_SHAPE, getKeyByValue(_STAIRS_SHAPE_MAP, pState.getValue(BlockStateProperties.STAIRS_SHAPE))), 11);
+                return true;
             }
             else
             {
-                if (pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, getKeyByValue(_FACING_6_MAP, pStateClicked.getValue(BlockStateProperties.FACING))), 11);
+                if(interactedAxis.isVertical())
+                {
+                    pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HORIZONTAL_FACING, pState.getValue(BlockStateProperties.HORIZONTAL_FACING).getCounterClockWise(interactedAxis)), 11);
+                    return true;
+                }
                 else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.FACING, _FACING_6_MAP.get(pStateClicked.getValue(BlockStateProperties.FACING))), 11);
+                {
+                    stairsState = getKeyByValue(_STAIRS_ROTATION_MAP, stairsState);
+                }
             }
-            return true;
         }
-        if(collection.contains(BlockStateProperties.HORIZONTAL_FACING))
+        else
         {
-            if(rightMouseClicked)
+            if(interactedAxis == stateAxis)
             {
-                if (pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING).getCounterClockWise(Direction.Axis.Y)), 11);
-                else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HORIZONTAL_FACING, pStateClicked.getValue(BlockStateProperties.HORIZONTAL_FACING).getClockWise(Direction.Axis.Y)), 11);
-            }
-            return true;
-        }
-        if(collection.contains(BlockStateProperties.ROTATION_16))
-        {
-            if(rightMouseClicked)
-            {
-                if(pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
-                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1 < 0 ? 15 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 1) , 11);
-                else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 1) % 16), 11);
+                pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.STAIRS_SHAPE, _STAIRS_SHAPE_MAP.get(pState.getValue(BlockStateProperties.STAIRS_SHAPE))), 11);
+                return true;
             }
             else
             {
-                if(pPlayer.isCrouching())
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16,
-                            pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 < 0 ? 16 + pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4 : pStateClicked.getValue(BlockStateProperties.ROTATION_16) - 4) , 11);
+                if(interactedAxis.isVertical())
+                {
+                    pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HORIZONTAL_FACING, pState.getValue(BlockStateProperties.HORIZONTAL_FACING).getClockWise(interactedAxis)), 11);
+                    return true;
+                }
                 else
-                    pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.ROTATION_16, (pStateClicked.getValue(BlockStateProperties.ROTATION_16) + 4) % 16), 11);
+                {
+                    stairsState = _STAIRS_ROTATION_MAP.get(stairsState);
+                }
             }
-            return true;
         }
-        if(collection.contains(BlockStateProperties.SLAB_TYPE))
-        {
-            if(rightMouseClicked)
-                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.SLAB_TYPE, _SLAB_MAP.get(pStateClicked.getValue(BlockStateProperties.SLAB_TYPE))), 11);
-            return true;
-        }
-        if(collection.contains(BlockStateProperties.HALF))
-        {
-            if(!rightMouseClicked)
-                pAccessor.setBlock(pPos, pStateClicked.setValue(BlockStateProperties.HALF, _HALF_MAP.get(pStateClicked.getValue(BlockStateProperties.HALF))), 11);
-        }
+        pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HORIZONTAL_FACING, (Direction) stairsState.get(0)), 11);
+        pState = pLevel.getBlockState(pPos);
+        pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HALF, (Half) stairsState.get(1)), 11);
 
-        return false;
+        return true;
     }
 
-    //Заготовка под метод. Вызывается при нажатии ПКМ по блоку с ключом в руках.
-    private boolean InteractionRightClick()
+    private boolean RotateGrindstone(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction.Axis interactedAxis, boolean isPlayerCrouching)
     {
         return false;
     }
 
-    //Заготовка под метод. Вызывается при нажатии ЛКМ по блоку с ключом в руках.
-    private boolean InteractionLeftClick()
+    private boolean RotateHorizontalFacing(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
     {
-        return false;
+        if(isPlayerCrouching)
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HORIZONTAL_FACING, pState.getValue(BlockStateProperties.HORIZONTAL_FACING).getCounterClockWise(Direction.Axis.Y)), 11);
+        else
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.HORIZONTAL_FACING, pState.getValue(BlockStateProperties.HORIZONTAL_FACING).getClockWise(Direction.Axis.Y)), 11);
+
+        return true;
     }
 
+    private boolean RotateFacing(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction.Axis interactedAxis, boolean isPlayerCrouching)
+    {
+        if(isPlayerCrouching)
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING, pState.getValue(BlockStateProperties.FACING).getCounterClockWise(interactedAxis)), 11);
+        else
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING, pState.getValue(BlockStateProperties.FACING).getClockWise(interactedAxis)), 11);
 
+        return true;
+    }
 
-    //Returns key from key-value pair from map.
+    private boolean RotateAxis(BlockState pState, LevelAccessor pLevel, BlockPos pPos,Direction.Axis interactedAxis)
+    {
+        var stateAxis = pState.getValue(BlockStateProperties.AXIS);
+
+        if(stateAxis == interactedAxis)
+            return false;
+        if(stateAxis.isVertical())
+        {
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.AXIS, interactedAxis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X), 11);
+            return true;
+        }
+        if(stateAxis.isHorizontal())
+        {
+            if(interactedAxis.isVertical())
+                pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.AXIS, stateAxis == Direction.Axis.X ? Direction.Axis.Z : Direction.Axis.X), 11);
+            else
+                pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.AXIS, Direction.Axis.Y), 11);
+            return true;
+        }
+
+        return true;
+    }
+
+    private boolean RotateAngular(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        int rotationAngle = pState.getValue(BlockStateProperties.ROTATION_16);
+
+        if(isPlayerCrouching)
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.ROTATION_16, rotationAngle - 1 < 0 ? 15 : rotationAngle - 1) , 11);
+        else
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.ROTATION_16, (rotationAngle + 1) % 16), 11);
+
+        return true;
+    }
+
+    private boolean RotateSlab(BlockState pState, LevelAccessor pLevel, BlockPos pPos)
+    {
+        if(pState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.BOTTOM)
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.SLAB_TYPE, SlabType.TOP), 11);
+        else if(pState.getValue(BlockStateProperties.SLAB_TYPE) == SlabType.TOP)
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.SLAB_TYPE, SlabType.BOTTOM), 11);
+        else
+            return false;
+
+        return true;
+    }
+
+    private boolean RotateHopperOutput(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        if(isPlayerCrouching)
+        {
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, pState.getValue(BlockStateProperties.FACING_HOPPER).getCounterClockWise(Direction.Axis.Y)), 11);
+        }
+        else
+        {
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, pState.getValue(BlockStateProperties.FACING_HOPPER).getClockWise(Direction.Axis.Y)), 11);
+        }
+        return true;
+    }
+
     private static <T, E> T getKeyByValue(Map<T, E> map, E value)
     {
         T pKey = null;
@@ -217,36 +260,9 @@ public class WrenchItem extends Item
     }
 
 
-
-    //Заготовки под будущие методы. Не забудь убрать static при необходимости.
-    private static void RotateAxis(){}
-    private static void RotateHorizontalFacing(){}
-    private static void RotateStairs(){}
-    private static void RotateGrinder(){}
-    private static void RotateTrapdoor(){}
-    private static void ChangeDoorHinge(){}
-    private static void RotateFacing(){}
-    private static void RotateAngular(){}
-    private static void RotateSlab(){}
-    private static void ChangeStairsShape(){}
-    private static void RotateRails(){}
-    private static void ChangeRailsType(){}
-    private static void RotateHopper(){}
-    private static void RotateCrafter(){}
-    private static void RotateMushroom(){}
-    private static void AddFenceSide(){}
-    private static void AddWallSite(){}
-    private static void RotateFence(){}
-    private static void RotateWallPlants(){}
-    private static void ConnectMinecarts(){}
-    private static void DisconnectMinecarts(){}
-    private static void ArmorStandInteraction(){}
-
-
     //Creates an object of WrenchItem class.
     public WrenchItem(Properties pProperties)
     {
         super(pProperties);
     }
-
 }
