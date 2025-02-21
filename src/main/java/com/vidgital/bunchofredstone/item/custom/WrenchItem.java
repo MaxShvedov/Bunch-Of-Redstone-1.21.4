@@ -245,6 +245,31 @@ public class WrenchItem extends Item
         return true;
     }
 
+    private boolean RotateCrafter(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private boolean RotateRails(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private boolean RotateFence(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private boolean RotateMushroomBlock(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private boolean RotateWallPlant(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
     private static <T, E> T getKeyByValue(Map<T, E> map, E value)
     {
         T pKey = null;

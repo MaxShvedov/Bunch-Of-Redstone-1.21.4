@@ -48,7 +48,7 @@ public class WrenchEvents
             );
 
     @SubscribeEvent
-    public static void onBlockHit(PlayerInteractEvent.LeftClickBlock event)
+    public static void OnBlockHit(PlayerInteractEvent.LeftClickBlock event)
     {
         Player player = event.getEntity();
         ItemStack mainHandItem = player.getMainHandItem();
@@ -244,6 +244,31 @@ public class WrenchEvents
             pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, stateFace == pFace ? Direction.DOWN : pFace.getOpposite()), 11 );
         }
         return true;
+    }
+
+    private static boolean RotateCrafter(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private static boolean ChangeRailsType(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private static boolean ChangeFenceShape(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private static boolean RotateMushroomBlock(BlockState pState, LevelAccessor pLevel, BlockPos pPos, Direction pFace, boolean isPlayerCrouching)
+    {
+        return false;
+    }
+
+    private static boolean RotateWallPlant(BlockState pState, LevelAccessor pLevel, BlockPos pPos, boolean isPlayerCrouching)
+    {
+        return false;
     }
 
 
