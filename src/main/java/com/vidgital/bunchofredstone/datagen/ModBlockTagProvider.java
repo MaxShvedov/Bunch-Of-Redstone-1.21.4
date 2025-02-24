@@ -17,13 +17,13 @@ public class ModBlockTagProvider extends BlockTagsProvider
     protected void addTags(HolderLookup.Provider pProvider)
     {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.SMOOTH_CALCITE.get())
-                .add(ModBlocks.COBBLED_DEEPSLATE_TILES.get());
-
-        tag(BlockTags.NEEDS_STONE_TOOL);
+                .add(ModBlocks.COBBLED_DEEPSLATE_TILES.get())
+                .add(ModBlocks.SMOOTH_CALCITE.get());
+        //Add tags for stone tools, doors and trapdoors, possibly for buttons and pressure plates
     }
 
-    //Creates an object of ModBlockTagProvider class.
+    //Creates an object of ModBlockTagProvider
+    //class.
     public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper)
     {
         super(output, lookupProvider, BunchOfRedstone.MOD_ID, existingFileHelper);

@@ -15,10 +15,10 @@ public class ModItemTagProvider extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider pProvider)
     {
-//        tag(ModTags.Items.WEATHERING_ITEMS);
+
     }
 
-    //Creates an object of ModBlockTagProvider class.
+    //Creates an object of ModItemTagProvider class.
     public ModItemTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider,
                               CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper)
     {
