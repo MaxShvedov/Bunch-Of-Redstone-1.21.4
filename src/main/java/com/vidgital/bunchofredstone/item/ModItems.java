@@ -36,6 +36,7 @@ public class ModItems
     public static final RegistryObject<Item> MAGIC_WRENCH = ITEMS.register("magic_wrench",
             () -> new MagicWrenchItem(new Item.Properties().durability(32).useItemDescriptionPrefix().
                     setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "magic_wrench")))));
+
     public static void Register(IEventBus eventBus)
     {
         ITEMS.register(eventBus);

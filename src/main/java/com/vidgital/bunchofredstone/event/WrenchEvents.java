@@ -250,7 +250,7 @@ public class WrenchEvents
 
         if(isPlayerCrouching)
         {
-            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER, stateFace == pFace.getOpposite() ? Direction.DOWN : pFace), 11 );
+            pLevel.setBlock(pPos, pState.setValue(BlockStateProperties.FACING_HOPPER,  pFace == Direction.UP ? Direction.NORTH : stateFace == pFace.getOpposite() ? Direction.DOWN : pFace), 11 );
         }
         else
         {

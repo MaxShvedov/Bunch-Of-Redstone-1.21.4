@@ -1,6 +1,7 @@
 package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
+import com.vidgital.bunchofredstone.block.custom.MagicBlock;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -29,7 +30,7 @@ public class ModBlocks
 
     //Temp block
     public static final RegistryObject<Block> SMOOTH_CALCITE = RegisterBlock("smooth_calcite",
-            () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
+            () -> new MagicBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
                     .strength(0.75f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
 
 
@@ -45,7 +46,7 @@ public class ModBlocks
     private static <T extends Block> void RegisterBlockItem(String name, RegistryObject<T> block)
     {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().useItemDescriptionPrefix().
-                setId(ResourceKey.create(Registries.ITEM, ResourceLocation.parse("bunchofredstone:" + name)))));
+                setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, name)))));
     }
 
     public static void Register(IEventBus eventBus)
