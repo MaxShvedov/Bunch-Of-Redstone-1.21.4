@@ -1,6 +1,34 @@
 {
   "values": [
     "bunchofredstone:cobbled_deepslate_tiles",
-    "bunchofredstone:smooth_calcite"
+    "bunchofredstone:smooth_calcite",
+    "bunchofredstone:cobblestone_pressure_plate",
+    "bunchofredstone:granite_pressure_plate",
+    "bunchofredstone:polished_granite_pressure_plate",
+    "bunchofredstone:diorite_pressure_plate",
+    "bunchofredstone:polished_diorite_pressure_plate",
+    "bunchofredstone:andesite_pressure_plate",
+    "bunchofredstone:polished_andesite_pressure_plate",
+    "bunchofredstone:cobbled_deepslate_pressure_plate",
+    "bunchofredstone:polished_deepslate_pressure_plate",
+    "bunchofredstone:tuff_pressure_plate",
+    "bunchofredstone:polished_tuff_pressure_plate",
+    "bunchofredstone:blackstone_pressure_plate",
+    "bunchofredstone:cobblestone_button",
+    "bunchofredstone:granite_button",
+    "bunchofredstone:polished_granite_button",
+    "bunchofredstone:diorite_button",
+    "bunchofredstone:polished_diorite_button",
+    "bunchofredstone:andesite_button",
+    "bunchofredstone:polished_andesite_button",
+    "bunchofredstone:cobbled_deepslate_button",
+    "bunchofredstone:polished_deepslate_button",
+    "bunchofredstone:tuff_button",
+    "bunchofredstone:polished_tuff_button",
+    "bunchofredstone:blackstone_button",
+    "bunchofredstone:measuring_weighted_pressure_plate",
+    "bunchofredstone:copper_button",
+    "bunchofredstone:golden_button",
+    "bunchofredstone:iron_button"
   ]
 }

@@ -73,6 +73,14 @@ public class BunchOfRedstone
             event.accept(ModBlocks.COBBLED_DEEPSLATE_TILES);
             event.accept(ModBlocks.SMOOTH_CALCITE);
         }
+        
+        if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
+        {
+            event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.COPPER_BUTTON.get());
+            event.accept(ModBlocks.GOLDEN_BUTTON.get());
+            event.accept(ModBlocks.IRON_BUTTON.get());
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

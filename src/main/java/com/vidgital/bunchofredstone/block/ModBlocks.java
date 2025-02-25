@@ -9,8 +9,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -32,6 +35,123 @@ public class ModBlocks
     public static final RegistryObject<Block> SMOOTH_CALCITE = RegisterBlock("smooth_calcite",
             () -> new MagicBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
                     .strength(0.75f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
+
+    /*PRESSURE PLATE BLOCKS*/
+    public static final RegistryObject<PressurePlateBlock> POLISHED_GRANITE_PRESSURE_PLATE = RegisterBlock("polished_granite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_granite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> POLISHED_DIORITE_PRESSURE_PLATE = RegisterBlock("polished_diorite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_diorite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> POLISHED_ANDESITE_PRESSURE_PLATE = RegisterBlock("polished_andesite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_andesite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> POLISHED_TUFF_PRESSURE_PLATE = RegisterBlock("polished_tuff_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_tuff_pressure_plate")))
+                    .strength(0.5f).sound(SoundType.POLISHED_TUFF).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> POLISHED_DEEPSLATE_PRESSURE_PLATE = RegisterBlock("polished_deepslate_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_deepslate_pressure_plate")))
+                    .strength(0.5f).sound(SoundType.POLISHED_DEEPSLATE).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> GRANITE_PRESSURE_PLATE = RegisterBlock("granite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "granite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> DIORITE_PRESSURE_PLATE = RegisterBlock("diorite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "diorite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> ANDESITE_PRESSURE_PLATE = RegisterBlock("andesite_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "andesite_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> COBBLESTONE_PRESSURE_PLATE = RegisterBlock("cobblestone_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobblestone_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> BLACKSTONE_PRESSURE_PLATE = RegisterBlock("blackstone_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "blackstone_pressure_plate")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> TUFF_PRESSURE_PLATE = RegisterBlock("tuff_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "tuff_pressure_plate")))
+                    .strength(0.5f).sound(SoundType.TUFF).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> COBBLED_DEEPSLATE_PRESSURE_PLATE = RegisterBlock("cobbled_deepslate_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobbled_deepslate_pressure_plate")))
+                    .strength(0.5f).sound(SoundType.DEEPSLATE).noCollission()));
+
+    public static final RegistryObject<PressurePlateBlock> MEASURING_WEIGHTED_PRESSURE_PLATE = RegisterBlock("measuring_weighted_pressure_plate",
+            () -> new PressurePlateBlock(BlockSetType.GOLD, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "measuring_weighted_pressure_plate")))
+                    .strength(0.5f).sound(SoundType.COPPER).noCollission()));
+
+    /*BUTTON BLOCKS*/
+    public static final RegistryObject<ButtonBlock> POLISHED_GRANITE_BUTTON = RegisterBlock("polished_granite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_granite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> POLISHED_DIORITE_BUTTON = RegisterBlock("polished_diorite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_diorite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> POLISHED_ANDESITE_BUTTON = RegisterBlock("polished_andesite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_andesite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> POLISHED_TUFF_BUTTON = RegisterBlock("polished_tuff_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_tuff_button")))
+                    .strength(0.5f).sound(SoundType.POLISHED_TUFF).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> POLISHED_DEEPSLATE_BUTTON = RegisterBlock("polished_deepslate_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "polished_deepslate_button")))
+                    .strength(0.5f).sound(SoundType.POLISHED_DEEPSLATE).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> GRANITE_BUTTON = RegisterBlock("granite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "granite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> DIORITE_BUTTON = RegisterBlock("diorite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "diorite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> ANDESITE_BUTTON = RegisterBlock("andesite_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "andesite_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> COBBLESTONE_BUTTON = RegisterBlock("cobblestone_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobblestone_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> BLACKSTONE_BUTTON = RegisterBlock("blackstone_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "blackstone_button")))
+                    .strength(0.5f).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> TUFF_BUTTON = RegisterBlock("tuff_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "tuff_button")))
+                    .strength(0.5f).sound(SoundType.TUFF).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> COBBLED_DEEPSLATE_BUTTON = RegisterBlock("cobbled_deepslate_button",
+            () -> new ButtonBlock(BlockSetType.STONE, 30, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobbled_deepslate_button")))
+                    .strength(0.5f).sound(SoundType.DEEPSLATE).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> IRON_BUTTON = RegisterBlock("iron_button",
+            () -> new ButtonBlock(BlockSetType.IRON, 2, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "iron_button")))
+                    .strength(0.5f).sound(SoundType.METAL).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> GOLDEN_BUTTON = RegisterBlock("golden_button",
+            () -> new ButtonBlock(BlockSetType.GOLD, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "golden_button")))
+                    .strength(0.5f).sound(SoundType.METAL).noCollission()));
+
+    public static final RegistryObject<ButtonBlock> COPPER_BUTTON = RegisterBlock("copper_button",
+            () -> new ButtonBlock(BlockSetType.GOLD, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_button")))
+                    .strength(0.5f).sound(SoundType.COPPER).noCollission()));
+
+
+
 
 
     //Helping method, returns block registration object

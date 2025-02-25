@@ -1,6 +1,7 @@
 package com.vidgital.bunchofredstone.item;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
+import com.vidgital.bunchofredstone.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +24,38 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.WEATHERED_WRENCH.get());
                         output.accept(ModItems.OXIDIZED_WRENCH.get());
                         output.accept(ModItems.MAGIC_WRENCH.get());
+
+                        output.accept(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.GRANITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.DIORITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ANDESITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.TUFF_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.POLISHED_TUFF_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.BLACKSTONE_PRESSURE_PLATE.get());
+
+                        output.accept(ModBlocks.COBBLESTONE_BUTTON.get());
+                        output.accept(ModBlocks.GRANITE_BUTTON.get());
+                        output.accept(ModBlocks.POLISHED_GRANITE_BUTTON.get());
+                        output.accept(ModBlocks.DIORITE_BUTTON.get());
+                        output.accept(ModBlocks.POLISHED_DIORITE_BUTTON.get());
+                        output.accept(ModBlocks.ANDESITE_BUTTON.get());
+                        output.accept(ModBlocks.POLISHED_ANDESITE_BUTTON.get());
+                        output.accept(ModBlocks.COBBLED_DEEPSLATE_BUTTON.get());
+                        output.accept(ModBlocks.POLISHED_DEEPSLATE_BUTTON.get());
+                        output.accept(ModBlocks.TUFF_BUTTON.get());
+                        output.accept(ModBlocks.POLISHED_TUFF_BUTTON.get());
+                        output.accept(ModBlocks.BLACKSTONE_BUTTON.get());
+
+                        output.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+
+                        output.accept(ModBlocks.COPPER_BUTTON.get());
+                        output.accept(ModBlocks.GOLDEN_BUTTON.get());
+                        output.accept(ModBlocks.IRON_BUTTON.get());
                     }).build());
 
 

@@ -141,6 +141,38 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 
         createTrivialCube(ModBlocks.SMOOTH_CALCITE.get());
         createTrivialCube(ModBlocks.COBBLED_DEEPSLATE_TILES.get());
+
+        createPressurePlate(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.GRANITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.DIORITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.ANDESITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.TUFF_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.POLISHED_TUFF_PRESSURE_PLATE.get());
+        createPressurePlate(ModBlocks.BLACKSTONE_PRESSURE_PLATE.get());
+
+        createButton(ModBlocks.COBBLESTONE_BUTTON.get());
+        createButton(ModBlocks.GRANITE_BUTTON.get());
+        createButton(ModBlocks.POLISHED_GRANITE_BUTTON.get());
+        createButton(ModBlocks.DIORITE_BUTTON.get());
+        createButton(ModBlocks.POLISHED_DIORITE_BUTTON.get());
+        createButton(ModBlocks.ANDESITE_BUTTON.get());
+        createButton(ModBlocks.POLISHED_ANDESITE_BUTTON.get());
+        createButton(ModBlocks.COBBLED_DEEPSLATE_BUTTON.get());
+        createButton(ModBlocks.POLISHED_DEEPSLATE_BUTTON.get());
+        createButton(ModBlocks.TUFF_BUTTON.get());
+        createButton(ModBlocks.POLISHED_TUFF_BUTTON.get());
+        createButton(ModBlocks.BLACKSTONE_BUTTON.get());
+
+        createPressurePlate(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+
+        createButton(ModBlocks.COPPER_BUTTON.get());
+        createButton(ModBlocks.GOLDEN_BUTTON.get());
+        createButton(ModBlocks.IRON_BUTTON.get());
     }
 
     protected void createOrientableTrapdoor(Block pOrientableTrapdoorBlock) {
@@ -161,7 +193,24 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         this.registerSimpleItemModel(pTrapdoorBlock, locationTrapdoorBottom);
     }
 
+    public void createPressurePlate(Block pPressurePlateBlock)
+    {
+        TextureMapping texturemapping = TextureMapping.defaultTexture(pPressurePlateBlock);
+        ResourceLocation locationPlateUp = ModModelTemplates.PRESSURE_PLATE_UP.create(pPressurePlateBlock, texturemapping, ModBlockModelGenerators.this.modelOutput);
+        ResourceLocation locationPlateDown = ModModelTemplates.PRESSURE_PLATE_DOWN.create(pPressurePlateBlock, texturemapping, ModBlockModelGenerators.this.modelOutput);
+        this.blockStateOutput.accept(BlockModelGenerators.createPressurePlate(pPressurePlateBlock, locationPlateUp, locationPlateDown));
+        this.registerSimpleItemModel(pPressurePlateBlock, locationPlateUp);
+    }
 
+    public void createButton(Block pButtonBlock)
+    {
+        TextureMapping textureMapping = TextureMapping.defaultTexture(pButtonBlock);
+        ResourceLocation locationButton = ModModelTemplates.BUTTON.create(pButtonBlock, textureMapping, ModBlockModelGenerators.this.modelOutput);
+        ResourceLocation locationButtonPressed = ModModelTemplates.BUTTON_PRESSED.create(pButtonBlock, textureMapping, ModBlockModelGenerators.this.modelOutput);
+        this.blockStateOutput.accept(BlockModelGenerators.createButton(pButtonBlock, locationButton, locationButtonPressed));
+        ResourceLocation locationInventory = ModModelTemplates.BUTTON_INVENTORY.create(pButtonBlock, textureMapping, ModBlockModelGenerators.this.modelOutput);
+        this.registerSimpleItemModel(pButtonBlock, locationInventory);
+    }
 
 
     //Creates an object of ModBlockModelGenerators.

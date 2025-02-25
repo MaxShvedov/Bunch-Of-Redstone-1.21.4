@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "andesite",
+  "ingredients": [
+    "minecraft:andesite"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:andesite_button"
+  }
+}

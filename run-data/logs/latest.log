@@ -1,106 +1,106 @@
-[25февр.2025 02:17:25.494] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 19, --assetsDir, C:\Users\VIDgital\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, bunchofredstone, --all, --output, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\generated\resources, --existing, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\main\resources]
-[25февр.2025 02:17:25.497] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.6+7-LTS
-[25февр.2025 02:17:25.497] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.6 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[25февр.2025 02:17:25.583] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[25февр.2025 02:17:25.674] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/VIDgital/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
-[25февр.2025 02:17:26.616] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[25февр.2025 02:17:27.292] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\VIDgital\.gradle\caches\forge_gradle\assets, --assetIndex, 19, --mod, bunchofredstone, --all, --output, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\generated\resources, --existing, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\main\resources]
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:root
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:sound_event
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:fluid
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:particle_type
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:attribute
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:mob_effect
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_effect_component_type
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:data_component_type
-[25февр.2025 02:17:31.270] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:entity_type
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:item
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:game_event
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:potion
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_entity_type
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:stat_type
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:custom_stat
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:chunk_status
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:rule_test
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:rule_block_entity_modifier
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:pos_rule_test
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:menu
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_type
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_serializer
-[25февр.2025 02:17:31.271] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:position_source_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:command_argument_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:villager_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:villager_profession
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:point_of_interest_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:memory_module_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:sensor_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:activity
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:schedule
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_score_provider_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_number_provider_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:map_decoration_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_nbt_provider_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_function_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_pool_entry_type
-[25февр.2025 02:17:31.272] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_condition_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:float_provider_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:int_provider_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:height_provider_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_predicate_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/carver
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_processor
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/feature
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_placement
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_piece
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/placement_modifier_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/block_state_provider_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/foliage_placer_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/trunk_placer_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/root_placer_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/tree_decorator_type
-[25февр.2025 02:17:31.273] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/feature_size_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/biome_source
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/chunk_generator
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/material_condition
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/material_rule
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/density_function_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_pool_element
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/pool_alias_binding
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:cat_variant
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:frog_variant
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:decorated_pot_pattern
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:creative_mode_tab
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:trigger_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:number_format_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:entity_sub_predicate_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:item_sub_predicate_type
-[25февр.2025 02:17:31.274] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_level_based_value_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_entity_effect_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_location_based_effect_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_value_effect_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_provider_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:consume_effect_type
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_display
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:slot_display
-[25февр.2025 02:17:31.275] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_book_category
-[25февр.2025 02:17:31.412] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 54.0.26, for MC 1.21.4 with MCP 20241203.143248
-[25февр.2025 02:17:31.412] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v54.0.26 Initialized
-[25февр.2025 02:17:31.426] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[25февр.2025 02:17:31.594] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [bunchofredstone]
-[25февр.2025 02:17:31.643] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/VIDgital/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4/forge-1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[25февр.2025 02:17:31.643] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/VIDgital/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4/forge-1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
-[25февр.2025 02:17:31.753] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[25февр.2025 02:17:31.949] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 195 ms
-[25февр.2025 02:17:31.949] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Model Definitions
-[25февр.2025 02:17:31.995] [main/INFO] [net.minecraft.data.DataGenerator/]: Model Definitions finished after 46 ms
-[25февр.2025 02:17:31.995] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[25февр.2025 02:17:32.171] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 175 ms
-[25февр.2025 02:17:32.171] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id bunchofredstone
-[25февр.2025 02:17:32.177] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id bunchofredstone finished after 5 ms
-[25февр.2025 02:17:32.177] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id bunchofredstone
-[25февр.2025 02:17:32.177] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id bunchofredstone finished after 0 ms
-[25февр.2025 02:17:32.177] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 424 ms
-[25февр.2025 02:17:32.191] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 530, old count: 19, new count: 531, removed stale: 0, written: 511
+[25февр.2025 22:52:29.305] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 19, --assetsDir, C:\Users\VIDgital\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, bunchofredstone, --all, --output, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\generated\resources, --existing, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\main\resources]
+[25февр.2025 22:52:29.308] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.6+7-LTS
+[25февр.2025 22:52:29.309] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.6 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[25февр.2025 22:52:29.423] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[25февр.2025 22:52:29.513] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/VIDgital/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[25февр.2025 22:52:31.244] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[25февр.2025 22:52:32.350] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\VIDgital\.gradle\caches\forge_gradle\assets, --assetIndex, 19, --mod, bunchofredstone, --all, --output, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\generated\resources, --existing, D:\Data\Repositories\Minecraft\Bunch-Of-Redstone-1.21.4\src\main\resources]
+[25февр.2025 22:52:36.636] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:root
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:sound_event
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:fluid
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:particle_type
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:attribute
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:mob_effect
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_effect_component_type
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:data_component_type
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:entity_type
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:item
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:game_event
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:potion
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_entity_type
+[25февр.2025 22:52:36.637] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:stat_type
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:custom_stat
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:chunk_status
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:rule_test
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:rule_block_entity_modifier
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:pos_rule_test
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:menu
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_type
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_serializer
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:position_source_type
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:command_argument_type
+[25февр.2025 22:52:36.638] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:villager_type
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:villager_profession
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:point_of_interest_type
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:memory_module_type
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:sensor_type
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:activity
+[25февр.2025 22:52:36.639] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:schedule
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_score_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_number_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:map_decoration_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_nbt_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_function_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_pool_entry_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:loot_condition_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:float_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:int_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:height_provider_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_predicate_type
+[25февр.2025 22:52:36.640] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/carver
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_processor
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/feature
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_placement
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_piece
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/placement_modifier_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/block_state_provider_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/foliage_placer_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/trunk_placer_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/root_placer_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/tree_decorator_type
+[25февр.2025 22:52:36.641] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/feature_size_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/biome_source
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/chunk_generator
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/material_condition
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/material_rule
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/density_function_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:block_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/structure_pool_element
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:worldgen/pool_alias_binding
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:cat_variant
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:frog_variant
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:decorated_pot_pattern
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:creative_mode_tab
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:trigger_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:number_format_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:entity_sub_predicate_type
+[25февр.2025 22:52:36.642] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:item_sub_predicate_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_level_based_value_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_entity_effect_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_location_based_effect_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_value_effect_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:enchantment_provider_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:consume_effect_type
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_display
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:slot_display
+[25февр.2025 22:52:36.643] [main/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: 	minecraft:recipe_book_category
+[25февр.2025 22:52:36.805] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 54.0.26, for MC 1.21.4 with MCP 20241203.143248
+[25февр.2025 22:52:36.805] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v54.0.26 Initialized
+[25февр.2025 22:52:36.823] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[25февр.2025 22:52:37.012] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [bunchofredstone]
+[25февр.2025 22:52:37.065] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/VIDgital/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4/forge-1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[25февр.2025 22:52:37.065] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/VIDgital/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4/forge-1.21.4-54.0.26_mapped_parchment_2025.01.19-1.21.4-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
+[25февр.2025 22:52:37.252] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[25февр.2025 22:52:37.324] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 72 ms
+[25февр.2025 22:52:37.325] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Model Definitions
+[25февр.2025 22:52:37.402] [main/INFO] [net.minecraft.data.DataGenerator/]: Model Definitions finished after 76 ms
+[25февр.2025 22:52:37.402] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[25февр.2025 22:52:37.528] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 126 ms
+[25февр.2025 22:52:37.529] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id bunchofredstone
+[25февр.2025 22:52:37.534] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id bunchofredstone finished after 5 ms
+[25февр.2025 22:52:37.534] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id bunchofredstone
+[25февр.2025 22:52:37.535] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id bunchofredstone finished after 0 ms
+[25февр.2025 22:52:37.535] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 283 ms
+[25февр.2025 22:52:37.549] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 748, old count: 744, new count: 749, removed stale: 0, written: 4

@@ -18,6 +18,38 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.COBBLED_DEEPSLATE_TILES.get());
         dropSelf(ModBlocks.SMOOTH_CALCITE.get());
 
+        dropSelf(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.GRANITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.DIORITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.ANDESITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.TUFF_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.POLISHED_TUFF_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.BLACKSTONE_PRESSURE_PLATE.get());
+
+        dropSelf(ModBlocks.COBBLESTONE_BUTTON.get());
+        dropSelf(ModBlocks.GRANITE_BUTTON.get());
+        dropSelf(ModBlocks.POLISHED_GRANITE_BUTTON.get());
+        dropSelf(ModBlocks.DIORITE_BUTTON.get());
+        dropSelf(ModBlocks.POLISHED_DIORITE_BUTTON.get());
+        dropSelf(ModBlocks.ANDESITE_BUTTON.get());
+        dropSelf(ModBlocks.POLISHED_ANDESITE_BUTTON.get());
+        dropSelf(ModBlocks.COBBLED_DEEPSLATE_BUTTON.get());
+        dropSelf(ModBlocks.POLISHED_DEEPSLATE_BUTTON.get());
+        dropSelf(ModBlocks.TUFF_BUTTON.get());
+        dropSelf(ModBlocks.POLISHED_TUFF_BUTTON.get());
+        dropSelf(ModBlocks.BLACKSTONE_BUTTON.get());
+
+        dropSelf(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+
+        dropSelf(ModBlocks.COPPER_BUTTON.get());
+        dropSelf(ModBlocks.GOLDEN_BUTTON.get());
+        dropSelf(ModBlocks.IRON_BUTTON.get());
+        
         //Blocks that also drops something additional
 
         //Blocks that drops other items

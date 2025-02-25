@@ -1,10 +1,12 @@
 package com.vidgital.bunchofredstone.datagen;
 
 import com.google.common.collect.Maps;
+import com.vidgital.bunchofredstone.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamilies;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.Map;
 import java.util.stream.Stream;

@@ -1,0 +1,17 @@
+{
+  "values": [
+    "bunchofredstone:cobblestone_pressure_plate",
+    "bunchofredstone:granite_pressure_plate",
+    "bunchofredstone:polished_granite_pressure_plate",
+    "bunchofredstone:diorite_pressure_plate",
+    "bunchofredstone:polished_diorite_pressure_plate",
+    "bunchofredstone:andesite_pressure_plate",
+    "bunchofredstone:polished_andesite_pressure_plate",
+    "bunchofredstone:cobbled_deepslate_pressure_plate",
+    "bunchofredstone:polished_deepslate_pressure_plate",
+    "bunchofredstone:tuff_pressure_plate",
+    "bunchofredstone:polished_tuff_pressure_plate",
+    "bunchofredstone:blackstone_pressure_plate",
+    "bunchofredstone:measuring_weighted_pressure_plate"
+  ]
+}
