@@ -4,10 +4,13 @@ import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.block.custom.MagicBlock;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
@@ -19,6 +22,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks
@@ -140,7 +144,15 @@ public class ModBlocks
 
     public static final RegistryObject<ButtonBlock> IRON_BUTTON = RegisterBlock("iron_button",
             () -> new ButtonBlock(BlockSetType.IRON, 2, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "iron_button")))
-                    .strength(0.5f).sound(SoundType.METAL).noCollission()));
+                    .strength(0.5f).sound(SoundType.METAL).noCollission())
+            {
+                @Override
+                public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+                {
+                    pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.iron_button"));
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                }
+            });
 
     public static final RegistryObject<ButtonBlock> GOLDEN_BUTTON = RegisterBlock("golden_button",
             () -> new ButtonBlock(BlockSetType.GOLD, 20, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "golden_button")))

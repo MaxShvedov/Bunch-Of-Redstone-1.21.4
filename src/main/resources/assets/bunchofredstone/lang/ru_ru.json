@@ -6,6 +6,7 @@
   "tooltip.bunchofredstone.wrench.shift_down1": "Чтобы повернуть блок по часовой стрелке вокруг выбранной стороны, нажмите §eПКМ§r.",
   "tooltip.bunchofredstone.wrench.shift_down2": "Чтобы повернуть блок в свою сторону, нажмите §eЛКМ§r по боковой стороне.",
   "tooltip.bunchofredstone.wrench.shift_down3": "Удерживайте §eShift§r чтобы обратить направление вращения.",
+  "tooltip.bunchofredstone.iron_button": "Выдаёт очень короткий импульс редстоун сигнала при нажатии.",
 
 
   "item.bunchofredstone.wrench": "Гаечный ключ",
