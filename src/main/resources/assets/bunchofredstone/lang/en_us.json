@@ -1,6 +1,13 @@
 {
   "creativetab.bunchofredstone.bunch_of_redstone_tab": "Bunch of Redstone",
 
+
+  "tooltip.bunchofredstone.wrench": "Allows you to rotate blocks, change some blocks appearance and connecting minecarts.",
+  "tooltip.bunchofredstone.wrench.shift_down1": "To rotate most blocks clockwise around the selected side, click §eRight Mouse Button §r.",
+  "tooltip.bunchofredstone.wrench.shift_down2": "To rotate most blocks in your direction, click §eLeft Mouse Button§r on horizontal side.",
+  "tooltip.bunchofredstone.wrench.shift_down3": "Hold §eShift§r key to invert the direction of the rotation.",
+
+
   "item.bunchofredstone.wrench": "Wrench",
   "item.bunchofredstone.exposed_wrench": "Exposed Wrench",
   "item.bunchofredstone.weathered_wrench": "Weathered Wrench",

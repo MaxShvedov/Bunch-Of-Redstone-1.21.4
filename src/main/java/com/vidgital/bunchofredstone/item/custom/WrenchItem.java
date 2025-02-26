@@ -1,11 +1,14 @@
 package com.vidgital.bunchofredstone.item.custom;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -70,6 +73,21 @@ public class WrenchItem extends Item
                     StairsShape.INNER_RIGHT, StairsShape.INNER_LEFT
             );
 
+    @Override
+    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+    {
+        if(Screen.hasShiftDown())
+        {
+            pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.wrench.shift_down1"));
+            pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.wrench.shift_down2"));
+            pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.wrench.shift_down3"));
+        }
+        else
+        {
+            pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.wrench"));
+        }
+        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+    }
 
     //Method to prevent block destruction in Creative Mode.
     @Override

@@ -98,6 +98,6 @@ public class BunchOfRedstone
         public static void onClientSetup(FMLClientSetupEvent event)
         {
 
-        }
+        } 
     }
 }

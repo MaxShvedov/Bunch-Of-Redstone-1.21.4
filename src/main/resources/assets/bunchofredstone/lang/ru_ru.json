@@ -1,6 +1,13 @@
 {
   "creativetab.bunchofredstone.bunch_of_redstone_tab": "Bunch of Redstone",
 
+
+  "tooltip.bunchofredstone.wrench": "Даёт возможность вращать блоки, изменять форму некоторых блоков и соединять вагонетки.",
+  "tooltip.bunchofredstone.wrench.shift_down1": "Чтобы повернуть блок по часовой стрелке вокруг выбранной стороны, нажмите §eПКМ§r.",
+  "tooltip.bunchofredstone.wrench.shift_down2": "Чтобы повернуть блок в свою сторону, нажмите §eЛКМ§r по боковой стороне.",
+  "tooltip.bunchofredstone.wrench.shift_down3": "Удерживайте §eShift§r чтобы обратить направление вращения.",
+
+
   "item.bunchofredstone.wrench": "Гаечный ключ",
   "item.bunchofredstone.exposed_wrench": "Потемневший гаечный ключ",
   "item.bunchofredstone.weathered_wrench": "Состаренный гаечный ключ",
@@ -37,7 +44,6 @@
   "item.bunchofredstone.tuff_button": "Туфовая кнопка",
   "item.bunchofredstone.polished_tuff_button": "Кнопка из полированного туфа",
   "item.bunchofredstone.blackstone_button": "Чернитная кнопка",
-
 
   "block.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого глубинного сланца",
 
