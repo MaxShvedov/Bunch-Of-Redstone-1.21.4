@@ -1,4 +1,4 @@
-// 1.21.4	2025-02-28T00:39:18.575962	Recipes
+// 1.21.4	2025-03-01T01:43:45.7868842	Recipes
 4b76658b8560a975be52b9eeffe6ad9ac188abee data/bunchofredstone/advancement/recipes/misc/copper_dust.json
 128c375b7061f7dd1cbf58752e717d327111c6cd data/bunchofredstone/advancement/recipes/misc/copper_nugget.json
 80dcc016790577c7c634f49b2ece1582f1252b4c data/bunchofredstone/advancement/recipes/redstone/andesite_button.json
@@ -27,6 +27,7 @@ ed949b28876b1c72a46acaf90cf691444ead18ae data/bunchofredstone/advancement/recipe
 f8348102d29167e6286bd144db8f90810048e735 data/bunchofredstone/advancement/recipes/redstone/polished_granite_pressure_plate.json
 bf6689df6992d9885b47fc79d4a2eb61f1746402 data/bunchofredstone/advancement/recipes/redstone/polished_tuff_button.json
 54000b71b739874377a8699bfd47e28d5c07a3b7 data/bunchofredstone/advancement/recipes/redstone/polished_tuff_pressure_plate.json
+781d7ce6c670cdf8ee63d7f6b6715854475b4735 data/bunchofredstone/advancement/recipes/redstone/redstone_lantern.json
 6b810c608f4abc9fa8dba6f7180d791fa27c68dd data/bunchofredstone/advancement/recipes/redstone/tuff_button.json
 25b478fb6468c9a799ddf22ecaec8b47de330d7a data/bunchofredstone/advancement/recipes/redstone/tuff_pressure_plate.json
 92b2586403df1f25cc5e9180dbc41343aad66812 data/bunchofredstone/advancement/recipes/tools/wrench.json
@@ -58,6 +59,7 @@ c70b4d1146e8148515920eeffe3c028f58cc3c56 data/bunchofredstone/recipe/polished_gr
 b8bbcc8412803a628ac6cdc1ce324ffad21215cd data/bunchofredstone/recipe/polished_granite_pressure_plate.json
 ae945245bd4c03b07596910fed23f997450fbb0f data/bunchofredstone/recipe/polished_tuff_button.json
 eef414ae94edeffecd4859b06437295d2d6c75af data/bunchofredstone/recipe/polished_tuff_pressure_plate.json
+1732761281255916ee288fb923990154fee6a070 data/bunchofredstone/recipe/redstone_lantern.json
 ab8956ddf24c449d0c1152a6f800ed8a4dadfabc data/bunchofredstone/recipe/tuff_button.json
 c376129464ef6d9c09d76804f3a2af5e3426396b data/bunchofredstone/recipe/tuff_pressure_plate.json
 e9e775fc080ade8d5b1b6d6ae7724297490d90c5 data/bunchofredstone/recipe/wrench.json

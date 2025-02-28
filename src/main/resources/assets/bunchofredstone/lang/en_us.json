@@ -18,6 +18,9 @@
   "item.bunchofredstone.oxidized_wrench": "Oxidized Wrench",
   "item.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles",
 
+
+  "item.bunchofredstone.redstone_lantern": "Redstone Lantern",
+
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "item.bunchofredstone.copper_button": "Copper Button",
   "item.bunchofredstone.golden_button": "Golden Button",
@@ -51,6 +54,8 @@
 
 
   "block.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles",
+
+  "block.bunchofredstone.redstone_lantern": "Redstone Lantern",
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "block.bunchofredstone.copper_button": "Copper Button",

@@ -173,6 +173,8 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         createButton(ModBlocks.COPPER_BUTTON.get());
         createButton(ModBlocks.GOLDEN_BUTTON.get());
         createButton(ModBlocks.IRON_BUTTON.get());
+
+        createLantern(ModBlocks.REDSTONE_LANTERN.get());
     }
 
     protected void createOrientableTrapdoor(Block pOrientableTrapdoorBlock) {

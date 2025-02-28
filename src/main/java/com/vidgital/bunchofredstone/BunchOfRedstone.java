@@ -73,6 +73,11 @@ public class BunchOfRedstone
             event.accept(ModBlocks.COBBLED_DEEPSLATE_TILES);
             event.accept(ModBlocks.SMOOTH_CALCITE);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
+        {
+            event.accept(ModBlocks.REDSTONE_LANTERN.get());
+        }
         
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
         {
@@ -81,6 +86,7 @@ public class BunchOfRedstone
             event.accept(ModBlocks.COPPER_BUTTON.get());
             event.accept(ModBlocks.GOLDEN_BUTTON.get());
             event.accept(ModBlocks.IRON_BUTTON.get());
+            event.accept(ModBlocks.REDSTONE_LANTERN.get());
         }
 
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)

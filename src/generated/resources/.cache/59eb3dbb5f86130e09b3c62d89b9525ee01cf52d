@@ -1,4 +1,4 @@
-// 1.21.4	2025-02-25T20:02:27.5461806	Loot Tables
+// 1.21.4	2025-03-01T01:43:45.7858849	Loot Tables
 d2a019c7c8cd227b96a5df955286c41ac2b66d24 data/bunchofredstone/loot_table/blocks/andesite_button.json
 57e69a18d64d677149a43863e3cd6900abd75759 data/bunchofredstone/loot_table/blocks/andesite_pressure_plate.json
 79255ffee0f2468eeac35a620b56e116d06682ee data/bunchofredstone/loot_table/blocks/blackstone_button.json
@@ -26,6 +26,7 @@ f32ab282cac55958ab391031e28d59d38ff9fec9 data/bunchofredstone/loot_table/blocks/
 0c9d1798205e98f1705ae45215278ec60f72fc20 data/bunchofredstone/loot_table/blocks/polished_granite_pressure_plate.json
 2d515647c1c30fcdf963b28bdea0640f27e85503 data/bunchofredstone/loot_table/blocks/polished_tuff_button.json
 199885ba6a5f4271b3b2bd7fc97936389b350d9a data/bunchofredstone/loot_table/blocks/polished_tuff_pressure_plate.json
+f75a6109d971adda10d8939867c9f695ae722e72 data/bunchofredstone/loot_table/blocks/redstone_lantern.json
 731a372afe83faa926b60ce7ff6c6ac155bc5904 data/bunchofredstone/loot_table/blocks/smooth_calcite.json
 f47ea09a89beb2d6011e02a8c0d8d65dde0e5480 data/bunchofredstone/loot_table/blocks/tuff_button.json
 5e616df960bdaa67b928ee3b417fc62698baeb57 data/bunchofredstone/loot_table/blocks/tuff_pressure_plate.json

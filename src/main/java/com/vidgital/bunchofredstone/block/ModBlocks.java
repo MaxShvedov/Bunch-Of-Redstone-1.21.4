@@ -11,12 +11,11 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -39,6 +38,18 @@ public class ModBlocks
     public static final RegistryObject<Block> SMOOTH_CALCITE = RegisterBlock("smooth_calcite",
             () -> new MagicBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
                     .strength(0.75f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
+
+
+    /*FUNCTIONAL REDSTONE BLOCKS*/
+    public static final RegistryObject<LanternBlock> REDSTONE_LANTERN = RegisterBlock("redstone_lantern",
+            () -> new LanternBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "redstone_lantern")))
+                    .mapColor(MapColor.METAL)
+                    .forceSolidOn()
+                    .strength(3.5f)
+                    .sound(SoundType.LANTERN)
+                    .lightLevel(blockState -> 7)
+                    .noOcclusion()
+                    .pushReaction(PushReaction.DESTROY)));
 
     /*PRESSURE PLATE BLOCKS*/
     public static final RegistryObject<PressurePlateBlock> POLISHED_GRANITE_PRESSURE_PLATE = RegisterBlock("polished_granite_pressure_plate",

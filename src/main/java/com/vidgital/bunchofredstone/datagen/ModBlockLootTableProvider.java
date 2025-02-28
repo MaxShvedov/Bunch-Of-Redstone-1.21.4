@@ -5,6 +5,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -49,6 +50,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.COPPER_BUTTON.get());
         dropSelf(ModBlocks.GOLDEN_BUTTON.get());
         dropSelf(ModBlocks.IRON_BUTTON.get());
+
+        dropSelf(ModBlocks.REDSTONE_LANTERN.get());
         
         //Blocks that also drops something additional
 
