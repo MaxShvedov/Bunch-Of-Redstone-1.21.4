@@ -76,10 +76,17 @@ public class BunchOfRedstone
         
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
         {
+            event.accept(ModItems.COPPER_DUST.get());
             event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
             event.accept(ModBlocks.COPPER_BUTTON.get());
             event.accept(ModBlocks.GOLDEN_BUTTON.get());
             event.accept(ModBlocks.IRON_BUTTON.get());
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+            event.accept(ModItems.COPPER_NUGGET.get());
+            event.accept(ModItems.COPPER_DUST.get());
         }
     }
 
@@ -98,6 +105,6 @@ public class BunchOfRedstone
         public static void onClientSetup(FMLClientSetupEvent event)
         {
 
-        } 
+        }
     }
 }

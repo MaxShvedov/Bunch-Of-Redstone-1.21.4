@@ -21,6 +21,9 @@ public class ModItemModelGenerators extends ItemModelGenerators
         generateFlatItem(ModItems.WEATHERED_WRENCH.get(), ModelTemplates.FLAT_ITEM);
         generateFlatItem(ModItems.OXIDIZED_WRENCH.get(), ModelTemplates.FLAT_ITEM);
 
+        generateFlatItem(ModItems.COPPER_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        generateFlatItem(ModItems.COPPER_DUST.get(), ModelTemplates.FLAT_ITEM);
+
         if(this.itemModelOutput instanceof ModModelProvider.ModItemInfoCollector collector)
             collector.generateDefaultBlockModels();
     }

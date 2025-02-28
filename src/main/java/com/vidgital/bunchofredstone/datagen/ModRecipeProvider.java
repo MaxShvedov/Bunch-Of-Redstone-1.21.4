@@ -13,7 +13,9 @@ import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements DataProvider
@@ -25,12 +27,30 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
         this.output.includeRootAdvancement();
         this.generateForEnabledBlockFamilies(FeatureFlagSet.of(FeatureFlags.VANILLA));
 
-        shaped(RecipeCategory.MISC, ModItems.WRENCH.get())
+        shaped(RecipeCategory.TOOLS, ModItems.WRENCH.get())
                 .pattern(" - ")
                 .pattern(" --")
                 .pattern("-  ")
                 .define('-', Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);
+
+        shaped(RecipeCategory.MISC, Items.COPPER_INGOT)
+                .pattern("***")
+                .pattern("***")
+                .pattern("***")
+                .define('*', ModItems.COPPER_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.COPPER_NUGGET.get()), has(ModItems.COPPER_NUGGET.get())).save(this.output);
+
+        shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 9)
+                .requires(Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);
+
+        shapeless(RecipeCategory.MISC, ModItems.COPPER_DUST.get())
+                .requires(ModItems.COPPER_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.COPPER_NUGGET.get()), has(ModItems.COPPER_NUGGET.get())).save(this.output);
+
+        oreSmelting(List.of(ModItems.COPPER_DUST.get()), RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 0f, 200, "nugget");
+        oreBlasting(List.of(ModItems.COPPER_DUST.get()), RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 0f, 100, "nugget");
 
         //Provide recipes using different stone buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.COPPER_BUTTON.get(), 1)

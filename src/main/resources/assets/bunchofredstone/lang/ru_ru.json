@@ -9,6 +9,9 @@
   "tooltip.bunchofredstone.iron_button": "Выдаёт очень короткий импульс редстоун сигнала при нажатии.",
 
 
+  "item.bunchofredstone.copper_nugget": "Кусочек меди",
+  "item.bunchofredstone.copper_dust": "Медная пыль",
+
   "item.bunchofredstone.wrench": "Гаечный ключ",
   "item.bunchofredstone.exposed_wrench": "Потемневший гаечный ключ",
   "item.bunchofredstone.weathered_wrench": "Состаренный гаечный ключ",
@@ -45,6 +48,7 @@
   "item.bunchofredstone.tuff_button": "Туфовая кнопка",
   "item.bunchofredstone.polished_tuff_button": "Кнопка из полированного туфа",
   "item.bunchofredstone.blackstone_button": "Чернитная кнопка",
+
 
   "block.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого глубинного сланца",
 

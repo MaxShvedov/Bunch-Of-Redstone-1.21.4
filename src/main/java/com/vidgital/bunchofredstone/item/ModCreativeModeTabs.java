@@ -56,6 +56,9 @@ public class ModCreativeModeTabs
                         output.accept(ModBlocks.COPPER_BUTTON.get());
                         output.accept(ModBlocks.GOLDEN_BUTTON.get());
                         output.accept(ModBlocks.IRON_BUTTON.get());
+
+                        output.accept(ModItems.COPPER_NUGGET.get());
+                        output.accept(ModItems.COPPER_DUST.get());
                     }).build());
 
 

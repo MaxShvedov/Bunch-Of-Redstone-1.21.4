@@ -1,4 +1,4 @@
-// 1.21.4	2025-02-25T20:02:27.5431789	Model Definitions
+// 1.21.4	2025-02-28T00:30:44.7742254	Model Definitions
 4e67c4da2c013536a3bf0eb74f5959fd07f2a00f assets/bunchofredstone/blockstates/andesite_button.json
 40c2dbba2d639e01cbe1b5f2f704efae9aa28e6d assets/bunchofredstone/blockstates/andesite_pressure_plate.json
 f295e8d945f0b48d9609fc8baaeeb831423aec1f assets/bunchofredstone/blockstates/blackstone_button.json
@@ -39,6 +39,8 @@ ac0b7641ad2b4b4f81063eeb2891618c8a861ca5 assets/bunchofredstone/items/blackstone
 83d2ecf9c52a9c4fbbbfc18276f1a1c7b667b332 assets/bunchofredstone/items/cobblestone_button.json
 e4202daeafb36276ba66a5a99cb3dfa36f42371c assets/bunchofredstone/items/cobblestone_pressure_plate.json
 40d0814c40d43f7190c28692ce00474375e6ccf4 assets/bunchofredstone/items/copper_button.json
+234f8bfa1f8d5550a570553504eddbe6889510fc assets/bunchofredstone/items/copper_dust.json
+4ab952cf8f6fc29a520350a553a4269e47d7dce6 assets/bunchofredstone/items/copper_nugget.json
 87f09947c365f9421a6d3d54c14ae7434cfb8e22 assets/bunchofredstone/items/diorite_button.json
 0ce65a8bae5f4ed4ff09dbcc68a410851a51273e assets/bunchofredstone/items/diorite_pressure_plate.json
 6b61b18dbd976082241cae7c17328da43bb9edd1 assets/bunchofredstone/items/exposed_wrench.json
@@ -137,6 +139,8 @@ cd381f671ef753494851735e4cacd29c7298bf77 assets/bunchofredstone/models/block/tuf
 7ea1ca13a2ff45ef9ccb269e18687744e696bd35 assets/bunchofredstone/models/block/tuff_button_pressed.json
 88be092a01824eea13a2cb883fcfc145782a5768 assets/bunchofredstone/models/block/tuff_pressure_plate.json
 f54ac3427cae2b5c395008b67af9d7f75e6d4703 assets/bunchofredstone/models/block/tuff_pressure_plate_down.json
+ae0060f6b8768c8ba6e2d13602bb2a5074fa43b7 assets/bunchofredstone/models/item/copper_dust.json
+ade9f8e5eb391e384c6434f315e7388cbd9d3709 assets/bunchofredstone/models/item/copper_nugget.json
 d519e288eef8c2921c518306c163b7d39e8e9e05 assets/bunchofredstone/models/item/exposed_wrench.json
 6a12a7c68813237afb9a79da571b4d9dae989ed7 assets/bunchofredstone/models/item/magic_wrench.json
 1b950ab1b014b11236b930cf106beee0f26438be assets/bunchofredstone/models/item/oxidized_wrench.json

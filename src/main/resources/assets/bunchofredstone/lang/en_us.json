@@ -9,6 +9,9 @@
   "tooltip.bunchofredstone.iron_button": "Emits a very short redstone signal pulse when pressed.",
 
 
+  "item.bunchofredstone.copper_nugget": "Copper Nugget",
+  "item.bunchofredstone.copper_dust": "Copper Dust",
+
   "item.bunchofredstone.wrench": "Wrench",
   "item.bunchofredstone.exposed_wrench": "Exposed Wrench",
   "item.bunchofredstone.weathered_wrench": "Weathered Wrench",
