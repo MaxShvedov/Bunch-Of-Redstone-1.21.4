@@ -18,8 +18,8 @@
   "item.bunchofredstone.oxidized_wrench": "Окисленный гаечный ключ",
   "item.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого сланца",
 
-
   "item.bunchofredstone.redstone_lantern": "Редстоуновый фонарь",
+  "item.bunchofredstone.redstone_rod": "Редстоуновый стержень",
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",
   "item.bunchofredstone.copper_button": "Медная кнопка",
@@ -56,6 +56,7 @@
   "block.bunchofredstone.cobbled_deepslate_tiles": "Плитка из колотого глубинного сланца",
 
   "block.bunchofredstone.redstone_lantern": "Редстоуновый фонарь",
+  "block.bunchofredstone.redstone_rod": "Редстоуновый стержень",
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",
   "block.bunchofredstone.copper_button": "Медная кнопка",

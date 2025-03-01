@@ -52,6 +52,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.IRON_BUTTON.get());
 
         dropSelf(ModBlocks.REDSTONE_LANTERN.get());
+        dropSelf(ModBlocks.REDSTONE_ROD.get());
         
         //Blocks that also drops something additional
 

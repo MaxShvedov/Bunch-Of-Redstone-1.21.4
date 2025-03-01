@@ -175,9 +175,18 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         createButton(ModBlocks.IRON_BUTTON.get());
 
         createLantern(ModBlocks.REDSTONE_LANTERN.get());
+        createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
+
     }
 
-    protected void createOrientableTrapdoor(Block pOrientableTrapdoorBlock) {
+//    protected void createRodWithBase(Block pRodBlock)
+//    {
+//        TextureMapping textureMapping = TextureMapping.defaultTexture(pRodBlock);
+//        ResourceLocation locationRod = ModModelTemplates.
+//    }
+
+    protected void createOrientableTrapdoor(Block pOrientableTrapdoorBlock)
+    {
         TextureMapping texturemapping = TextureMapping.defaultTexture(pOrientableTrapdoorBlock);
         ResourceLocation locationTrapdoorTop = ModModelTemplates.ORIENTABLE_TRAPDOOR_TOP.create(pOrientableTrapdoorBlock, texturemapping, this.modelOutput);
         ResourceLocation locationTrapdoorBottom = ModModelTemplates.ORIENTABLE_TRAPDOOR_BOTTOM.create(pOrientableTrapdoorBlock, texturemapping, this.modelOutput);
@@ -186,7 +195,8 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         this.registerSimpleItemModel(pOrientableTrapdoorBlock, locationTrapdoorBottom);
     }
 
-    protected void createTrapdoor(Block pTrapdoorBlock) {
+    protected void createTrapdoor(Block pTrapdoorBlock)
+    {
         TextureMapping texturemapping = TextureMapping.defaultTexture(pTrapdoorBlock);
         ResourceLocation locationTrapdoorTop = ModModelTemplates.TRAPDOOR_TOP.create(pTrapdoorBlock, texturemapping, this.modelOutput);
         ResourceLocation locationTrapdoorBottom = ModModelTemplates.TRAPDOOR_BOTTOM.create(pTrapdoorBlock, texturemapping, this.modelOutput);

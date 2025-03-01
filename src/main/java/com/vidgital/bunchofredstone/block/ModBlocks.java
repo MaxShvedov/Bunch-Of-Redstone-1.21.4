@@ -2,17 +2,25 @@ package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.block.custom.MagicBlock;
+import com.vidgital.bunchofredstone.block.custom.RedstoneRodBlock;
 import com.vidgital.bunchofredstone.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -50,6 +58,14 @@ public class ModBlocks
                     .lightLevel(blockState -> 7)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<RedstoneRodBlock> REDSTONE_ROD = RegisterBlock("redstone_rod",
+            () -> new RedstoneRodBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "redstone_rod")))
+                    .forceSolidOn()
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .lightLevel(blockState -> 7)
+                    .noOcclusion()));
 
     /*PRESSURE PLATE BLOCKS*/
     public static final RegistryObject<PressurePlateBlock> POLISHED_GRANITE_PRESSURE_PLATE = RegisterBlock("polished_granite_pressure_plate",

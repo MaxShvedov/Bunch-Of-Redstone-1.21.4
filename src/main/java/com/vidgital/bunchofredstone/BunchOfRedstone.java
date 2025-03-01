@@ -77,6 +77,7 @@ public class BunchOfRedstone
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
         {
             event.accept(ModBlocks.REDSTONE_LANTERN.get());
+            event.accept(ModBlocks.REDSTONE_ROD.get());
         }
         
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
@@ -87,6 +88,7 @@ public class BunchOfRedstone
             event.accept(ModBlocks.GOLDEN_BUTTON.get());
             event.accept(ModBlocks.IRON_BUTTON.get());
             event.accept(ModBlocks.REDSTONE_LANTERN.get());
+            event.accept(ModBlocks.REDSTONE_ROD.get());
         }
 
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)

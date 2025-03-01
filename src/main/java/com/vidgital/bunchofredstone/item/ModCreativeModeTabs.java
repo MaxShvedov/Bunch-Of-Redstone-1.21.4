@@ -60,6 +60,7 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.COPPER_NUGGET.get());
                         output.accept(ModItems.COPPER_DUST.get());
                         output.accept(ModBlocks.REDSTONE_LANTERN.get());
+                        output.accept(ModBlocks.REDSTONE_ROD.get());
                     }).build());
 
 

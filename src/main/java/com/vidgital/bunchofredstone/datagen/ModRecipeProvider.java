@@ -49,6 +49,15 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .define('/', Items.REDSTONE_TORCH)
                 .unlockedBy(getHasName(Items.REDSTONE_TORCH), has(Items.REDSTONE_TORCH)).save(this.output);
 
+        shaped(RecipeCategory.REDSTONE, ModBlocks.REDSTONE_ROD.get())
+                .pattern(" r ")
+                .pattern("r/r")
+                .pattern(" g ")
+                .define('r', Items.REDSTONE)
+                .define('/', Items.END_ROD)
+                .define('g', Items.GOLD_INGOT)
+                .unlockedBy(getHasName(Items.END_ROD), has(Items.END_ROD)).save(this.output);
+
         shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);
