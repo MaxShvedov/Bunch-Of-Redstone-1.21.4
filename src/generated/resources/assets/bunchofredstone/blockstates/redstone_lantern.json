@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "bunchofredstone:block/redstone_lantern"
+    },
+    "hanging=true": {
+      "model": "bunchofredstone:block/redstone_lantern_hanging"
+    }
+  }
+}
