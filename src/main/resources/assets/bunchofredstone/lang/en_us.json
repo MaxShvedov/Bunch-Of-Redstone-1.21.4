@@ -21,6 +21,7 @@
 
   "item.bunchofredstone.redstone_lantern": "Redstone Lantern",
   "item.bunchofredstone.redstone_rod": "Redstone Rod",
+  "item.bunchofredstone.copper_rod": "Copper Rod",
   "item.bunchofredstone.rain_detector": "Rain Detector",
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
@@ -59,6 +60,7 @@
 
   "block.bunchofredstone.redstone_lantern": "Redstone Lantern",
   "block.bunchofredstone.redstone_rod": "Redstone Rod",
+  "block.bunchofredstone.copper_rod": "Copper Rod",
   "block.bunchofredstone.rain_detector": "Rain Detector",
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",

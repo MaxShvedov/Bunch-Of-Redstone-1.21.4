@@ -174,7 +174,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         createButton(ModBlocks.GOLDEN_BUTTON.get());
         createButton(ModBlocks.IRON_BUTTON.get());
 
-        createLantern(ModBlocks.REDSTONE_LANTERN.get());
+        createRedstoneLantern();
         createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
         createRainDetector();
 
@@ -185,6 +185,34 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 //        TextureMapping textureMapping = TextureMapping.defaultTexture(pRodBlock);
 //        ResourceLocation locationRod = ModModelTemplates.
 //    }
+
+    protected void createRedstoneLantern()
+    {
+        ResourceLocation resourceLocationOn = TexturedModel.LANTERN.createWithSuffix(
+                ModBlocks.REDSTONE_LANTERN.get(), "_on", this.modelOutput);
+        ResourceLocation resourceLocationOff = TexturedModel.LANTERN.createWithSuffix(
+                ModBlocks.REDSTONE_LANTERN.get(), "_off", this.modelOutput);
+        ResourceLocation resourceLocationHangingOn = TexturedModel.HANGING_LANTERN.createWithSuffix(
+                ModBlocks.REDSTONE_LANTERN.get(), "_on", this.modelOutput);
+        ResourceLocation resourceLocationHangingOff = TexturedModel.HANGING_LANTERN.createWithSuffix(
+                ModBlocks.REDSTONE_LANTERN.get(), "_off", this.modelOutput);
+        this.registerSimpleFlatItemModel(ModBlocks.REDSTONE_LANTERN.get().asItem());
+        this.blockStateOutput
+                .accept(MultiVariantGenerator.multiVariant(ModBlocks.REDSTONE_LANTERN.get())
+                        .with(PropertyDispatch.properties(BlockStateProperties.HANGING, BlockStateProperties.LIT)
+                                .generate(
+                                                      (isHanging, isLit) -> isHanging
+                                                      ? Variant.variant().with(VariantProperties.MODEL, isLit
+                                                              ? resourceLocationHangingOn
+                                                              : resourceLocationHangingOff
+                                                      )
+                                                      : Variant.variant().with(VariantProperties.MODEL, isLit
+                                                              ? resourceLocationOn
+                                                              : resourceLocationOff
+                                                              )
+                                              )
+                        ));
+    }
 
     protected void createRainDetector()
     {

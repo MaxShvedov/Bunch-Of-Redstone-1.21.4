@@ -20,6 +20,7 @@
 
   "item.bunchofredstone.redstone_lantern": "Редстоуновый фонарь",
   "item.bunchofredstone.redstone_rod": "Редстоуновый стержень",
+  "item.bunchofredstone.copper_rod": "Медный стержень",
   "item.bunchofredstone.rain_detector": "Датчик дождя",
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",
@@ -58,6 +59,7 @@
 
   "block.bunchofredstone.redstone_lantern": "Редстоуновый фонарь",
   "block.bunchofredstone.redstone_rod": "Редстоуновый стержень",
+  "block.bunchofredstone.copper_rod": "Медный стержень",
   "block.bunchofredstone.rain_detector": "Датчик дождя",
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",

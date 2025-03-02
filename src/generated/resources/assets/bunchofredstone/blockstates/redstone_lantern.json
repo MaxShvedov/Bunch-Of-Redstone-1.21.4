@@ -7,10 +7,10 @@
       "model": "bunchofredstone:block/redstone_lantern_on"
     },
     "hanging=true,lit=false": {
-      "model": "bunchofredstone:block/redstone_lantern_hanging_off"
+      "model": "bunchofredstone:block/redstone_lantern_off_hanging"
     },
     "hanging=true,lit=true": {
-      "model": "bunchofredstone:block/redstone_lantern_hanging_on"
+      "model": "bunchofredstone:block/redstone_lantern_on_hanging"
     }
   }
 }

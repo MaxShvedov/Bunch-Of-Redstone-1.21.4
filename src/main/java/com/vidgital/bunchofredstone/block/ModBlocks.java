@@ -1,6 +1,7 @@
 package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
+import com.vidgital.bunchofredstone.block.custom.CopperRodBlock;
 import com.vidgital.bunchofredstone.block.custom.MagicBlock;
 import com.vidgital.bunchofredstone.block.custom.RedstoneLanternBlock;
 import com.vidgital.bunchofredstone.block.custom.RedstoneRodBlock;
@@ -68,6 +69,14 @@ public class ModBlocks
                     .sound(SoundType.WOOD)
                     .lightLevel(blockState -> 7)
                     .noOcclusion()));
+
+//    public static final RegistryObject<CopperRodBlock> COPPER_ROD = RegisterBlock("copper_rod",
+//            () -> new CopperRodBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
+//                    .mapColor(MapColor.COLOR_ORANGE)
+//                    .forceSolidOn()
+//                    .sound(SoundType.COPPER)
+//                    .noOcclusion()
+//                    .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> RAIN_DETECTOR = RegisterBlock("rain_detector",
             () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "rain_detector")))
