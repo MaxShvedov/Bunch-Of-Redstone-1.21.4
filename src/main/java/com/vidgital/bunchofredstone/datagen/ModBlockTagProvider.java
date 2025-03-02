@@ -53,7 +53,17 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 .add(ModBlocks.IRON_BUTTON.get())
 
                 .add(ModBlocks.REDSTONE_LANTERN.get())
-                .add(ModBlocks.RAIN_DETECTOR.get());
+                .add(ModBlocks.RAIN_DETECTOR.get())
+                .add(ModBlocks.COPPER_ROD.get());
+
+        tag(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.COPPER_ROD.get());
+
+        tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
+                .add(ModBlocks.COPPER_ROD.get());
+
+        tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
+                .add(ModBlocks.COPPER_ROD.get());
 
         tag(BlockTags.WALL_POST_OVERRIDE)
                 .add(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get())

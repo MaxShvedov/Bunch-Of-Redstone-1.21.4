@@ -176,6 +176,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 
         createRedstoneLantern();
         createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
+        createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_ROD.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_ROD.get()));
         createRainDetector();
 
     }
@@ -185,6 +186,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 //        TextureMapping textureMapping = TextureMapping.defaultTexture(pRodBlock);
 //        ResourceLocation locationRod = ModModelTemplates.
 //    }
+
 
     protected void createRedstoneLantern()
     {

@@ -58,6 +58,12 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .define('g', Items.GOLD_INGOT)
                 .unlockedBy(getHasName(Items.END_ROD), has(Items.END_ROD)).save(this.output);
 
+        shaped(RecipeCategory.REDSTONE, ModBlocks.COPPER_ROD.get())
+                .pattern(" - ")
+                .pattern(" - ")
+                .define('-', Items.COPPER_INGOT)
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);
+
         shaped(RecipeCategory.REDSTONE, ModBlocks.RAIN_DETECTOR.get())
                 .pattern("###")
                 .pattern("MMM")

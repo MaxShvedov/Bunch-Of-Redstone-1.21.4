@@ -1,4 +1,4 @@
-// 1.21.4	2025-03-02T19:54:48.0949761	Recipes
+// 1.21.4	2025-03-03T01:24:45.2359913	Recipes
 4b76658b8560a975be52b9eeffe6ad9ac188abee data/bunchofredstone/advancement/recipes/misc/copper_dust.json
 128c375b7061f7dd1cbf58752e717d327111c6cd data/bunchofredstone/advancement/recipes/misc/copper_nugget.json
 80dcc016790577c7c634f49b2ece1582f1252b4c data/bunchofredstone/advancement/recipes/redstone/andesite_button.json
@@ -10,6 +10,7 @@ b00f4a4621e5153e0e200b3ff427f379fb3e01d6 data/bunchofredstone/advancement/recipe
 653091efb2889db4af4558dd1a883940942aa051 data/bunchofredstone/advancement/recipes/redstone/cobblestone_button.json
 e4f998debfe9abfd396247d1a74d877099bc93b8 data/bunchofredstone/advancement/recipes/redstone/cobblestone_pressure_plate.json
 65a973a9578987f5de7286bb20b0ed2ec3895717 data/bunchofredstone/advancement/recipes/redstone/copper_button.json
+925633cde311f7f7cc4656208d10dd33a6dd9413 data/bunchofredstone/advancement/recipes/redstone/copper_rod.json
 7ea417aca8985efca8bfcb3eaec34c83f2c722d7 data/bunchofredstone/advancement/recipes/redstone/diorite_button.json
 5498bf3a378d75b4bba54dbe3272282ac30a140b data/bunchofredstone/advancement/recipes/redstone/diorite_pressure_plate.json
 fc43feed521adf4e7976f5259ed20b191d175c0a data/bunchofredstone/advancement/recipes/redstone/golden_button.json
@@ -44,6 +45,7 @@ a9cfddd7563228f2c4d26793f3e85afc471f0449 data/bunchofredstone/recipe/andesite_pr
 eaf125ee7069287fbd79be08a45df6aef14dda3b data/bunchofredstone/recipe/copper_button.json
 fa9ae4c7a086278e955adcca47b3d555cee116bd data/bunchofredstone/recipe/copper_dust.json
 f30c6f4df4cf0a7b85c2e9a1da311e083ae4ca79 data/bunchofredstone/recipe/copper_nugget.json
+7d8c8f7f3f1d844c76dd0c28caacaa0414dbac4b data/bunchofredstone/recipe/copper_rod.json
 5215420ac081e9a63ef1a335a9eb78d6b73c6f85 data/bunchofredstone/recipe/diorite_button.json
 c2b23565b5802e292ed41802e2dfad1d4f0b07c1 data/bunchofredstone/recipe/diorite_pressure_plate.json
 b209f8a6182fbd0f580d90466228f9908bc59b1d data/bunchofredstone/recipe/golden_button.json

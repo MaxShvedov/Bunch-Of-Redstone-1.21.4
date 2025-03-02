@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "bunchofredstone:block/copper_rod",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "bunchofredstone:block/copper_rod"
+    },
+    "axis=z": {
+      "model": "bunchofredstone:block/copper_rod",
+      "x": 90
+    }
+  }
+}

@@ -1,6 +1,9 @@
-// 1.21.4	2025-03-02T19:54:48.1009777	Tags for minecraft:block mod id bunchofredstone
+// 1.21.4	2025-03-03T02:32:01.4505274	Tags for minecraft:block mod id bunchofredstone
 36f8d06c3081041507dd6574837cb68b3622a632 data/minecraft/tags/block/buttons.json
-8b9465e08e8eebab3c297abc8b8faf8ebe223814 data/minecraft/tags/block/mineable/pickaxe.json
+bb121991fee0fa8803a28268f5c5077c19ed715c data/minecraft/tags/block/incorrect_for_gold_tool.json
+bb121991fee0fa8803a28268f5c5077c19ed715c data/minecraft/tags/block/incorrect_for_wooden_tool.json
+58f30a4224dca6ac2e093fda1b21dfc4d70257fd data/minecraft/tags/block/mineable/pickaxe.json
+bb121991fee0fa8803a28268f5c5077c19ed715c data/minecraft/tags/block/needs_stone_tool.json
 d819d6d691b3590cec4f608c2f17086a47196d7a data/minecraft/tags/block/pressure_plates.json
 8dde69253a7dcc2d34b36229461b646976f665b1 data/minecraft/tags/block/stone_buttons.json
 f08d68448e2e3f62f8cbfe834328dcefec8e72c3 data/minecraft/tags/block/stone_pressure_plates.json

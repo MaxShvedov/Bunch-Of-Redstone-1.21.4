@@ -31,7 +31,7 @@ public class CopperRodBlock extends RotatedPillarBlock implements SimpleWaterlog
     @Override
     protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext)
     {
-        switch ((Direction.Axis) pState.getValue(AXIS))
+        switch (pState.getValue(AXIS))
         {
             case X:
             default:

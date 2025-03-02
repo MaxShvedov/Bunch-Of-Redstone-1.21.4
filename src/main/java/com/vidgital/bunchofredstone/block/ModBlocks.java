@@ -70,13 +70,14 @@ public class ModBlocks
                     .lightLevel(blockState -> 7)
                     .noOcclusion()));
 
-//    public static final RegistryObject<CopperRodBlock> COPPER_ROD = RegisterBlock("copper_rod",
-//            () -> new CopperRodBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
-//                    .mapColor(MapColor.COLOR_ORANGE)
-//                    .forceSolidOn()
-//                    .sound(SoundType.COPPER)
-//                    .noOcclusion()
-//                    .requiresCorrectToolForDrops()));
+    public static final RegistryObject<CopperRodBlock> COPPER_ROD = RegisterBlock("copper_rod",
+            () -> new CopperRodBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .forceSolidOn()
+                    .sound(SoundType.COPPER)
+                    .noOcclusion()
+                    .strength(3.0f, 6.0f)
+                    .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> RAIN_DETECTOR = RegisterBlock("rain_detector",
             () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "rain_detector")))

@@ -78,7 +78,7 @@ public class BunchOfRedstone
         {
             event.accept(ModBlocks.REDSTONE_LANTERN.get());
             event.accept(ModBlocks.REDSTONE_ROD.get());
-            event.accept(ModBlocks.RAIN_DETECTOR.get());
+            event.accept(ModBlocks.COPPER_ROD.get());
         }
         
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
