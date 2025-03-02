@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_daylight_detector",
+  "textures": {
+    "side": "bunchofredstone:block/rain_detector_side",
+    "top": "bunchofredstone:block/rain_detector_top"
+  }
+}

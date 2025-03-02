@@ -176,6 +176,7 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 
         createLantern(ModBlocks.REDSTONE_LANTERN.get());
         createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
+        createRainDetector();
 
     }
 
@@ -184,6 +185,16 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 //        TextureMapping textureMapping = TextureMapping.defaultTexture(pRodBlock);
 //        ResourceLocation locationRod = ModModelTemplates.
 //    }
+
+    protected void createRainDetector()
+    {
+        ResourceLocation resourceLocation = TextureMapping.getBlockTexture(ModBlocks.RAIN_DETECTOR.get(), "_side");
+        TextureMapping textureMapping = new TextureMapping()
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(ModBlocks.RAIN_DETECTOR.get(), "_top"))
+                .put(TextureSlot.SIDE, resourceLocation);
+        this.blockStateOutput.accept(createSimpleBlock(ModBlocks.RAIN_DETECTOR.get(), ModelTemplates.DAYLIGHT_DETECTOR
+                .create(ModBlocks.RAIN_DETECTOR.get(), textureMapping, this.modelOutput)));
+    }
 
     protected void createOrientableTrapdoor(Block pOrientableTrapdoorBlock)
     {

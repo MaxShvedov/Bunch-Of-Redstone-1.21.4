@@ -40,7 +40,8 @@ public class RedstoneRodBlock extends EndRodBlock
     }
 
     @Override
-    protected int getSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pDirection) {
+    protected int getSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pDirection)
+    {
         return pState.getValue(FACING).getOpposite() == pDirection ? 15 : 0;
     }
 

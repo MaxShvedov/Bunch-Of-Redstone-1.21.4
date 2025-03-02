@@ -58,6 +58,15 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .define('g', Items.GOLD_INGOT)
                 .unlockedBy(getHasName(Items.END_ROD), has(Items.END_ROD)).save(this.output);
 
+        shaped(RecipeCategory.REDSTONE, ModBlocks.RAIN_DETECTOR.get())
+                .pattern("###")
+                .pattern("MMM")
+                .pattern("___")
+                .define('#', Items.IRON_BARS)
+                .define('M', Items.MOSS_BLOCK)
+                .define('_', Items.COBBLED_DEEPSLATE_SLAB)
+                .unlockedBy(getHasName(Items.MOSS_BLOCK), has(Items.MOSS_BLOCK)).save(this.output);
+
         shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);

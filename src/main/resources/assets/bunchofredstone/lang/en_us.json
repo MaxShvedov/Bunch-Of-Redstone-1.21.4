@@ -6,6 +6,7 @@
   "tooltip.bunchofredstone.wrench.shift_down1": "To rotate most blocks clockwise around the selected side, click §eRight Mouse Button §r.",
   "tooltip.bunchofredstone.wrench.shift_down2": "To rotate most blocks in your direction, click §eLeft Mouse Button§r on horizontal side.",
   "tooltip.bunchofredstone.wrench.shift_down3": "Hold §eShift§r key to invert the direction of the rotation.",
+
   "tooltip.bunchofredstone.iron_button": "Emits a very short redstone signal pulse when pressed.",
 
 
@@ -20,6 +21,7 @@
 
   "item.bunchofredstone.redstone_lantern": "Redstone Lantern",
   "item.bunchofredstone.redstone_rod": "Redstone Rod",
+  "item.bunchofredstone.rain_detector": "Rain Detector",
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "item.bunchofredstone.copper_button": "Copper Button",
@@ -57,6 +59,7 @@
 
   "block.bunchofredstone.redstone_lantern": "Redstone Lantern",
   "block.bunchofredstone.redstone_rod": "Redstone Rod",
+  "block.bunchofredstone.rain_detector": "Rain Detector",
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "block.bunchofredstone.copper_button": "Copper Button",

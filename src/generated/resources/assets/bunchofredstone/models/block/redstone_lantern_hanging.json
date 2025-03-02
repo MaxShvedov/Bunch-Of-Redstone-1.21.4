@@ -1,6 +1,0 @@
-{
-  "parent": "bunchofredstone:block/template_hanging_redstone_lantern",
-  "textures": {
-    "lantern": "bunchofredstone:block/redstone_lantern_on"
-  }
-}

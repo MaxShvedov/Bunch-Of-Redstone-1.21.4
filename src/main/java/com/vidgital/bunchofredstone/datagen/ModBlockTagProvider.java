@@ -52,7 +52,8 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 .add(ModBlocks.GOLDEN_BUTTON.get())
                 .add(ModBlocks.IRON_BUTTON.get())
 
-                .add(ModBlocks.REDSTONE_LANTERN.get());
+                .add(ModBlocks.REDSTONE_LANTERN.get())
+                .add(ModBlocks.RAIN_DETECTOR.get());
 
         tag(BlockTags.WALL_POST_OVERRIDE)
                 .add(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get())

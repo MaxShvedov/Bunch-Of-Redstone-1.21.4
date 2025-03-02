@@ -2,6 +2,7 @@ package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.block.custom.MagicBlock;
+import com.vidgital.bunchofredstone.block.custom.RedstoneLanternBlock;
 import com.vidgital.bunchofredstone.block.custom.RedstoneRodBlock;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -49,13 +51,13 @@ public class ModBlocks
 
 
     /*FUNCTIONAL REDSTONE BLOCKS*/
-    public static final RegistryObject<LanternBlock> REDSTONE_LANTERN = RegisterBlock("redstone_lantern",
-            () -> new LanternBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "redstone_lantern")))
+    public static final RegistryObject<RedstoneLanternBlock> REDSTONE_LANTERN = RegisterBlock("redstone_lantern",
+            () -> new RedstoneLanternBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "redstone_lantern")))
                     .mapColor(MapColor.METAL)
                     .forceSolidOn()
                     .strength(3.5f)
                     .sound(SoundType.LANTERN)
-                    .lightLevel(blockState -> 7)
+                    .lightLevel(blockState -> blockState.getValue(RedstoneLanternBlock.LIT) ? 7 : 0)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -66,6 +68,14 @@ public class ModBlocks
                     .sound(SoundType.WOOD)
                     .lightLevel(blockState -> 7)
                     .noOcclusion()));
+
+    public static final RegistryObject<Block> RAIN_DETECTOR = RegisterBlock("rain_detector",
+            () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "rain_detector")))
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(0.8f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE_TILES)));
 
     /*PRESSURE PLATE BLOCKS*/
     public static final RegistryObject<PressurePlateBlock> POLISHED_GRANITE_PRESSURE_PLATE = RegisterBlock("polished_granite_pressure_plate",
