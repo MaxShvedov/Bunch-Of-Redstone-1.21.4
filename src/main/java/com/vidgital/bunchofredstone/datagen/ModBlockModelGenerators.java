@@ -176,7 +176,8 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 
         createRedstoneLantern();
         createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
-        createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_ROD.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_ROD.get()));
+//        createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_ROD.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_ROD.get()));
+        createCopperRod();
         createRainDetector();
 
     }
@@ -187,6 +188,19 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 //        ResourceLocation locationRod = ModModelTemplates.
 //    }
 
+
+    protected void createCopperRod()
+    {
+        Block block = ModBlocks.COPPER_ROD.get();
+        ResourceLocation resourceLocationOn = ModelLocationUtils.getModelLocation(block, "_on");
+        ResourceLocation resourceLocationOff= ModelLocationUtils.getModelLocation(block);
+        this.blockStateOutput
+                .accept(
+                        MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(block)))
+                                .with(createRotatedPillar())
+                                .with(createBooleanModelDispatch(BlockStateProperties.POWERED, resourceLocationOn, resourceLocationOff))
+                );
+    }
 
     protected void createRedstoneLantern()
     {

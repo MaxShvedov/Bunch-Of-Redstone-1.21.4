@@ -90,6 +90,7 @@ public class BunchOfRedstone
             event.accept(ModBlocks.IRON_BUTTON.get());
             event.accept(ModBlocks.REDSTONE_LANTERN.get());
             event.accept(ModBlocks.REDSTONE_ROD.get());
+            event.accept(ModBlocks.COPPER_ROD.get());
             event.accept(ModBlocks.RAIN_DETECTOR.get());
         }
 

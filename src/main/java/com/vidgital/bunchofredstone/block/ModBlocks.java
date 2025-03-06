@@ -1,10 +1,7 @@
 package com.vidgital.bunchofredstone.block;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
-import com.vidgital.bunchofredstone.block.custom.CopperRodBlock;
-import com.vidgital.bunchofredstone.block.custom.MagicBlock;
-import com.vidgital.bunchofredstone.block.custom.RedstoneLanternBlock;
-import com.vidgital.bunchofredstone.block.custom.RedstoneRodBlock;
+import com.vidgital.bunchofredstone.block.custom.*;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -71,7 +68,7 @@ public class ModBlocks
                     .noOcclusion()));
 
     public static final RegistryObject<CopperRodBlock> COPPER_ROD = RegisterBlock("copper_rod",
-            () -> new CopperRodBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
+            () -> new CopperRodBlock(Blocks.LIGHTNING_ROD, BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
                     .mapColor(MapColor.COLOR_ORANGE)
                     .forceSolidOn()
                     .sound(SoundType.COPPER)
@@ -79,8 +76,8 @@ public class ModBlocks
                     .strength(3.0f, 6.0f)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> RAIN_DETECTOR = RegisterBlock("rain_detector",
-            () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "rain_detector")))
+    public static final RegistryObject<RainDetectorBlock> RAIN_DETECTOR = RegisterBlock("rain_detector",
+            () -> new RainDetectorBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "rain_detector")))
                     .mapColor(MapColor.DEEPSLATE)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .strength(0.8f)
