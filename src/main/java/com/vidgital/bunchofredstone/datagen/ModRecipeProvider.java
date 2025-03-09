@@ -140,7 +140,16 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .unlockedBy(getHasName(Items.POLISHED_TUFF), has(Items.POLISHED_TUFF)).save(this.output);
         buttonBuilder(ModBlocks.BLACKSTONE_BUTTON.get(), Ingredient.of (Items.BLACKSTONE)).group("blackstone")
                 .unlockedBy(getHasName(Items.BLACKSTONE), has(Items.BLACKSTONE)).save(this.output);
-        
+
+        //Provide alternative crafting recipes for existing blocks made of cobblestone
+//        shaped(RecipeCategory.REDSTONE, Items.DISPENSER)
+//                .pattern("***")
+//                .pattern("*b*")
+//                .pattern("*r*")
+//                .define('*', Items.COBBLED_DEEPSLATE)
+//                .define('b', Items.BOW)
+//                .define('r', Items.REDSTONE)
+//                .unlockedBy(getHasName(Items.BOW), has(Items.BOW)).save(this.output);
     }
 
     @Override

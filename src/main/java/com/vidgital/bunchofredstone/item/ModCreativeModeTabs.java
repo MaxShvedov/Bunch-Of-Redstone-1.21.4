@@ -23,7 +23,6 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.EXPOSED_WRENCH.get());
                         output.accept(ModItems.WEATHERED_WRENCH.get());
                         output.accept(ModItems.OXIDIZED_WRENCH.get());
-                        output.accept(ModItems.MAGIC_WRENCH.get());
 
                         output.accept(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.GRANITE_PRESSURE_PLATE.get());

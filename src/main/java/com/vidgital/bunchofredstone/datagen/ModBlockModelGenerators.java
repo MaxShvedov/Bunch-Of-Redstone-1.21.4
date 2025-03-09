@@ -139,9 +139,6 @@ public class ModBlockModelGenerators extends BlockModelGenerators
                 blockFamily -> this.family(blockFamily.getBaseBlock()).generateFor(blockFamily)
         );
 
-        createTrivialCube(ModBlocks.SMOOTH_CALCITE.get());
-        createTrivialCube(ModBlocks.COBBLED_DEEPSLATE_TILES.get());
-
         createPressurePlate(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
         createPressurePlate(ModBlocks.GRANITE_PRESSURE_PLATE.get());
         createPressurePlate(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE.get());
@@ -176,18 +173,10 @@ public class ModBlockModelGenerators extends BlockModelGenerators
 
         createRedstoneLantern();
         createRotatableColumn(ModBlocks.REDSTONE_ROD.get());
-//        createAxisAlignedPillarBlockCustomModel(ModBlocks.COPPER_ROD.get(), ModelLocationUtils.getModelLocation(ModBlocks.COPPER_ROD.get()));
         createCopperRod();
         createRainDetector();
 
     }
-
-//    protected void createRodWithBase(Block pRodBlock)
-//    {
-//        TextureMapping textureMapping = TextureMapping.defaultTexture(pRodBlock);
-//        ResourceLocation locationRod = ModModelTemplates.
-//    }
-
 
     protected void createCopperRod()
     {

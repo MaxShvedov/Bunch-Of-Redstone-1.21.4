@@ -17,8 +17,6 @@ public class ModBlockTagProvider extends BlockTagsProvider
     protected void addTags(HolderLookup.Provider pProvider)
     {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.COBBLED_DEEPSLATE_TILES.get())
-                .add(ModBlocks.SMOOTH_CALCITE.get())
                 
                 .add(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get())
                 .add(ModBlocks.GRANITE_PRESSURE_PLATE.get())

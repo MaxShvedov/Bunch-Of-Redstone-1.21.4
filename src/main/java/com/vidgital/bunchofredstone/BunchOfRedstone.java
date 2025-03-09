@@ -2,6 +2,7 @@ package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
 import com.vidgital.bunchofredstone.block.ModBlocks;
+import com.vidgital.bunchofredstone.block.entity.ModBlockEntities;
 import com.vidgital.bunchofredstone.event.WrenchEvents;
 import com.vidgital.bunchofredstone.item.ModCreativeModeTabs;
 import com.vidgital.bunchofredstone.item.ModItems;
@@ -45,6 +46,7 @@ public class BunchOfRedstone
         // Register mod items and blocks
         ModItems.Register(modEventBus);
         ModBlocks.Register(modEventBus);
+        ModBlockEntities.Register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -66,12 +68,6 @@ public class BunchOfRedstone
             event.accept(ModItems.EXPOSED_WRENCH);
             event.accept(ModItems.WEATHERED_WRENCH);
             event.accept(ModItems.OXIDIZED_WRENCH);
-        }
-
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-        {
-            event.accept(ModBlocks.COBBLED_DEEPSLATE_TILES);
-            event.accept(ModBlocks.SMOOTH_CALCITE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)

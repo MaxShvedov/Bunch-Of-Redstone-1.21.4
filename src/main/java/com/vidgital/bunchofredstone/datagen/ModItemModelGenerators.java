@@ -14,8 +14,6 @@ public class ModItemModelGenerators extends ItemModelGenerators
     @Override
     public void run()
     {
-        generateFlatItem(ModItems.MAGIC_WRENCH.get(), ModelTemplates.FLAT_ITEM);
-
         generateFlatItem(ModItems.WRENCH.get(), ModelTemplates.FLAT_ITEM);
         generateFlatItem(ModItems.EXPOSED_WRENCH.get(), ModelTemplates.FLAT_ITEM);
         generateFlatItem(ModItems.WEATHERED_WRENCH.get(), ModelTemplates.FLAT_ITEM);

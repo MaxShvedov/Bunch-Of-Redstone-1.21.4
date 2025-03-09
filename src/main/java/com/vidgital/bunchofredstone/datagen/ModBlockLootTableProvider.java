@@ -16,8 +16,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
     protected void generate()
     {
         //Blocks that drops itself
-        dropSelf(ModBlocks.COBBLED_DEEPSLATE_TILES.get());
-        dropSelf(ModBlocks.SMOOTH_CALCITE.get());
 
         dropSelf(ModBlocks.COBBLESTONE_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.GRANITE_PRESSURE_PLATE.get());

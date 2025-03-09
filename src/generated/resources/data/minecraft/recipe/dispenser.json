@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "*": "minecraft:deepslate",
+    "b": "minecraft:bow",
+    "r": "minecraft:redstone"
+  },
+  "pattern": [
+    "***",
+    "*b*",
+    "*r*"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:dispenser"
+  }
+}

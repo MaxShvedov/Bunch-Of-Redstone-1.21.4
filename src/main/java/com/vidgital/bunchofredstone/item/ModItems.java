@@ -1,7 +1,6 @@
 package com.vidgital.bunchofredstone.item;
 
 import com.vidgital.bunchofredstone.BunchOfRedstone;
-import com.vidgital.bunchofredstone.item.custom.MagicWrenchItem;
 import com.vidgital.bunchofredstone.item.custom.WrenchItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -40,10 +39,6 @@ public class ModItems
     public static final RegistryObject<Item> OXIDIZED_WRENCH = ITEMS.register(
             "oxidized_wrench", () -> new WrenchItem(new Item.Properties().useItemDescriptionPrefix().stacksTo(1)
                     .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "oxidized_wrench")))));
-
-    public static final RegistryObject<Item> MAGIC_WRENCH = ITEMS.register("magic_wrench",
-            () -> new MagicWrenchItem(new Item.Properties().durability(32).useItemDescriptionPrefix()
-                    .setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "magic_wrench")))));
 
     public static void Register(IEventBus eventBus)
     {

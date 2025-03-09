@@ -1,4 +1,4 @@
-// 1.21.4	2025-03-03T01:24:45.2359913	Recipes
+// 1.21.4	2025-03-06T22:38:32.5335167	Recipes
 4b76658b8560a975be52b9eeffe6ad9ac188abee data/bunchofredstone/advancement/recipes/misc/copper_dust.json
 128c375b7061f7dd1cbf58752e717d327111c6cd data/bunchofredstone/advancement/recipes/misc/copper_nugget.json
 80dcc016790577c7c634f49b2ece1582f1252b4c data/bunchofredstone/advancement/recipes/redstone/andesite_button.json
@@ -262,6 +262,7 @@ df053e06d8c35d8a20dc5b8a70a52796b04a3d68 data/minecraft/advancement/recipes/deco
 9f0c95de22bd0c7ea69bd0588ccfd85f0f3aedc6 data/minecraft/advancement/recipes/misc/copper_ingot.json
 2281576582babd02d94cb2a617a34a9ed3eb39b4 data/minecraft/advancement/recipes/misc/copper_nugget_from_blasting_copper_dust.json
 ad04d2d0c4ed8ba54715734a63f032334cb6e0e9 data/minecraft/advancement/recipes/misc/copper_nugget_from_smelting_copper_dust.json
+a4e90eb48f727c0baf614396017900308f49ce68 data/minecraft/advancement/recipes/misc/dispenser.json
 9b83fd03f5ee774693b76caf9fb114b92bd0a545 data/minecraft/advancement/recipes/redstone/acacia_button.json
 f9ee03860ba39891ade161264003f91915809963 data/minecraft/advancement/recipes/redstone/acacia_door.json
 540762d3625b9a3ba8f0a3ff3025c7d27e1ee7bd data/minecraft/advancement/recipes/redstone/acacia_fence_gate.json
@@ -428,6 +429,7 @@ dcbcd99f2fd8d46223534a1a85250ae5484f0f79 data/minecraft/recipe/deepslate_tile_wa
 5105e7efa299e03aa9a9c477e67ed3ff9afd22b5 data/minecraft/recipe/diorite_slab.json
 83a7e1b7824c4dcc2949ca5652051f71314e6c4c data/minecraft/recipe/diorite_stairs.json
 2c24ce2cbc77247f069d397ecd19cb1e1cbbc2cf data/minecraft/recipe/diorite_wall.json
+d5fbf3f063fd8b7fa7ed0dcbe6a8ea7e0a95ca14 data/minecraft/recipe/dispenser.json
 b9db0ba8e60e1ecf24ad54a972949943bf67da3c data/minecraft/recipe/end_stone_brick_slab.json
 b6543edb0fb5a9445caa6fa08b6e6db41d8a2530 data/minecraft/recipe/end_stone_brick_stairs.json
 58d7c1d68fda5c1f6bf217f09d1ae914eb1f41ac data/minecraft/recipe/end_stone_brick_wall.json

@@ -37,15 +37,6 @@ public class ModBlocks
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, BunchOfRedstone.MOD_ID);
 
-    //Temp block
-    public static final RegistryObject<Block> COBBLED_DEEPSLATE_TILES = RegisterBlock("cobbled_deepslate_tiles",
-            () -> new Block(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "cobbled_deepslate_tiles")))
-                    .strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE_TILES)));
-
-    //Temp block
-    public static final RegistryObject<Block> SMOOTH_CALCITE = RegisterBlock("smooth_calcite",
-            () -> new MagicBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "smooth_calcite")))
-                    .strength(0.75f).requiresCorrectToolForDrops().sound(SoundType.CALCITE)));
 
 
     /*FUNCTIONAL REDSTONE BLOCKS*/

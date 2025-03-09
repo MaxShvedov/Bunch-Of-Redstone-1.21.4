@@ -2,8 +2,10 @@ package com.vidgital.bunchofredstone.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DiodeBlock;
@@ -45,9 +47,16 @@ public class ReductorBlock extends DiodeBlock
         return pState.getValue(DELAY) * 2;
     }
 
+    @Override
+    protected boolean isSignalSource(BlockState pState)
+    {
+        return true;
+    }
 
-
-
+    @Override
+    protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide) {
+        return 15 - pBlockState.getValue(DELAY);
+    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
