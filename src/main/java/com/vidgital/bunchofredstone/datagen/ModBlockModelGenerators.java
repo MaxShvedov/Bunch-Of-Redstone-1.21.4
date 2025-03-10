@@ -168,6 +168,14 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         createPressurePlate(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
 
         createButton(ModBlocks.COPPER_BUTTON.get());
+        createButton(ModBlocks.EXPOSED_COPPER_BUTTON.get());
+        createButton(ModBlocks.WEATHERED_COPPER_BUTTON.get());
+        createButton(ModBlocks.OXIDIZED_COPPER_BUTTON.get());
+        createButton(ModBlocks.WAXED_COPPER_BUTTON.get());
+        createButton(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
+        createButton(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
+        createButton(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get());
+
         createButton(ModBlocks.GOLDEN_BUTTON.get());
         createButton(ModBlocks.IRON_BUTTON.get());
 

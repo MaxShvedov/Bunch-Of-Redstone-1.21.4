@@ -28,7 +28,6 @@ public record ModBlockSetType(
 )
 {
     private static final Map<String, BlockSetType> TYPES = new Object2ObjectArrayMap<>();
-    public static final Codec<BlockSetType> CODEC = Codec.stringResolver(BlockSetType::name, TYPES::get);
 
     public static final BlockSetType HEAVY_COPPER = BlockSetType.register(
       new BlockSetType(

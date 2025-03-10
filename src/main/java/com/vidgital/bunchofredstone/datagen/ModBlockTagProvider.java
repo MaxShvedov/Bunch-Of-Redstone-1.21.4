@@ -47,6 +47,13 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 .add(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get())
 
                 .add(ModBlocks.COPPER_BUTTON.get())
+                .add(ModBlocks.EXPOSED_COPPER_BUTTON.get())
+                .add(ModBlocks.WEATHERED_COPPER_BUTTON.get())
+                .add(ModBlocks.OXIDIZED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get())
                 .add(ModBlocks.GOLDEN_BUTTON.get())
                 .add(ModBlocks.IRON_BUTTON.get())
 
@@ -93,6 +100,13 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 .add(ModBlocks.POLISHED_TUFF_BUTTON.get())
                 .add(ModBlocks.BLACKSTONE_BUTTON.get())
                 .add(ModBlocks.COPPER_BUTTON.get())
+                .add(ModBlocks.EXPOSED_COPPER_BUTTON.get())
+                .add(ModBlocks.WEATHERED_COPPER_BUTTON.get())
+                .add(ModBlocks.OXIDIZED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get())
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get())
                 .add(ModBlocks.GOLDEN_BUTTON.get())
                 .add(ModBlocks.IRON_BUTTON.get());
 
@@ -110,10 +124,10 @@ public class ModBlockTagProvider extends BlockTagsProvider
                 .add(ModBlocks.POLISHED_DIORITE_BUTTON.get())
                 .add(ModBlocks.POLISHED_ANDESITE_BUTTON.get())
                 .add(ModBlocks.POLISHED_DEEPSLATE_BUTTON.get())
-                .add(ModBlocks.POLISHED_TUFF_BUTTON.get())
-                .add(ModBlocks.COPPER_BUTTON.get()) //temp
-                .add(ModBlocks.GOLDEN_BUTTON.get()) //temp
-                .add(ModBlocks.IRON_BUTTON.get());  //temp
+                .add(ModBlocks.POLISHED_TUFF_BUTTON.get());
+//                .add(ModBlocks.COPPER_BUTTON.get())
+//                .add(ModBlocks.GOLDEN_BUTTON.get())
+//                .add(ModBlocks.IRON_BUTTON.get())
 
 
         tag(BlockTags.PRESSURE_PLATES)

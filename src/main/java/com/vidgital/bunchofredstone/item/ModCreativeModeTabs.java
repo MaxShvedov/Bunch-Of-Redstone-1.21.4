@@ -53,6 +53,14 @@ public class ModCreativeModeTabs
                         output.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
 
                         output.accept(ModBlocks.COPPER_BUTTON.get());
+                        output.accept(ModBlocks.EXPOSED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.WEATHERED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.OXIDIZED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.WAXED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
+                        output.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get());
+
                         output.accept(ModBlocks.GOLDEN_BUTTON.get());
                         output.accept(ModBlocks.IRON_BUTTON.get());
 

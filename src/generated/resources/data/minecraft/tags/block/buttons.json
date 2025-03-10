@@ -13,6 +13,13 @@
     "bunchofredstone:polished_tuff_button",
     "bunchofredstone:blackstone_button",
     "bunchofredstone:copper_button",
+    "bunchofredstone:exposed_copper_button",
+    "bunchofredstone:weathered_copper_button",
+    "bunchofredstone:oxidized_copper_button",
+    "bunchofredstone:waxed_copper_button",
+    "bunchofredstone:waxed_exposed_copper_button",
+    "bunchofredstone:waxed_weathered_copper_button",
+    "bunchofredstone:waxed_oxidized_copper_button",
     "bunchofredstone:golden_button",
     "bunchofredstone:iron_button"
   ]

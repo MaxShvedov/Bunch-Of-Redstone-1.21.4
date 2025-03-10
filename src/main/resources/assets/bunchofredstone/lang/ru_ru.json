@@ -24,6 +24,13 @@
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",
   "item.bunchofredstone.copper_button": "Медная кнопка",
+  "item.bunchofredstone.exposed_copper_button": "Потемневшая медная кнопка",
+  "item.bunchofredstone.weathered_copper_button": "Состаренная медная кнопка",
+  "item.bunchofredstone.oxidized_copper_button": "Окисленная медная кнопка",
+  "item.bunchofredstone.waxed_copper_button": "Вощённая медная кнопка",
+  "item.bunchofredstone.waxed_exposed_copper_button": "Вощённая потемневшая медная кнопка",
+  "item.bunchofredstone.waxed_weathered_copper_button": "Вощённая состаренная медная кнопка",
+  "item.bunchofredstone.waxed_oxidized_copper_button": "Вощённая окисленная медная кнопка",
   "item.bunchofredstone.golden_button": "Золотая кнопка",
   "item.bunchofredstone.iron_button": "Железная кнопка",
 
@@ -63,6 +70,13 @@
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Мерная весовая пластина",
   "block.bunchofredstone.copper_button": "Медная кнопка",
+  "block.bunchofredstone.exposed_copper_button": "Потемневшая медная кнопка",
+  "block.bunchofredstone.weathered_copper_button": "Состаренная медная кнопка",
+  "block.bunchofredstone.oxidized_copper_button": "Окисленная медная кнопка",
+  "block.bunchofredstone.waxed_copper_button": "Вощёная медная кнопка",
+  "block.bunchofredstone.waxed_exposed_copper_button": "Вощёная потемневшая медная кнопка",
+  "block.bunchofredstone.waxed_weathered_copper_button": "Вощёная состаренная медная кнопка",
+  "block.bunchofredstone.waxed_oxidized_copper_button": "Вощёная окисленная медная кнопка",
   "block.bunchofredstone.golden_button": "Золотая кнопка",
   "block.bunchofredstone.iron_button": "Железная кнопка",
 

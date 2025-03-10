@@ -46,6 +46,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
 
         dropSelf(ModBlocks.COPPER_BUTTON.get());
+        dropSelf(ModBlocks.EXPOSED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.WEATHERED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.OXIDIZED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.WAXED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
+        dropSelf(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get());
+
         dropSelf(ModBlocks.GOLDEN_BUTTON.get());
         dropSelf(ModBlocks.IRON_BUTTON.get());
 

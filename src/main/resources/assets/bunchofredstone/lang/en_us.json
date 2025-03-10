@@ -25,6 +25,13 @@
 
   "item.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "item.bunchofredstone.copper_button": "Copper Button",
+  "item.bunchofredstone.exposed_copper_button": "Exposed Copper Button",
+  "item.bunchofredstone.weathered_copper_button": "Weathered Copper Button",
+  "item.bunchofredstone.oxidized_copper_button": "Oxidized Copper Button",
+  "item.bunchofredstone.waxed_copper_button": "Waxed Copper Button",
+  "item.bunchofredstone.waxed_exposed_copper_button": "Waxed Exposed Copper Button",
+  "item.bunchofredstone.waxed_weathered_copper_button": "Waxed Weathered Copper Button",
+  "item.bunchofredstone.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button",
   "item.bunchofredstone.golden_button": "Golden Button",
   "item.bunchofredstone.iron_button": "Iron Button",
 
@@ -64,6 +71,13 @@
 
   "block.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
   "block.bunchofredstone.copper_button": "Copper Button",
+  "block.bunchofredstone.exposed_copper_button": "Exposed Copper Button",
+  "block.bunchofredstone.weathered_copper_button": "Weathered Copper Button",
+  "block.bunchofredstone.oxidized_copper_button": "Oxidized Copper Button",
+  "block.bunchofredstone.waxed_copper_button": "Waxed Copper Button",
+  "block.bunchofredstone.waxed_exposed_copper_button": "Waxed Exposed Copper Button",
+  "block.bunchofredstone.waxed_weathered_copper_button": "Waxed Weathered Copper Button",
+  "block.bunchofredstone.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button",
   "block.bunchofredstone.golden_button": "Golden Button",
   "block.bunchofredstone.iron_button": "Iron Button",
 

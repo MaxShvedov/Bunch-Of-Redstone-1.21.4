@@ -81,7 +81,10 @@ public class BunchOfRedstone
         {
             event.accept(ModItems.COPPER_DUST.get());
             event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
-            event.accept(ModBlocks.COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get());
             event.accept(ModBlocks.GOLDEN_BUTTON.get());
             event.accept(ModBlocks.IRON_BUTTON.get());
             event.accept(ModBlocks.REDSTONE_LANTERN.get());
