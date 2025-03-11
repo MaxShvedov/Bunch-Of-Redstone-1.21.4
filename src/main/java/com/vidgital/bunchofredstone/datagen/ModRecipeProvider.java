@@ -90,6 +90,31 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .requires(Items.STONE_BUTTON)
                 .unlockedBy(getHasName(Items.STONE_BUTTON), has(Items.STONE_BUTTON)).save(this.output);
 
+        //Waxing copper buttons.
+        shapeless(RecipeCategory.REDSTONE, ModBlocks.WAXED_COPPER_BUTTON.get(), 1)
+                .requires(ModBlocks.COPPER_BUTTON.get())
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(ModBlocks.COPPER_BUTTON.get()), has(ModBlocks.COPPER_BUTTON.get())).save(this.output);
+
+        shapeless(RecipeCategory.REDSTONE, ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get(), 1)
+                .requires(ModBlocks.EXPOSED_COPPER_BUTTON.get())
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(ModBlocks.COPPER_BUTTON.get()), has(ModBlocks.COPPER_BUTTON.get())).save(this.output);
+
+        shapeless(RecipeCategory.REDSTONE, ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get(), 1)
+                .requires(ModBlocks.WEATHERED_COPPER_BUTTON.get())
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(ModBlocks.COPPER_BUTTON.get()), has(ModBlocks.COPPER_BUTTON.get())).save(this.output);
+
+        shapeless(RecipeCategory.REDSTONE, ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get(), 1)
+                .requires(ModBlocks.OXIDIZED_COPPER_BUTTON.get())
+                .requires(Items.HONEYCOMB)
+                .unlockedBy(getHasName(ModBlocks.COPPER_BUTTON.get()), has(ModBlocks.COPPER_BUTTON.get())).save(this.output);
+
+
+
+
+
         //Provide recipes using different stone buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.GOLDEN_BUTTON.get(), 1)
                 .requires(Items.GOLD_INGOT)

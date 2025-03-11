@@ -320,7 +320,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> COPPER_BUTTON = RegisterBlock("copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 10, BlockBehaviour.Properties.of()
+            () -> new WeatheringCopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 10, ModWeatheringCopper.WeatherState.UNAFFECTED,  BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -328,7 +328,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> EXPOSED_COPPER_BUTTON = RegisterBlock("exposed_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 40, BlockBehaviour.Properties.of()
+            () -> new WeatheringCopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 40, ModWeatheringCopper.WeatherState.EXPOSED, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "exposed_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -336,7 +336,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> WEATHERED_COPPER_BUTTON = RegisterBlock("weathered_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 100, BlockBehaviour.Properties.of()
+            () -> new WeatheringCopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 100, ModWeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "weathered_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -344,7 +344,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> OXIDIZED_COPPER_BUTTON = RegisterBlock("oxidized_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 200, BlockBehaviour.Properties.of()
+            () -> new WeatheringCopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 200, ModWeatheringCopper.WeatherState.OXIDIZED, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "oxidized_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -352,7 +352,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> WAXED_COPPER_BUTTON = RegisterBlock("waxed_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 10, BlockBehaviour.Properties.of()
+            () -> new CopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 10,  BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "waxed_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -360,7 +360,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> WAXED_EXPOSED_COPPER_BUTTON = RegisterBlock("waxed_exposed_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 40, BlockBehaviour.Properties.of()
+            () -> new CopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 40, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "waxed_exposed_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -368,7 +368,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> WAXED_WEATHERED_COPPER_BUTTON = RegisterBlock("waxed_weathered_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 100, BlockBehaviour.Properties.of()
+            () -> new CopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 100, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "waxed_weathered_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
@@ -376,7 +376,7 @@ public class ModBlocks
                     .noCollission()));
 
     public static final RegistryObject<ButtonBlock> WAXED_OXIDIZED_COPPER_BUTTON = RegisterBlock("waxed_oxidized_copper_button",
-            () -> new ButtonBlock(ModBlockSetType.HEAVY_COPPER, 200, BlockBehaviour.Properties.of()
+            () -> new CopperButtonBlock(ModBlockSetType.HEAVY_COPPER, 200, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "waxed_oxidized_copper_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)

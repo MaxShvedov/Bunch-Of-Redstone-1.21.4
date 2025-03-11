@@ -1,6 +1,5 @@
 package com.vidgital.bunchofredstone.block;
 
-import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
