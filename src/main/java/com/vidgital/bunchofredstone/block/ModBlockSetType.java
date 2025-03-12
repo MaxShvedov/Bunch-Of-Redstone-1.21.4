@@ -71,7 +71,7 @@ public record ModBlockSetType(
                     "br_gold",
                     false,
                     false,
-                    false,
+                    true,
                     BlockSetType.PressurePlateSensitivity.EVERYTHING,
                     SoundType.METAL,
                     SoundEvents.IRON_DOOR_CLOSE,

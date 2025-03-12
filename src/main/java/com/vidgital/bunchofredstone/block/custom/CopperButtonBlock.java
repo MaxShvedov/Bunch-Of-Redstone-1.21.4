@@ -13,7 +13,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -29,8 +28,6 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.redstone.ExperimentalRedstoneUtils;
 import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -39,7 +36,6 @@ public class CopperButtonBlock extends ButtonBlock
 {
     public static final BooleanProperty POWER = BooleanProperty.create("power");
     public static final Supplier<BiMap<Block, Block>> WAX_OFF = Suppliers.memoize(() -> WeatheringCopperButtonBlock.WAX_ON.get().inverse());
-    private final BlockSetType type;
     private final int ticksToStayPressed;
 
     @Override
@@ -156,9 +152,8 @@ public class CopperButtonBlock extends ButtonBlock
 
     public CopperButtonBlock(BlockSetType pType, int pTicksToStayPressed, Properties pProperties)
     {
-        super(pType, pTicksToStayPressed, pProperties);
+        super(pType, Math.max(pTicksToStayPressed, 10), pProperties);
         this.ticksToStayPressed = pTicksToStayPressed;
-        this.type = pType;
         this.registerDefaultState(
                 this.stateDefinition.any()
                         .setValue(FACING, Direction.NORTH)
