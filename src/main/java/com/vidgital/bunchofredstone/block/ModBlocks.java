@@ -312,7 +312,7 @@ public class ModBlocks
             });
 
     public static final RegistryObject<ButtonBlock> GOLDEN_BUTTON = RegisterBlock("golden_button",
-            () -> new GoldenButtonBlock(ModBlockSetType.BR_GOLD, 12 ,BlockBehaviour.Properties.of()
+            () -> new GoldenButtonBlock(ModBlockSetType.BR_GOLD, 8 ,BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "golden_button")))
                     .strength(0.5f)
                     .pushReaction(PushReaction.DESTROY)
