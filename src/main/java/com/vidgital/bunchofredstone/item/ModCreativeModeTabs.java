@@ -71,6 +71,9 @@ public class ModCreativeModeTabs
                         output.accept(ModBlocks.REDSTONE_ROD.get());
                         output.accept(ModBlocks.RAIN_DETECTOR.get());
                         output.accept(ModBlocks.COPPER_ROD.get());
+
+                        output.accept(ModBlocks.REDUCTOR.get());
+                        output.accept(ModBlocks.INTERSECTION.get());
                     }).build());
 
 

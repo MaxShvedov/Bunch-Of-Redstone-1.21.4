@@ -1,0 +1,184 @@
+{
+  "variants": {
+    "facing=east,mode=forward,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_off",
+      "y": 270
+    },
+    "facing=east,mode=forward,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_second",
+      "y": 270
+    },
+    "facing=east,mode=forward,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_prime",
+      "y": 270
+    },
+    "facing=east,mode=forward,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_all",
+      "y": 270
+    },
+    "facing=east,mode=left,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_off",
+      "y": 270
+    },
+    "facing=east,mode=left,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_second",
+      "y": 270
+    },
+    "facing=east,mode=left,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_prime",
+      "y": 270
+    },
+    "facing=east,mode=left,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_all",
+      "y": 270
+    },
+    "facing=east,mode=right,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_off",
+      "y": 270
+    },
+    "facing=east,mode=right,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_second",
+      "y": 270
+    },
+    "facing=east,mode=right,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_prime",
+      "y": 270
+    },
+    "facing=east,mode=right,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_all",
+      "y": 270
+    },
+    "facing=north,mode=forward,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_off",
+      "y": 180
+    },
+    "facing=north,mode=forward,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_second",
+      "y": 180
+    },
+    "facing=north,mode=forward,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_prime",
+      "y": 180
+    },
+    "facing=north,mode=forward,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_all",
+      "y": 180
+    },
+    "facing=north,mode=left,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_off",
+      "y": 180
+    },
+    "facing=north,mode=left,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_second",
+      "y": 180
+    },
+    "facing=north,mode=left,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_prime",
+      "y": 180
+    },
+    "facing=north,mode=left,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_all",
+      "y": 180
+    },
+    "facing=north,mode=right,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_off",
+      "y": 180
+    },
+    "facing=north,mode=right,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_second",
+      "y": 180
+    },
+    "facing=north,mode=right,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_prime",
+      "y": 180
+    },
+    "facing=north,mode=right,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_all",
+      "y": 180
+    },
+    "facing=south,mode=forward,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_off"
+    },
+    "facing=south,mode=forward,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_second"
+    },
+    "facing=south,mode=forward,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_prime"
+    },
+    "facing=south,mode=forward,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_all"
+    },
+    "facing=south,mode=left,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_off"
+    },
+    "facing=south,mode=left,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_second"
+    },
+    "facing=south,mode=left,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_prime"
+    },
+    "facing=south,mode=left,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_all"
+    },
+    "facing=south,mode=right,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_off"
+    },
+    "facing=south,mode=right,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_second"
+    },
+    "facing=south,mode=right,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_prime"
+    },
+    "facing=south,mode=right,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_all"
+    },
+    "facing=west,mode=forward,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_off",
+      "y": 90
+    },
+    "facing=west,mode=forward,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_second",
+      "y": 90
+    },
+    "facing=west,mode=forward,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_forward_prime",
+      "y": 90
+    },
+    "facing=west,mode=forward,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_forward_all",
+      "y": 90
+    },
+    "facing=west,mode=left,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_off",
+      "y": 90
+    },
+    "facing=west,mode=left,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_second",
+      "y": 90
+    },
+    "facing=west,mode=left,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_left_prime",
+      "y": 90
+    },
+    "facing=west,mode=left,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_left_all",
+      "y": 90
+    },
+    "facing=west,mode=right,prime_power=false,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_off",
+      "y": 90
+    },
+    "facing=west,mode=right,prime_power=false,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_second",
+      "y": 90
+    },
+    "facing=west,mode=right,prime_power=true,second_power=false": {
+      "model": "bunchofredstone:block/intersection_right_prime",
+      "y": 90
+    },
+    "facing=west,mode=right,prime_power=true,second_power=true": {
+      "model": "bunchofredstone:block/intersection_right_all",
+      "y": 90
+    }
+  }
+}

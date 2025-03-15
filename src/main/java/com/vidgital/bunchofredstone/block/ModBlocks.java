@@ -3,6 +3,8 @@ package com.vidgital.bunchofredstone.block;
 import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.block.custom.*;
 import com.vidgital.bunchofredstone.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -11,8 +13,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -52,6 +56,24 @@ public class ModBlocks
                     .lightLevel(blockState -> 7)
                     .noOcclusion()));
 
+//public static final RegistryObject<RedstoneRodBlock> WEAK_REDSTONE_ROD = RegisterBlock("weak_redstone_rod",
+//            () -> new RedstoneRodBlock(BlockBehaviour.Properties.of()
+//                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "weak_redstone_rod")))
+//                    .forceSolidOn()
+//                    .instabreak()
+//                    .sound(SoundType.WOOD)
+//                    .lightLevel(blockState -> 7)
+//                    .noOcclusion())
+//            {
+//                @Override
+//                protected int getSignal(BlockState pState, BlockGetter pLevel, BlockPos pPos, Direction pDirection)
+//                {
+//                    if(!(pLevel.getBlockState(pPos.relative(pDirection)).getBlock() instanceof AirBlock))
+//                        return pState.getValue(FACING).getOpposite() == pDirection ? 15 : 0;
+//                    return 0;
+//                }
+//            });
+
     public static final RegistryObject<CopperRodBlock> COPPER_ROD = RegisterBlock("copper_rod",
             () -> new CopperRodBlock(Blocks.LIGHTNING_ROD, BlockBehaviour.Properties.of()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "copper_rod")))
@@ -70,6 +92,22 @@ public class ModBlocks
                     .strength(0.8f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE_TILES)));
+
+    public static final RegistryObject<ReductorBlock> REDUCTOR = RegisterBlock("reductor",
+            () -> new ReductorBlock(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "reductor")))
+                    .instabreak()
+                    .sound(SoundType.POLISHED_DEEPSLATE)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
+
+    public static final RegistryObject<IntersectionBlock> INTERSECTION = RegisterBlock("intersection",
+            () -> new IntersectionBlock(BlockBehaviour.Properties.of()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(BunchOfRedstone.MOD_ID, "intersection")))
+                    .instabreak()
+                    .sound(SoundType.POLISHED_DEEPSLATE)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
 
     /*PRESSURE PLATE BLOCKS*/
     public static final RegistryObject<PressurePlateBlock> POLISHED_GRANITE_PRESSURE_PLATE = RegisterBlock("polished_granite_pressure_plate",

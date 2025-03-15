@@ -1,4 +1,4 @@
-// 1.21.4	2025-03-10T22:40:15.6017417	Loot Tables
+// 1.21.4	2025-03-14T00:00:43.550203	Loot Tables
 d2a019c7c8cd227b96a5df955286c41ac2b66d24 data/bunchofredstone/loot_table/blocks/andesite_button.json
 57e69a18d64d677149a43863e3cd6900abd75759 data/bunchofredstone/loot_table/blocks/andesite_pressure_plate.json
 79255ffee0f2468eeac35a620b56e116d06682ee data/bunchofredstone/loot_table/blocks/blackstone_button.json
@@ -15,6 +15,7 @@ eb877986f0d311f3c4ceeb0e2c18b776f87ff908 data/bunchofredstone/loot_table/blocks/
 25534bd63a8c320fa8f5231d3adf486e1a93f5be data/bunchofredstone/loot_table/blocks/golden_button.json
 ca351c7c85863efb78dfe7d8106fec35a9504c45 data/bunchofredstone/loot_table/blocks/granite_button.json
 bfadaa410fa3c99e5f5f144537938029aae4a269 data/bunchofredstone/loot_table/blocks/granite_pressure_plate.json
+d2d3d943b80feba733df994324cc1a0f94e4a89c data/bunchofredstone/loot_table/blocks/intersection.json
 b6bb5882dfd344cf3a4782505bcc2467368eedb2 data/bunchofredstone/loot_table/blocks/iron_button.json
 19be3d0defdd8113d3f479b3435a977375152156 data/bunchofredstone/loot_table/blocks/measuring_weighted_pressure_plate.json
 96d9a4c9d7f8a92d21f5eddf4cb16cfd03dd01c0 data/bunchofredstone/loot_table/blocks/oxidized_copper_button.json
@@ -31,6 +32,7 @@ f32ab282cac55958ab391031e28d59d38ff9fec9 data/bunchofredstone/loot_table/blocks/
 93c030f5ca108e8ab491140963663046197e073b data/bunchofredstone/loot_table/blocks/rain_detector.json
 f75a6109d971adda10d8939867c9f695ae722e72 data/bunchofredstone/loot_table/blocks/redstone_lantern.json
 d36c8f6ecf1a83f1ca67c7c111f52ffafcd69ed9 data/bunchofredstone/loot_table/blocks/redstone_rod.json
+4c304ed2f32e3eadee2ad0f19b2fc386936d3a45 data/bunchofredstone/loot_table/blocks/reductor.json
 f47ea09a89beb2d6011e02a8c0d8d65dde0e5480 data/bunchofredstone/loot_table/blocks/tuff_button.json
 5e616df960bdaa67b928ee3b417fc62698baeb57 data/bunchofredstone/loot_table/blocks/tuff_pressure_plate.json
 d2224af9d73b69238e7bd9e3ba14c14cd9b5c882 data/bunchofredstone/loot_table/blocks/waxed_copper_button.json

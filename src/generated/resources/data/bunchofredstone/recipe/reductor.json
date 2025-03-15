@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "-": "minecraft:brick",
+    "/": "minecraft:redstone_torch",
+    "D": "minecraft:deepslate",
+    "r": "minecraft:redstone"
+  },
+  "pattern": [
+    " - ",
+    "/r/",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:reductor"
+  }
+}

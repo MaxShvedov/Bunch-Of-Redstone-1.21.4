@@ -35,6 +35,9 @@
   "item.bunchofredstone.golden_button": "Golden Button",
   "item.bunchofredstone.iron_button": "Iron Button",
 
+  "item.bunchofredstone.reductor": "Reductor",
+  "item.bunchofredstone.intersection": "Intersection",
+
   "item.bunchofredstone.cobblestone_pressure_plate": "Cobblestone Pressure Plate",
   "item.bunchofredstone.granite_pressure_plate": "Granite Pressure Plate",
   "item.bunchofredstone.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
@@ -93,6 +96,9 @@
   "block.bunchofredstone.tuff_pressure_plate": "Tuff Pressure Plate",
   "block.bunchofredstone.polished_tuff_pressure_plate": "Polished Tuff Pressure Plate",
   "block.bunchofredstone.blackstone_pressure_plate": "Blackstone Pressure Plate",
+
+  "block.bunchofredstone.reductor": "Reductor",
+  "block.bunchofredstone.intersection": "Intersection",
 
   "block.bunchofredstone.cobblestone_button": "Cobblestone Button",
   "block.bunchofredstone.granite_button": "Granite Button",

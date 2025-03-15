@@ -5,7 +5,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Set;
@@ -61,7 +60,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.REDSTONE_ROD.get());
         dropSelf(ModBlocks.COPPER_ROD.get());
         dropSelf(ModBlocks.RAIN_DETECTOR.get());
-        
+
+        dropSelf(ModBlocks.REDUCTOR.get());
+        dropSelf(ModBlocks.INTERSECTION.get());
+
         //Blocks that also drops something additional
 
         //Blocks that drops other items

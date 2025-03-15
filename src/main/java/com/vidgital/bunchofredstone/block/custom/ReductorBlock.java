@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 public class ReductorBlock extends DiodeBlock
 {
@@ -47,15 +48,44 @@ public class ReductorBlock extends DiodeBlock
         return pState.getValue(DELAY) * 2;
     }
 
+
     @Override
-    protected boolean isSignalSource(BlockState pState)
+    protected boolean sideInputDiodesOnly()
     {
         return true;
     }
 
     @Override
-    protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide) {
-        return 15 - pBlockState.getValue(DELAY);
+    protected int getDirectSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
+    {
+        return this.getSignal(pBlockState, pBlockAccess, pPos, pSide);
+    }
+
+    @Override
+    protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
+    {
+        if(!pBlockState.getValue(POWERED))
+        {
+            return 0;
+        }
+        else
+        {
+            return pBlockState.getValue(FACING) == pSide ? this.getOutputSignal(pBlockAccess, pPos, pBlockState) : 0;
+        }
+    }
+
+    @Override
+    protected int getOutputSignal(BlockGetter pLevel, BlockPos pPos, BlockState pState)
+    {
+        return Math.max(getInputSignal((Level) pLevel, pPos, pState) - pState.getValue(DELAY), 0);
+    }
+
+    @Override
+    public boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction)
+    {
+         if(direction == null)
+             return false;
+         return direction.getAxis() == state.getValue(FACING).getAxis();
     }
 
     @Override
@@ -67,5 +97,11 @@ public class ReductorBlock extends DiodeBlock
     public ReductorBlock(BlockBehaviour.Properties properties)
     {
         super(properties);
+        this.registerDefaultState(
+                this.stateDefinition.any()
+                        .setValue(FACING, Direction.NORTH)
+                        .setValue(DELAY, 1)
+                        .setValue(POWERED, false)
+        );
     }
 }

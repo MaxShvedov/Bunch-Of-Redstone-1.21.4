@@ -72,6 +72,26 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .define('M', Items.MOSS_BLOCK)
                 .define('_', Items.COBBLED_DEEPSLATE_SLAB)
                 .unlockedBy(getHasName(Items.MOSS_BLOCK), has(Items.MOSS_BLOCK)).save(this.output);
+        
+        shaped(RecipeCategory.REDSTONE, ModBlocks.REDUCTOR.get())
+                .pattern(" - ")
+                .pattern("/r/")
+                .pattern("DDD")
+                .define('-', Items.BRICK)
+                .define('/', Items.REDSTONE_TORCH)
+                .define('r', Items.REDSTONE)
+                .define('D', Items.DEEPSLATE)
+                .unlockedBy(getHasName(Items.DEEPSLATE), has(Items.DEEPSLATE)).save(this.output);
+
+        shaped(RecipeCategory.REDSTONE, ModBlocks.INTERSECTION.get())
+                .pattern(" ^ ")
+                .pattern("r/r")
+                .pattern("DDD")
+                .define('^', Items.RESIN_CLUMP)
+                .define('/', Items.REDSTONE_TORCH)
+                .define('r', Items.REDSTONE)
+                .define('D', Items.DEEPSLATE)
+                .unlockedBy(getHasName(Items.DEEPSLATE), has(Items.DEEPSLATE)).save(this.output);
 
         shapeless(RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 9)
                 .requires(Items.COPPER_INGOT)

@@ -34,6 +34,9 @@
   "item.bunchofredstone.golden_button": "Золотая кнопка",
   "item.bunchofredstone.iron_button": "Железная кнопка",
 
+  "item.bunchofredstone.reductor": "Редстоуновый редуктор",
+  "item.bunchofredstone.intersection": "Редстоуновый перекрёсток",
+
   "item.bunchofredstone.cobblestone_pressure_plate": "Булыжная нажимная плита",
   "item.bunchofredstone.granite_pressure_plate": "Гранитная нажимная плита",
   "item.bunchofredstone.polished_granite_pressure_plate": "Нажимная плита из полированного гранита",
@@ -79,6 +82,9 @@
   "block.bunchofredstone.waxed_oxidized_copper_button": "Вощёная окисленная медная кнопка",
   "block.bunchofredstone.golden_button": "Золотая кнопка",
   "block.bunchofredstone.iron_button": "Железная кнопка",
+
+  "block.bunchofredstone.reductor": "Редстоуновый редуктор",
+  "block.bunchofredstone.intersection": "Редстоуновый перекрёсток",
 
   "block.bunchofredstone.cobblestone_pressure_plate": "Булыжная нажимная плита",
   "block.bunchofredstone.granite_pressure_plate": "Гранитная нажимная плита",

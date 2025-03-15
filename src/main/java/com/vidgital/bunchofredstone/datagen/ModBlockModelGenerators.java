@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.vidgital.bunchofredstone.block.ModBlocks;
+import com.vidgital.bunchofredstone.block.custom.IntersectionBlock;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelOutput;
 import net.minecraft.client.data.models.blockstates.*;
@@ -184,6 +185,8 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         createCopperRod();
         createRainDetector();
 
+        createReductor();
+        createIntersection();
     }
 
     protected void createCopperRod()
@@ -274,6 +277,57 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         this.blockStateOutput.accept(BlockModelGenerators.createButton(pButtonBlock, locationButton, locationButtonPressed));
         ResourceLocation locationInventory = ModModelTemplates.BUTTON_INVENTORY.create(pButtonBlock, textureMapping, ModBlockModelGenerators.this.modelOutput);
         this.registerSimpleItemModel(pButtonBlock, locationInventory);
+    }
+
+    public void createReductor()
+    {
+        this.registerSimpleFlatItemModel(ModBlocks.REDUCTOR.get().asItem());
+        this.blockStateOutput
+                .accept(MultiVariantGenerator.multiVariant(ModBlocks.REDUCTOR.get())
+                        .with(
+                                PropertyDispatch.properties(BlockStateProperties.DELAY, BlockStateProperties.POWERED)
+                                        .generate( (delay, powered) ->
+                                        {
+                                            StringBuilder stringBuilder = new StringBuilder();
+                                            stringBuilder.append('_').append(delay).append("tick");
+                                            if(powered)
+                                                stringBuilder.append("_on");
+                                            return Variant.variant()
+                                                    .with(VariantProperties.MODEL, TextureMapping.getBlockTexture(ModBlocks.REDUCTOR.get(), stringBuilder.toString()));
+                                        }
+                                        )
+                        )
+                        .with(createHorizontalFacingDispatchAlt())
+                );
+    }
+
+    public void createIntersection()
+    {
+        this.registerSimpleFlatItemModel(ModBlocks.INTERSECTION.get().asItem());
+        this.blockStateOutput
+                .accept(MultiVariantGenerator.multiVariant(ModBlocks.INTERSECTION.get())
+                        .with(
+                                PropertyDispatch.properties(IntersectionBlock.MODE, IntersectionBlock.PRIME_POWERED, IntersectionBlock.SECOND_POWERED)
+                                        .generate( (mode, prime, second) ->
+                                                {
+                                                    StringBuilder stringBuilder = new StringBuilder();
+                                                    stringBuilder.append('_').append(mode);
+                                                    if(!prime && !second)
+                                                        stringBuilder.append("_off");
+                                                    if(!prime && second)
+                                                        stringBuilder.append("_second");
+                                                    if(prime && !second)
+                                                        stringBuilder.append("_prime");
+                                                    if(prime && second)
+                                                        stringBuilder.append("_all");
+
+                                                    return Variant.variant()
+                                                            .with(VariantProperties.MODEL, TextureMapping.getBlockTexture(ModBlocks.INTERSECTION.get(), stringBuilder.toString()));
+                                                }
+                                        )
+                        )
+                        .with(createHorizontalFacingDispatchAlt())
+                );
     }
 
 
