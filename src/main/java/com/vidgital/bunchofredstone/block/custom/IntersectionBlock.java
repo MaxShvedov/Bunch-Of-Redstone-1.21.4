@@ -2,7 +2,6 @@ package com.vidgital.bunchofredstone.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.vidgital.bunchofredstone.block.IntersectionMode;
-import com.vidgital.bunchofredstone.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -15,21 +14,20 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.SignalGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DiodeBlock;
 import net.minecraft.world.level.block.RedStoneWireBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.ticks.TickPriority;
 
 public class IntersectionBlock extends DiodeBlock
 {
     public static final MapCodec<IntersectionBlock> CODEC = simpleCodec(IntersectionBlock::new);
-    public static final BooleanProperty PRIME_POWERED = BooleanProperty.create("prime_power");
-    public static final BooleanProperty SECOND_POWERED = BooleanProperty.create("second_power");
+    public static final IntegerProperty PRIME_POWER = IntegerProperty.create("prime_power", 0 ,15);
+    public static final IntegerProperty SECOND_POWER = IntegerProperty.create("second_power", 0, 15);
     public static final EnumProperty<IntersectionMode> MODE = EnumProperty.create("mode", IntersectionMode.class);
     @Override
     protected MapCodec<? extends DiodeBlock> codec()
@@ -66,9 +64,25 @@ public class IntersectionBlock extends DiodeBlock
     @Override
     protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
     {
-        if(pBlockState.getValue(MODE) == IntersectionMode.FORWARD && pSide == pBlockState.getValue(FACING))
-            return Math.max(this.getInputSignal((Level) pBlockAccess, pPos, pBlockState) - 2, 0);
-        else return 0;
+        if(pSide.getAxis() != Direction.Axis.Y)
+        {
+            Direction front = pBlockState.getValue(FACING);
+            Direction left = front.getClockWise();
+            Direction right = front.getCounterClockWise();
+            Direction back = front.getOpposite();
+            int primeValue = pBlockState.getValue(PRIME_POWER) - 1;
+            int secondValue = pBlockState.getValue(SECOND_POWER) - 1;
+            if (primeValue > 0 || secondValue > 0) {
+                if (pSide == back)
+                    return primeValue;
+                return switch (pBlockState.getValue(MODE)) {
+                    case FORWARD -> pSide == front ? primeValue : secondValue;
+                    case LEFT -> pSide == right ? primeValue : secondValue;
+                    case RIGHT -> pSide == left ? primeValue : secondValue;
+                };
+            }
+        }
+        return 0;
     }
 
     @Override
@@ -112,7 +126,7 @@ public class IntersectionBlock extends DiodeBlock
                 break;
             }
         }
-        return Math.max(Math.max(i, j), blockState.getBlock() instanceof RedStoneWireBlock ? blockState.getValue(RedStoneWireBlock.POWER) : 0);
+        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(i, j);
     }
 
     @Override
@@ -155,60 +169,29 @@ public class IntersectionBlock extends DiodeBlock
                 break;
             }
         }
-        return Math.max(Math.max(i, j), blockState.hasAnalogOutputSignal() ? blockState.getValue(RedStoneWireBlock.POWER) : 0);
-    }
-
-    protected int getOutputSignal(BlockGetter pLevel, BlockPos pPos, BlockState pState, Direction pSide)
-    {
-        Direction front = pState.getValue(FACING);
-        Direction left = front.getClockWise();
-        Direction right = front.getCounterClockWise();
-        Direction back = front.getOpposite();
-
-        if(pSide == back)
-            return Math.max(this.getInputSignal((Level) pLevel, pPos, pState), 0);
-
-        return 0;
+        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(i, j);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder)
     {
-        pBuilder.add(FACING, PRIME_POWERED, SECOND_POWERED, MODE);
+        pBuilder.add(FACING, PRIME_POWER, SECOND_POWER, MODE);
     }
 
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
     {
-        boolean prime = pState.getValue(PRIME_POWERED);
-        boolean second = pState.getValue(SECOND_POWERED);
-        boolean flagPrime = this.shouldTurnOn(pLevel, pPos, pState);
-        boolean flagSecond = this.shouldAlternativeTurnOn(pLevel, pPos, pState);
-        boolean tickScheduleFlag = false;
-            if (prime && !flagPrime)
-                pState = pState.setValue(PRIME_POWERED, false);
-            else if (!prime && flagPrime)
-                pState = pState.setValue(PRIME_POWERED, true);
-            else if (!flagPrime)
-                    tickScheduleFlag = true;
-
-            if (second && !flagSecond)
-                pState = pState.setValue(SECOND_POWERED, false);
-            else if(!second && flagSecond)
-                pState = pState.setValue(SECOND_POWERED, true);
-            else if (!flagSecond)
-                    tickScheduleFlag = true;
-
-            pLevel.setBlock(pPos, pState, 3);
-            if (tickScheduleFlag)
-                pLevel.scheduleTick(pPos, this, 0, TickPriority.VERY_HIGH);
+        pState = pState.setValue(PRIME_POWER, getInputSignal(pLevel, pPos, pState));
+        pState = pState.setValue(SECOND_POWER, getAlternateSignal(pLevel, pPos, pState));
+        pLevel.setBlock(pPos, pState, 3);
+        pLevel.scheduleTick(pPos, this, 0, TickPriority.VERY_HIGH);
     }
 
     @Override
     protected void checkTickOnNeighbor(Level pLevel, BlockPos pPos, BlockState pState)
     {
-        boolean prime = pState.getValue(PRIME_POWERED);
-        boolean second = pState.getValue(SECOND_POWERED);
+        boolean prime = pState.getValue(PRIME_POWER) > 0;
+        boolean second = pState.getValue(SECOND_POWER) > 0;
         boolean primeFlag = this.shouldTurnOn(pLevel, pPos, pState);
         boolean secondFlag = this.shouldAlternativeTurnOn(pLevel, pPos, pState);
         if (prime != primeFlag && !pLevel.getBlockTicks().willTickThisTick(pPos, this))
@@ -258,8 +241,8 @@ public class IntersectionBlock extends DiodeBlock
         this.registerDefaultState(
                 this.stateDefinition.any()
                         .setValue(FACING, Direction.NORTH)
-                        .setValue(PRIME_POWERED, false)
-                        .setValue(SECOND_POWERED, false)
+                        .setValue(PRIME_POWER, 0)
+                        .setValue(SECOND_POWER, 0)
                         .setValue(MODE,  IntersectionMode.FORWARD)
         );
     }

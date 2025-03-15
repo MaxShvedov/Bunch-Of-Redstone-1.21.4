@@ -307,18 +307,18 @@ public class ModBlockModelGenerators extends BlockModelGenerators
         this.blockStateOutput
                 .accept(MultiVariantGenerator.multiVariant(ModBlocks.INTERSECTION.get())
                         .with(
-                                PropertyDispatch.properties(IntersectionBlock.MODE, IntersectionBlock.PRIME_POWERED, IntersectionBlock.SECOND_POWERED)
+                                PropertyDispatch.properties(IntersectionBlock.MODE, IntersectionBlock.PRIME_POWER, IntersectionBlock.SECOND_POWER)
                                         .generate( (mode, prime, second) ->
                                                 {
                                                     StringBuilder stringBuilder = new StringBuilder();
                                                     stringBuilder.append('_').append(mode);
-                                                    if(!prime && !second)
+                                                    if(prime == 0 && second == 0)
                                                         stringBuilder.append("_off");
-                                                    if(!prime && second)
+                                                    if(prime == 0 && second > 0)
                                                         stringBuilder.append("_second");
-                                                    if(prime && !second)
+                                                    if(prime > 0 && second == 0)
                                                         stringBuilder.append("_prime");
-                                                    if(prime && second)
+                                                    if(prime > 0 && second > 0)
                                                         stringBuilder.append("_all");
 
                                                     return Variant.variant()

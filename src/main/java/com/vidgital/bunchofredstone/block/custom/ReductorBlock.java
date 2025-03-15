@@ -3,6 +3,8 @@ package com.vidgital.bunchofredstone.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -15,6 +17,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.ticks.TickPriority;
 import org.jetbrains.annotations.Nullable;
 
 public class ReductorBlock extends DiodeBlock
@@ -48,13 +51,6 @@ public class ReductorBlock extends DiodeBlock
         return pState.getValue(DELAY) * 2;
     }
 
-
-    @Override
-    protected boolean sideInputDiodesOnly()
-    {
-        return true;
-    }
-
     @Override
     protected int getDirectSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
     {
@@ -77,6 +73,7 @@ public class ReductorBlock extends DiodeBlock
     @Override
     protected int getOutputSignal(BlockGetter pLevel, BlockPos pPos, BlockState pState)
     {
+
         return Math.max(getInputSignal((Level) pLevel, pPos, pState) - pState.getValue(DELAY), 0);
     }
 
@@ -86,6 +83,21 @@ public class ReductorBlock extends DiodeBlock
          if(direction == null)
              return false;
          return direction.getAxis() == state.getValue(FACING).getAxis();
+    }
+
+    @Override
+    protected void tick(BlockState p_221065_, ServerLevel p_221066_, BlockPos p_221067_, RandomSource p_221068_)
+    {
+        boolean flag = p_221065_.getValue(POWERED);
+        boolean flag1 = this.shouldTurnOn(p_221066_, p_221067_, p_221065_);
+        if (flag && !flag1) {
+            p_221066_.setBlock(p_221067_, p_221065_.setValue(POWERED, Boolean.valueOf(false)), 2);
+        } else if (!flag) {
+            p_221066_.setBlock(p_221067_, p_221065_.setValue(POWERED, Boolean.valueOf(true)), 2);
+            if (flag1) {
+                p_221066_.scheduleTick(p_221067_, this, this.getDelay(p_221065_), TickPriority.VERY_HIGH);
+            }
+        }
     }
 
     @Override
