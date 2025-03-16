@@ -1,0 +1,26 @@
+{
+  "values": [
+    "bunchofredstone:cobblestone_button",
+    "bunchofredstone:granite_button",
+    "bunchofredstone:polished_granite_button",
+    "bunchofredstone:diorite_button",
+    "bunchofredstone:polished_diorite_button",
+    "bunchofredstone:andesite_button",
+    "bunchofredstone:polished_andesite_button",
+    "bunchofredstone:cobbled_deepslate_button",
+    "bunchofredstone:polished_deepslate_button",
+    "bunchofredstone:tuff_button",
+    "bunchofredstone:polished_tuff_button",
+    "bunchofredstone:blackstone_button",
+    "bunchofredstone:copper_button",
+    "bunchofredstone:exposed_copper_button",
+    "bunchofredstone:weathered_copper_button",
+    "bunchofredstone:oxidized_copper_button",
+    "bunchofredstone:waxed_copper_button",
+    "bunchofredstone:waxed_exposed_copper_button",
+    "bunchofredstone:waxed_weathered_copper_button",
+    "bunchofredstone:waxed_oxidized_copper_button",
+    "bunchofredstone:golden_button",
+    "bunchofredstone:iron_button"
+  ]
+}

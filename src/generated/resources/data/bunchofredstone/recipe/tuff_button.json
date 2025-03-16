@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "tuff",
+  "ingredients": [
+    "minecraft:tuff"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:tuff_button"
+  }
+}

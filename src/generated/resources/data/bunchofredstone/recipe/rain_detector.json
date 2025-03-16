@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "minecraft:iron_bars",
+    "M": "minecraft:moss_block",
+    "_": "minecraft:cobbled_deepslate_slab"
+  },
+  "pattern": [
+    "###",
+    "MMM",
+    "___"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:rain_detector"
+  }
+}

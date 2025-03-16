@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "blackstone",
+  "ingredients": [
+    "minecraft:blackstone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:blackstone_button"
+  }
+}

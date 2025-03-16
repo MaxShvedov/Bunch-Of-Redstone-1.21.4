@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "axis=x,powered=false": {
+      "model": "bunchofredstone:block/copper_rod",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,powered=true": {
+      "model": "bunchofredstone:block/copper_rod_on",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,powered=false": {
+      "model": "bunchofredstone:block/copper_rod"
+    },
+    "axis=y,powered=true": {
+      "model": "bunchofredstone:block/copper_rod_on"
+    },
+    "axis=z,powered=false": {
+      "model": "bunchofredstone:block/copper_rod",
+      "x": 90
+    },
+    "axis=z,powered=true": {
+      "model": "bunchofredstone:block/copper_rod_on",
+      "x": 90
+    }
+  }
+}

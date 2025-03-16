@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "diorite",
+  "ingredients": [
+    "minecraft:diorite"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:diorite_button"
+  }
+}

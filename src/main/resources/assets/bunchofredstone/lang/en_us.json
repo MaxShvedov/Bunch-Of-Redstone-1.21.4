@@ -1,11 +1,115 @@
 {
   "creativetab.bunchofredstone.bunch_of_redstone_tab": "Bunch of Redstone",
 
+
+  "tooltip.bunchofredstone.wrench": "Allows you to rotate blocks, change some blocks appearance and connecting minecarts.",
+  "tooltip.bunchofredstone.wrench.shift_down1": "To rotate most blocks clockwise around the selected side, click §eRight Mouse Button §r.",
+  "tooltip.bunchofredstone.wrench.shift_down2": "To rotate most blocks in your direction, click §eLeft Mouse Button§r on horizontal side.",
+  "tooltip.bunchofredstone.wrench.shift_down3": "Hold §eShift§r key to invert the direction of the rotation.",
+
+  "tooltip.bunchofredstone.iron_button": "Emits a very short redstone signal pulse when pressed.",
+
+
+  "item.bunchofredstone.copper_nugget": "Copper Nugget",
+  "item.bunchofredstone.copper_dust": "Copper Dust",
+
   "item.bunchofredstone.wrench": "Wrench",
   "item.bunchofredstone.exposed_wrench": "Exposed Wrench",
   "item.bunchofredstone.weathered_wrench": "Weathered Wrench",
   "item.bunchofredstone.oxidized_wrench": "Oxidized Wrench",
-  "item.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles",
 
-  "block.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles"
+  "item.bunchofredstone.redstone_lantern": "Redstone Lantern",
+  "item.bunchofredstone.redstone_rod": "Redstone Rod",
+  "item.bunchofredstone.copper_rod": "Copper Rod",
+  "item.bunchofredstone.rain_detector": "Rain Detector",
+
+  "item.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
+  "item.bunchofredstone.copper_button": "Copper Button",
+  "item.bunchofredstone.exposed_copper_button": "Exposed Copper Button",
+  "item.bunchofredstone.weathered_copper_button": "Weathered Copper Button",
+  "item.bunchofredstone.oxidized_copper_button": "Oxidized Copper Button",
+  "item.bunchofredstone.waxed_copper_button": "Waxed Copper Button",
+  "item.bunchofredstone.waxed_exposed_copper_button": "Waxed Exposed Copper Button",
+  "item.bunchofredstone.waxed_weathered_copper_button": "Waxed Weathered Copper Button",
+  "item.bunchofredstone.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button",
+  "item.bunchofredstone.golden_button": "Golden Button",
+  "item.bunchofredstone.iron_button": "Iron Button",
+
+  "item.bunchofredstone.reductor": "Reductor",
+  "item.bunchofredstone.intersection": "Intersection",
+
+  "item.bunchofredstone.cobblestone_pressure_plate": "Cobblestone Pressure Plate",
+  "item.bunchofredstone.granite_pressure_plate": "Granite Pressure Plate",
+  "item.bunchofredstone.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
+  "item.bunchofredstone.diorite_pressure_plate": "Diorite Pressure Plate",
+  "item.bunchofredstone.polished_diorite_pressure_plate": "Polished Diorite Pressure Plate",
+  "item.bunchofredstone.andesite_pressure_plate": "Andesite Pressure Plate",
+  "item.bunchofredstone.polished_andesite_pressure_plate": "Polished Andesite Pressure Plate",
+  "item.bunchofredstone.cobbled_deepslate_pressure_plate": "Cobbled Deepslate Pressure Plate",
+  "item.bunchofredstone.polished_deepslate_pressure_plate": "Polished Deepslate Pressure Plate",
+  "item.bunchofredstone.tuff_pressure_plate": "Tuff Pressure Plate",
+  "item.bunchofredstone.polished_tuff_pressure_plate": "Polished Tuff Pressure Plate",
+  "item.bunchofredstone.blackstone_pressure_plate": "Blackstone Pressure Plate",
+
+  "item.bunchofredstone.cobblestone_button": "Cobblestone Button",
+  "item.bunchofredstone.granite_button": "Granite Button",
+  "item.bunchofredstone.polished_granite_button": "Polished Granite Button",
+  "item.bunchofredstone.diorite_button": "Diorite Button",
+  "item.bunchofredstone.polished_diorite_button": "Polished Diorite Button",
+  "item.bunchofredstone.andesite_button": "Andesite Button",
+  "item.bunchofredstone.polished_andesite_button": "Polished Andesite Button",
+  "item.bunchofredstone.cobbled_deepslate_button": "Cobbled Deepslate Button",
+  "item.bunchofredstone.polished_deepslate_button": "Polished Deepslate Button",
+  "item.bunchofredstone.tuff_button": "Tuff Button",
+  "item.bunchofredstone.polished_tuff_button": "Polished Tuff Button",
+  "item.bunchofredstone.blackstone_button": "Blackstone Button",
+
+
+  "block.bunchofredstone.cobbled_deepslate_tiles": "Cobbled Deepslate Tiles",
+
+  "block.bunchofredstone.redstone_lantern": "Redstone Lantern",
+  "block.bunchofredstone.redstone_rod": "Redstone Rod",
+  "block.bunchofredstone.copper_rod": "Copper Rod",
+  "block.bunchofredstone.rain_detector": "Rain Detector",
+
+  "block.bunchofredstone.measuring_weighted_pressure_plate": "Measuring Weighted Pressure Plate",
+  "block.bunchofredstone.copper_button": "Copper Button",
+  "block.bunchofredstone.exposed_copper_button": "Exposed Copper Button",
+  "block.bunchofredstone.weathered_copper_button": "Weathered Copper Button",
+  "block.bunchofredstone.oxidized_copper_button": "Oxidized Copper Button",
+  "block.bunchofredstone.waxed_copper_button": "Waxed Copper Button",
+  "block.bunchofredstone.waxed_exposed_copper_button": "Waxed Exposed Copper Button",
+  "block.bunchofredstone.waxed_weathered_copper_button": "Waxed Weathered Copper Button",
+  "block.bunchofredstone.waxed_oxidized_copper_button": "Waxed Oxidized Copper Button",
+  "block.bunchofredstone.golden_button": "Golden Button",
+  "block.bunchofredstone.iron_button": "Iron Button",
+
+  "block.bunchofredstone.cobblestone_pressure_plate": "Cobblestone Pressure Plate",
+  "block.bunchofredstone.granite_pressure_plate": "Granite Pressure Plate",
+  "block.bunchofredstone.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
+  "block.bunchofredstone.diorite_pressure_plate": "Diorite Pressure Plate",
+  "block.bunchofredstone.polished_diorite_pressure_plate": "Polished Diorite Pressure Plate",
+  "block.bunchofredstone.andesite_pressure_plate": "Andesite Pressure Plate",
+  "block.bunchofredstone.polished_andesite_pressure_plate": "Polished Andesite Pressure Plate",
+  "block.bunchofredstone.cobbled_deepslate_pressure_plate": "Cobbled Deepslate Pressure Plate",
+  "block.bunchofredstone.polished_deepslate_pressure_plate": "Polished Deepslate Pressure Plate",
+  "block.bunchofredstone.tuff_pressure_plate": "Tuff Pressure Plate",
+  "block.bunchofredstone.polished_tuff_pressure_plate": "Polished Tuff Pressure Plate",
+  "block.bunchofredstone.blackstone_pressure_plate": "Blackstone Pressure Plate",
+
+  "block.bunchofredstone.reductor": "Reductor",
+  "block.bunchofredstone.intersection": "Intersection",
+
+  "block.bunchofredstone.cobblestone_button": "Cobblestone Button",
+  "block.bunchofredstone.granite_button": "Granite Button",
+  "block.bunchofredstone.polished_granite_button": "Polished Granite Button",
+  "block.bunchofredstone.diorite_button": "Diorite Button",
+  "block.bunchofredstone.polished_diorite_button": "Polished Diorite Button",
+  "block.bunchofredstone.andesite_button": "Andesite Button",
+  "block.bunchofredstone.polished_andesite_button": "Polished Andesite Button",
+  "block.bunchofredstone.cobbled_deepslate_button": "Cobbled Deepslate Button",
+  "block.bunchofredstone.polished_deepslate_button": "Polished Deepslate Button",
+  "block.bunchofredstone.tuff_button": "Tuff Button",
+  "block.bunchofredstone.polished_tuff_button": "Polished Tuff Button",
+  "block.bunchofredstone.blackstone_button": "Blackstone Button"
 }

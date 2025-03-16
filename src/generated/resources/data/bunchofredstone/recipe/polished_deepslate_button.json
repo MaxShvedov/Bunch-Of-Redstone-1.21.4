@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "polished_deepslate",
+  "ingredients": [
+    "minecraft:polished_deepslate"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:polished_deepslate_button"
+  }
+}

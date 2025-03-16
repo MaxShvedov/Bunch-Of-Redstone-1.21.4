@@ -1,0 +1,7 @@
+{
+  "parent": "bunchofredstone:block/template_redstone_lantern",
+  "render_type":"cutout",
+  "textures": {
+    "lantern": "bunchofredstone:block/redstone_lantern_on"
+  }
+}

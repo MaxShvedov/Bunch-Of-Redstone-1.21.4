@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "hanging=false,lit=false": {
+      "model": "bunchofredstone:block/redstone_lantern_off"
+    },
+    "hanging=false,lit=true": {
+      "model": "bunchofredstone:block/redstone_lantern_on"
+    },
+    "hanging=true,lit=false": {
+      "model": "bunchofredstone:block/redstone_lantern_off_hanging"
+    },
+    "hanging=true,lit=true": {
+      "model": "bunchofredstone:block/redstone_lantern_on_hanging"
+    }
+  }
+}

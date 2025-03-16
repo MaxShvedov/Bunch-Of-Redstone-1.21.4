@@ -2,6 +2,7 @@ package com.vidgital.bunchofredstone;
 
 import com.mojang.logging.LogUtils;
 import com.vidgital.bunchofredstone.block.ModBlocks;
+import com.vidgital.bunchofredstone.block.entity.ModBlockEntities;
 import com.vidgital.bunchofredstone.event.WrenchEvents;
 import com.vidgital.bunchofredstone.item.ModCreativeModeTabs;
 import com.vidgital.bunchofredstone.item.ModItems;
@@ -45,6 +46,7 @@ public class BunchOfRedstone
         // Register mod items and blocks
         ModItems.Register(modEventBus);
         ModBlocks.Register(modEventBus);
+        ModBlockEntities.Register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -62,16 +64,41 @@ public class BunchOfRedstone
     {
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
         {
-            event.accept(ModItems.WRENCH);
-            event.accept(ModItems.EXPOSED_WRENCH);
-            event.accept(ModItems.WEATHERED_WRENCH);
-            event.accept(ModItems.OXIDIZED_WRENCH);
+//            event.accept(ModItems.WRENCH);
+//            event.accept(ModItems.EXPOSED_WRENCH);
+//            event.accept(ModItems.WEATHERED_WRENCH);
+//            event.accept(ModItems.OXIDIZED_WRENCH);
         }
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
         {
-            event.accept(ModBlocks.COBBLED_DEEPSLATE_TILES);
-            event.accept(ModBlocks.SMOOTH_CALCITE);
+            event.accept(ModBlocks.REDSTONE_LANTERN.get());
+            event.accept(ModBlocks.REDSTONE_ROD.get());
+            event.accept(ModBlocks.COPPER_ROD.get());
+        }
+        
+        if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
+        {
+//            event.accept(ModItems.COPPER_DUST.get());
+//            event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+            event.accept(ModBlocks.WAXED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.WAXED_OXIDIZED_COPPER_BUTTON.get());
+            event.accept(ModBlocks.GOLDEN_BUTTON.get());
+            event.accept(ModBlocks.IRON_BUTTON.get());
+            event.accept(ModBlocks.REDSTONE_LANTERN.get());
+            event.accept(ModBlocks.REDSTONE_ROD.get());
+            event.accept(ModBlocks.COPPER_ROD.get());
+            event.accept(ModBlocks.RAIN_DETECTOR.get());
+            event.accept(ModBlocks.REDUCTOR.get());
+            event.accept(ModBlocks.INTERSECTION.get());
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
+        {
+//            event.accept(ModItems.COPPER_NUGGET.get());
+//            event.accept(ModItems.COPPER_DUST.get());
         }
     }
 

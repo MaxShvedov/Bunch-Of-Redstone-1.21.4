@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "granite",
+  "ingredients": [
+    "minecraft:granite"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:granite_button"
+  }
+}

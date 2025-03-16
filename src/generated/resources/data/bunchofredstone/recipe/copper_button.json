@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:copper_ingot",
+    "minecraft:stone_button"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bunchofredstone:copper_button"
+  }
+}
