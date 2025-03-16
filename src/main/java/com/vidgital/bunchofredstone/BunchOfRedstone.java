@@ -64,10 +64,10 @@ public class BunchOfRedstone
     {
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES)
         {
-            event.accept(ModItems.WRENCH);
-            event.accept(ModItems.EXPOSED_WRENCH);
-            event.accept(ModItems.WEATHERED_WRENCH);
-            event.accept(ModItems.OXIDIZED_WRENCH);
+//            event.accept(ModItems.WRENCH);
+//            event.accept(ModItems.EXPOSED_WRENCH);
+//            event.accept(ModItems.WEATHERED_WRENCH);
+//            event.accept(ModItems.OXIDIZED_WRENCH);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
@@ -79,8 +79,8 @@ public class BunchOfRedstone
         
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS)
         {
-            event.accept(ModItems.COPPER_DUST.get());
-            event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
+//            event.accept(ModItems.COPPER_DUST.get());
+//            event.accept(ModBlocks.MEASURING_WEIGHTED_PRESSURE_PLATE.get());
             event.accept(ModBlocks.WAXED_COPPER_BUTTON.get());
             event.accept(ModBlocks.WAXED_EXPOSED_COPPER_BUTTON.get());
             event.accept(ModBlocks.WAXED_WEATHERED_COPPER_BUTTON.get());
@@ -97,8 +97,8 @@ public class BunchOfRedstone
 
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS)
         {
-            event.accept(ModItems.COPPER_NUGGET.get());
-            event.accept(ModItems.COPPER_DUST.get());
+//            event.accept(ModItems.COPPER_NUGGET.get());
+//            event.accept(ModItems.COPPER_DUST.get());
         }
     }
 

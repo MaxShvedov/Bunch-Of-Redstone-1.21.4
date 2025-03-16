@@ -340,14 +340,15 @@ public class ModBlocks
                     .pushReaction(PushReaction.DESTROY)
                     .sound(SoundType.METAL)
                     .noCollission())
-            {
-                @Override
-                public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
-                {
-                    pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.iron_button"));
-                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
-                }
-            });
+//            {
+//                @Override
+//                public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+//                {
+//                    pTooltipComponents.add(Component.translatable("tooltip.bunchofredstone.iron_button"));
+//                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+//                }
+//            }
+            );
 
     public static final RegistryObject<ButtonBlock> GOLDEN_BUTTON = RegisterBlock("golden_button",
             () -> new GoldenButtonBlock(ModBlockSetType.BR_GOLD, 8 ,BlockBehaviour.Properties.of()
