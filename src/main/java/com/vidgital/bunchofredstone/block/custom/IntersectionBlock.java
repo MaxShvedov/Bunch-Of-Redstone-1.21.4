@@ -70,8 +70,8 @@ public class IntersectionBlock extends DiodeBlock
             Direction left = front.getClockWise();
             Direction right = front.getCounterClockWise();
             Direction back = front.getOpposite();
-            int primeValue = pBlockState.getValue(PRIME_POWER) - 1;
-            int secondValue = pBlockState.getValue(SECOND_POWER) - 1;
+            int primeValue = Math.max(pBlockState.getValue(PRIME_POWER) - 1, 0);
+            int secondValue = Math.max(pBlockState.getValue(SECOND_POWER) - 1, 0);
             if (primeValue > 0 || secondValue > 0) {
                 if (pSide == back)
                     return primeValue;
@@ -181,10 +181,14 @@ public class IntersectionBlock extends DiodeBlock
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
     {
+        boolean primeFlag = shouldTurnOn(pLevel, pPos, pState);
+        boolean secondFlag = shouldAlternativeTurnOn(pLevel, pPos, pState);
+
         pState = pState.setValue(PRIME_POWER, getInputSignal(pLevel, pPos, pState));
         pState = pState.setValue(SECOND_POWER, getAlternateSignal(pLevel, pPos, pState));
         pLevel.setBlock(pPos, pState, 3);
-        pLevel.scheduleTick(pPos, this, 0, TickPriority.VERY_HIGH);
+        if(primeFlag || secondFlag)
+            pLevel.scheduleTick(pPos, this, 0, TickPriority.VERY_HIGH);
     }
 
     @Override

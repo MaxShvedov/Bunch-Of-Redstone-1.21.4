@@ -60,20 +60,12 @@ public class ReductorBlock extends DiodeBlock
     @Override
     protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
     {
-        if(!pBlockState.getValue(POWERED))
-        {
-            return 0;
-        }
-        else
-        {
-            return pBlockState.getValue(FACING) == pSide ? this.getOutputSignal(pBlockAccess, pPos, pBlockState) : 0;
-        }
+        return pBlockState.getValue(FACING) == pSide ? this.getOutputSignal(pBlockAccess, pPos, pBlockState) : 0;
     }
 
     @Override
     protected int getOutputSignal(BlockGetter pLevel, BlockPos pPos, BlockState pState)
     {
-
         return Math.max(getInputSignal((Level) pLevel, pPos, pState) - pState.getValue(DELAY), 0);
     }
 
@@ -86,16 +78,20 @@ public class ReductorBlock extends DiodeBlock
     }
 
     @Override
-    protected void tick(BlockState p_221065_, ServerLevel p_221066_, BlockPos p_221067_, RandomSource p_221068_)
+    protected void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource)
     {
-        boolean flag = p_221065_.getValue(POWERED);
-        boolean flag1 = this.shouldTurnOn(p_221066_, p_221067_, p_221065_);
-        if (flag && !flag1) {
-            p_221066_.setBlock(p_221067_, p_221065_.setValue(POWERED, Boolean.valueOf(false)), 2);
-        } else if (!flag) {
-            p_221066_.setBlock(p_221067_, p_221065_.setValue(POWERED, Boolean.valueOf(true)), 2);
-            if (flag1) {
-                p_221066_.scheduleTick(p_221067_, this, this.getDelay(p_221065_), TickPriority.VERY_HIGH);
+        boolean flag = blockState.getValue(POWERED);
+        boolean flag1 = this.shouldTurnOn(serverLevel, blockPos, blockState);
+        if (flag && !flag1)
+        {
+            serverLevel.setBlock(blockPos, blockState.setValue(POWERED, false), 2);
+        }
+        else if (!flag)
+        {
+            serverLevel.setBlock(blockPos, blockState.setValue(POWERED, true), 2);
+            if (flag1)
+            {
+                serverLevel.scheduleTick(blockPos, this, this.getDelay(blockState), TickPriority.VERY_HIGH);
             }
         }
     }
