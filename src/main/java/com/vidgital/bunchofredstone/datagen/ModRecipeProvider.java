@@ -1,5 +1,6 @@
 package com.vidgital.bunchofredstone.datagen;
 
+import com.vidgital.bunchofredstone.BunchOfRedstone;
 import com.vidgital.bunchofredstone.block.ModBlocks;
 import com.vidgital.bunchofredstone.item.ModItems;
 import net.minecraft.core.HolderLookup;
@@ -9,10 +10,12 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.List;
@@ -59,8 +62,8 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .unlockedBy(getHasName(Items.END_ROD), has(Items.END_ROD)).save(this.output);
 
         shaped(RecipeCategory.REDSTONE, ModBlocks.COPPER_ROD.get())
-                .pattern(" - ")
-                .pattern(" - ")
+                .pattern("-")
+                .pattern("-")
                 .define('-', Items.COPPER_INGOT)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT)).save(this.output);
 
@@ -183,14 +186,53 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
                 .unlockedBy(getHasName(Items.POLISHED_TUFF), has(Items.POLISHED_TUFF)).save(this.output);
 
         //Provide alternative crafting recipes for existing blocks made of cobblestone
-//        shaped(RecipeCategory.REDSTONE, Items.DISPENSER)
-//                .pattern("***")
-//                .pattern("*b*")
-//                .pattern("*r*")
-//                .define('*', Items.COBBLED_DEEPSLATE)
-//                .define('b', Items.BOW)
-//                .define('r', Items.REDSTONE)
-//                .unlockedBy(getHasName(Items.BOW), has(Items.BOW)).save(this.output);
+        shaped(RecipeCategory.REDSTONE, Items.DISPENSER)
+                .pattern("***")
+                .pattern("*b*")
+                .pattern("*r*")
+                .define('*', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('b', Items.BOW)
+                .define('r', Items.REDSTONE)
+                .unlockedBy("has_bow", has(Items.BOW))
+                .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(Items.DISPENSER));
+
+        shaped(RecipeCategory.REDSTONE, Items.DROPPER)
+                .pattern("***")
+                .pattern("* *")
+                .pattern("*r*")
+                .define('*', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('r', Items.REDSTONE)
+                .unlockedBy("has_redstone", has(Items.REDSTONE))
+                .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(Items.DROPPER));
+
+        shaped(RecipeCategory.REDSTONE, Items.OBSERVER)
+                .pattern("***")
+                .pattern("rrq")
+                .pattern("***")
+                .define('*', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('q', Items.QUARTZ)
+                .define('r', Items.REDSTONE)
+                .unlockedBy("has_quartz", this.has(Items.QUARTZ))
+                .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(Items.OBSERVER));
+
+        shaped(RecipeCategory.REDSTONE, Items.PISTON)
+                .pattern("ppp")
+                .pattern("*-*")
+                .pattern("*r*")
+                .define('*', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('p', ItemTags.PLANKS)
+                .define('-', Items.IRON_INGOT)
+                .define('r', Items.REDSTONE)
+                .unlockedBy("has_redstone", has(Items.REDSTONE))
+                .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(Items.PISTON));
+
+        shaped(RecipeCategory.REDSTONE, Items.LEVER)
+                .pattern("/")
+                .pattern("*")
+                .define('*', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('/', Items.STICK)
+                .unlockedBy("has_cobblestone", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(Items.LEVER));
     }
 
     @Override
@@ -225,6 +267,33 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
         protected Runner(PackOutput pPackOutput, CompletableFuture<HolderLookup.Provider> pRegistries)
         {
             super(pPackOutput, pRegistries);
+        }
+    }
+
+    protected void oreSmelting(List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
+        this.oreCooking(RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_smelting");
+    }
+
+    protected void oreBlasting(List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
+        this.oreCooking(RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
+    }
+
+    private <T extends AbstractCookingRecipe> void oreCooking(
+            RecipeSerializer<T> pSerializer,
+            AbstractCookingRecipe.Factory<T> pRecipeFactory,
+            List<ItemLike> pIngredients,
+            RecipeCategory pCategory,
+            ItemLike pResult,
+            float pExperience,
+            int pCookingTime,
+            String pGroup,
+            String pSuffix
+    ) {
+        for (ItemLike itemlike : pIngredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pSerializer, pRecipeFactory)
+                    .group(pGroup)
+                    .unlockedBy(getHasName(itemlike), this.has(itemlike))
+                    .save(this.output, BunchOfRedstone.MOD_ID + ":" + getItemName(pResult) + pSuffix + "_" + getItemName(itemlike));
         }
     }
 
