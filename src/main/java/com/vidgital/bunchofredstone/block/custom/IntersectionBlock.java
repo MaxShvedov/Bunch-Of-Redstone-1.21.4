@@ -106,7 +106,7 @@ public class IntersectionBlock extends DiodeBlock
         {
             case FORWARD:
             {
-                j = pLevel.getDirectSignal(pPos.relative(back), back);
+                j = pLevel.getSignal(pPos.relative(back), back);
                 if(j >= i)
                     blockState = pLevel.getBlockState(pPos.relative(back));
                 break;
@@ -126,7 +126,7 @@ public class IntersectionBlock extends DiodeBlock
                 break;
             }
         }
-        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(i, j);
+        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(j, i);
     }
 
     @Override
@@ -169,7 +169,7 @@ public class IntersectionBlock extends DiodeBlock
                 break;
             }
         }
-        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(i, j);
+        return blockState.getBlock() instanceof RedStoneWireBlock ? Math.max(blockState.getValue(RedStoneWireBlock.POWER) - 1, 0) : Math.max(j, i);
     }
 
     @Override
