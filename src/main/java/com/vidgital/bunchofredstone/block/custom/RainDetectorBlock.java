@@ -41,7 +41,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
-@Mod.EventBusSubscriber(modid = BunchOfRedstone.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+
 public class RainDetectorBlock extends BaseEntityBlock implements SimpleWaterloggedBlock
 {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -187,7 +187,8 @@ public class RainDetectorBlock extends BaseEntityBlock implements SimpleWaterlog
         float downfall = pLevel.getBiome(pPos).get().modifiableBiomeInfo().get().climateSettings().downfall();
         int power;
 
-        if (pLevel.isRaining())
+
+        if (pLevel.isRaining() && pLevel.canSeeSky(pPos))
             power = rain + thunder + (int)(downfall * 10) + moisture;
         else
             power = moisture;
