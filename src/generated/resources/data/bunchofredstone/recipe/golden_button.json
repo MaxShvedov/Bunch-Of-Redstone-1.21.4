@@ -3,7 +3,7 @@
   "category": "redstone",
   "ingredients": [
     "minecraft:gold_ingot",
-    "minecraft:stone_button"
+    "#bunchofredstone:stone_button_crafting_materials"
   ],
   "result": {
     "count": 1,

@@ -16,6 +16,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.vidgital.bunchofredstone.util.ModTags;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -106,23 +107,22 @@ public class ModRecipeProvider extends RecipeProvider implements DataProvider
 //        oreSmelting(List.of(ModItems.COPPER_DUST.get()), RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 0f, 200, "nugget");
 //        oreBlasting(List.of(ModItems.COPPER_DUST.get()), RecipeCategory.MISC, ModItems.COPPER_NUGGET.get(), 0f, 100, "nugget");
 
-        //Provide recipes using different stone buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.GOLDEN_BUTTON.get(), 1)
                 .requires(Items.GOLD_INGOT)
-                .requires(Items.STONE_BUTTON)
-                .unlockedBy(getHasName(Items.STONE_BUTTON), has(Items.STONE_BUTTON)).save(this.output);
+                .requires(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)
+                .unlockedBy(getHasName(Items.STONE_BUTTON), has(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)).save(this.output);
 
         //Provide recipes using different stone buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.IRON_BUTTON.get(), 1)
                 .requires(Items.IRON_INGOT)
-                .requires(Items.STONE_BUTTON)
-                .unlockedBy(getHasName(Items.STONE_BUTTON), has(Items.STONE_BUTTON)).save(this.output);
+                .requires(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)
+                .unlockedBy(getHasName(Items.STONE_BUTTON), has(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)).save(this.output);
 
         //Provide recipes using different stone buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.COPPER_BUTTON.get(), 1)
                 .requires(Items.COPPER_INGOT)
-                .requires(Items.STONE_BUTTON)
-                .unlockedBy(getHasName(Items.STONE_BUTTON), has(Items.STONE_BUTTON)).save(this.output);
+                .requires(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)
+                .unlockedBy(getHasName(Items.STONE_BUTTON), has(ModTags.Items.STONE_BUTTON_CRAFTING_MATERIALS)).save(this.output);
 
         //Waxing copper buttons.
         shapeless(RecipeCategory.REDSTONE, ModBlocks.WAXED_COPPER_BUTTON.get(), 1)

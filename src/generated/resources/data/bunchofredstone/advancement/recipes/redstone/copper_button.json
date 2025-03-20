@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:stone_button"
+            "items": "#bunchofredstone:stone_button_crafting_materials"
           }
         ]
       },
