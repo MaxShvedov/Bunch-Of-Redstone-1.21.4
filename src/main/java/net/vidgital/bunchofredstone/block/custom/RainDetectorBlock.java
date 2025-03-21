@@ -116,6 +116,7 @@ public class RainDetectorBlock extends BaseEntityBlock implements SimpleWaterlog
                     && !pState.getValue(WATERLOGGED))
             {
                 pLevel.setBlock(pPos, pState.setValue(MOISTURE, 0), 11);
+                pPlayer.playSound(SoundEvents.SPONGE_ABSORB, 0.5f, 1.2f);
                 if(!pPlayer.isCreative())
                 {
                     itemStack.shrink(1);
@@ -184,7 +185,6 @@ public class RainDetectorBlock extends BaseEntityBlock implements SimpleWaterlog
         int moisture = pState.getValue(MOISTURE);
         float downfall = pLevel.getBiome(pPos).get().modifiableBiomeInfo().get().climateSettings().downfall();
         int power;
-
 
         if (pLevel.isRaining() && pLevel.canSeeSky(pPos))
             power = rain + thunder + (int)(downfall * 10) + moisture;

@@ -41,6 +41,7 @@ public class ReductorBlock extends DiodeBlock
         else
         {
             pLevel.setBlock(pPos, pState.cycle(DELAY), 3);
+            this.updateNeighborsInFront(pLevel, pPos, pState);
             return InteractionResult.SUCCESS;
         }
     }
@@ -49,18 +50,6 @@ public class ReductorBlock extends DiodeBlock
     protected int getDelay(BlockState pState)
     {
         return pState.getValue(DELAY) * 2;
-    }
-
-    @Override
-    protected int getDirectSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
-    {
-        return this.getSignal(pBlockState, pBlockAccess, pPos, pSide);
-    }
-
-    @Override
-    protected int getSignal(BlockState pBlockState, BlockGetter pBlockAccess, BlockPos pPos, Direction pSide)
-    {
-        return pBlockState.getValue(FACING) == pSide ? this.getOutputSignal(pBlockAccess, pPos, pBlockState) : 0;
     }
 
     @Override
@@ -87,13 +76,12 @@ public class ReductorBlock extends DiodeBlock
             serverLevel.setBlock(blockPos, blockState.setValue(POWERED, false), 2);
         }
         else if (!flag)
-        {
             serverLevel.setBlock(blockPos, blockState.setValue(POWERED, true), 2);
-            if (flag1)
-            {
-                serverLevel.scheduleTick(blockPos, this, this.getDelay(blockState), TickPriority.VERY_HIGH);
-            }
+        if (flag1)
+        {
+            serverLevel.scheduleTick(blockPos, this, this.getDelay(blockState), TickPriority.VERY_HIGH);
         }
+        this.updateNeighborsInFront(serverLevel, blockPos, blockState);
     }
 
     @Override

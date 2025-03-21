@@ -44,7 +44,7 @@ public class IntersectionBlock extends DiodeBlock
     @Override
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
     {
-        if(!pPlayer.mayBuild())
+        if(!pPlayer.getAbilities().mayBuild)
             return InteractionResult.PASS;
         else
         {
